@@ -1,0 +1,1046 @@
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Youssef Abou Ali | ePortfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&amp;family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&amp;display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --black:       #0a1628;
+  --black2:      #0d1f3c;
+  --black3:      #112448;
+  --white:       #f0f5ff;
+  --gold:        #3c74b7;
+  --gold2:       #4d97f5;
+  --gold-dim:    rgba(42,125,225,0.16);
+  --gold-border: rgba(42,125,225,0.26);
+  --muted:       rgba(240,245,255,0.60);
+  --nav-h:       72px;
+}
+
+body {
+background: var(--black2);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* ── BLOG PAGE (hidden by default, shown when #blog-N hash is active) ── */
+.blog-page {
+  display: none;
+  min-height: 100vh;
+  padding: calc(var(--nav-h) + 4rem) 3.5rem 5rem;
+  max-width: 900px;
+  margin: 0 auto;
+  animation: fadeUp 0.5s ease both;
+}
+
+/* Show blog page via hash — handled by JS */
+.blog-page.active { display: block; }
+
+/* ── NAVBAR ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: var(--nav-h);
+  display: flex; align-items: center;
+  padding: 0 3.5rem;
+  z-index: 1000;
+  background: rgba(10,22,40,0.96);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--gold-border);
+}
+
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem; font-weight: 700;
+  color: var(--gold); letter-spacing: 0.04em;
+  margin-right: auto; cursor: pointer;
+}
+.nav-logo span {
+  display: block; font-size: 0.58rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--muted);
+  font-family: 'DM Sans', sans-serif; font-weight: 400; margin-top: 2px;
+}
+
+.nav-links {
+  display: flex; align-items: center;
+  list-style: none; gap: 0;
+}
+.nav-links > li { position: relative; }
+
+.nav-links > li > a,
+.nav-links > li > button {
+  display: flex; align-items: center; gap: 0.3rem;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted); transition: color 0.2s;
+  background: none; border: none; cursor: pointer;
+  font-family: 'DM Sans', sans-serif; font-weight: 400;
+}
+.nav-links > li > a:hover,
+.nav-links > li > button:hover,
+.nav-links > li > a.active { color: var(--gold); }
+
+.chevron {
+  width: 0; height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid currentColor;
+  transition: transform 0.25s; margin-top: 1px;
+}
+.nav-links > li:hover .chevron { transform: rotate(180deg); }
+
+/* DROPDOWN */
+.dropdown {
+  position: absolute; top: calc(100% + 4px); left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  min-width: 270px;
+  background: var(--black2);
+  border: 1px solid var(--gold-border);
+  box-shadow: 0 28px 64px rgba(0,0,0,0.75);
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+  z-index: 2000;
+}
+.nav-links > li:hover .dropdown {
+  opacity: 1; pointer-events: all;
+  transform: translateX(-50%) translateY(0);
+}
+.dropdown-header {
+  padding: 0.9rem 1.25rem 0.55rem;
+  font-size: 0.63rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--gold);
+  border-bottom: 1px solid var(--gold-border);
+}
+.dropdown a {
+  display: flex; align-items: center; gap: 0.75rem;
+  padding: 0.72rem 1.25rem;
+  font-size: 0.84rem; color: var(--muted);
+  transition: background 0.18s, color 0.18s;
+  border-bottom: 1px solid rgba(42,125,225,0.07);
+}
+.dropdown a:last-child { border-bottom: none; }
+.dropdown a:hover { background: var(--gold-dim); color: var(--white); }
+.post-num {
+  font-family: 'Playfair Display', serif;
+  font-style: italic; font-size: 0.72rem;
+  color: var(--gold); min-width: 1.5rem; opacity: 0.75;
+}
+
+.nav-cta {
+  margin-left: 1.5rem; padding: 0.55rem 1.5rem;
+  background: var(--gold); color: #fff;
+  font-size: 0.78rem; letter-spacing: 0.12em;
+  text-transform: uppercase; font-weight: 500;
+  transition: background 0.2s; white-space: nowrap;
+}
+.nav-cta:hover { background: var(--gold2); }
+
+.hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer;
+  padding: 4px; margin-left: auto;
+}
+.hamburger span {
+  display: block; width: 24px; height: 1.5px;
+  background: var(--white); transition: all 0.3s;
+}
+
+/* ── MOBILE NAV ── */
+.mobile-nav {
+  position: fixed; inset: 0;
+  background: rgba(10,22,40,0.98); backdrop-filter: blur(20px);
+  z-index: 999; padding: calc(var(--nav-h) + 2rem) 2rem 3rem;
+  transform: translateX(100%); transition: transform 0.35s ease;
+  overflow-y: auto;
+}
+.mobile-nav.open { transform: translateX(0); }
+.mobile-nav > a {
+  display: block; padding: 1rem 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem; font-weight: 700;
+  border-bottom: 1px solid var(--gold-border);
+  color: var(--white); transition: color 0.2s;
+}
+.mobile-nav > a:hover { color: var(--gold); }
+.mobile-sub-label {
+  font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold); padding: 1rem 0 0.4rem; display: block;
+}
+.mobile-sub a {
+  display: block; padding: 0.65rem 1rem;
+  font-size: 0.9rem; color: var(--muted);
+  border-bottom: 1px solid rgba(42,125,225,0.06);
+  transition: color 0.2s;
+}
+.mobile-sub a:hover { color: var(--gold); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center;
+  padding: calc(var(--nav-h) + 5rem) 2rem 6rem;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(42,125,225,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(42,125,225,0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+  animation: gridMove 25s linear infinite;
+}
+@keyframes gridMove { to { background-position: 64px 64px; } }
+.hero::after {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 70% 65% at 50% 45%, rgba(42,125,225,0.12) 0%, transparent 68%);
+  pointer-events: none;
+}
+
+.hero-inner { position: relative; z-index: 1; max-width: 780px; }
+
+.hero-photo {
+  width: 150px; height: 150px; border-radius: 50%;
+  margin: 0 auto 2.5rem; position: relative;
+  animation: dropIn 0.9s cubic-bezier(0.22,1,0.36,1) both;
+}
+.hero-photo::before {
+  content: ''; position: absolute; inset: -7px; border-radius: 50%;
+  border: 1px solid var(--gold-border);
+  animation: rotateCW 14s linear infinite;
+}
+.hero-photo::after {
+  content: ''; position: absolute; inset: -14px; border-radius: 50%;
+  border: 1px solid rgba(42,125,225,0.1);
+  animation: rotateCW 22s linear infinite reverse;
+}
+@keyframes rotateCW { to { transform: rotate(360deg); } }
+.hero-photo img {
+  width: 100%; height: 100%; border-radius: 50%;
+  object-fit: cover; object-position: top;
+  border: 3px solid var(--black);
+  filter: grayscale(15%) contrast(1.05);
+}
+
+.hero-badge {
+  display: inline-block;
+  font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--gold); border: 1px solid var(--gold-border);
+  padding: 0.32rem 0.9rem; margin-bottom: 1.8rem;
+  animation: fadeUp 0.8s 0.15s ease both; opacity: 0;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 7vw, 6rem);
+  font-weight: 900; line-height: 1.05; margin-bottom: 0.5rem;
+  animation: fadeUp 0.8s 0.25s ease both; opacity: 0;
+}
+.hero h1 em { font-style: italic; color: var(--gold); }
+.hero-role {
+  font-family: 'Playfair Display', serif; font-style: italic;
+  font-size: clamp(1rem, 2.5vw, 1.35rem); color: var(--muted);
+  line-height: 1.6; margin-bottom: 0.3rem;
+  animation: fadeUp 0.8s 0.35s ease both; opacity: 0;
+}
+.hero-uni {
+  font-size: 0.88rem; color: var(--gold); letter-spacing: 0.06em; margin-bottom: 2.5rem;
+  animation: fadeUp 0.8s 0.45s ease both; opacity: 0;
+}
+.hero-desc {
+  font-size: 1rem; line-height: 1.9; color: var(--muted);
+  max-width: 56ch; margin: 0 auto 3rem;
+  animation: fadeUp 0.8s 0.55s ease both; opacity: 0;
+}
+.hero-btns {
+  display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+  animation: fadeUp 0.8s 0.65s ease both; opacity: 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.88rem 2.3rem;
+  font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase;
+  font-weight: 500; transition: all 0.25s;
+}
+.btn-gold  { background: var(--gold); color: #fff; }
+.btn-gold:hover  { background: var(--gold2); }
+.btn-ghost { background: transparent; color: var(--white); border: 1px solid rgba(240,245,255,0.22); }
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+.scroll-cue {
+  position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+  font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: rgba(42,125,225,0.55); z-index: 1;
+  animation: fadeUp 1s 1.1s ease both; opacity: 0;
+}
+.scroll-line {
+  width: 1px; height: 38px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: pulse 2.2s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100%{opacity:.4;transform:scaleY(1)} 50%{opacity:1;transform:scaleY(1.2)} }
+
+/* ── ABOUT ── */
+#about { background: var(--black2); padding: 7rem 3.5rem; }
+.about-wrap {
+  display: grid; grid-template-columns: 1fr 1.2fr;
+  gap: 6rem; align-items: center;
+  max-width: 1100px; margin: 0 auto;
+}
+.about-img-outer { position: relative; }
+.about-img-box { position: relative; overflow: hidden; aspect-ratio: 4/5; }
+.about-img-box img {
+  width: 100%; height: 100%; object-fit: cover; object-position: top;
+  filter: grayscale(20%); display: block;
+}
+.about-img-box::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(10,22,40,0.45), transparent 55%);
+}
+.about-img-shadow {
+  position: absolute; top: 18px; right: -18px; bottom: -18px; left: 18px;
+  border: 1px solid var(--gold-border); z-index: -1;
+}
+.about-chip {
+  position: absolute; bottom: -1.8rem; right: -1.8rem;
+  background: var(--gold); color: #fff;
+  padding: 1.1rem 1.4rem; text-align: center; z-index: 2;
+}
+.about-chip strong { display: block; font-size: 1.7rem; font-weight: 900; font-family: 'Playfair Display', serif; }
+.about-chip span { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.about-body p { font-size: 0.96rem; line-height: 1.9; color: var(--muted); margin-bottom: 1.2rem; }
+.facts { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--gold-border); margin: 2.5rem 0; }
+.fact { background: var(--black2); padding: 1.15rem 1.4rem; }
+.fact-lbl { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem; }
+.fact-val { font-size: 0.88rem; color: var(--white); }
+.eyebrow { font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.7rem; }
+.sec-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem,3.5vw,2.9rem); font-weight: 700; line-height: 1.15; }
+.sec-title em { font-style: italic; color: var(--gold); }
+.gold-line { width: 44px; height: 1px; background: var(--gold); margin: 1.2rem 0 2.5rem; }
+
+/* ── BLOG OVERVIEW ── */
+#blog-overview { background: var(--black); padding: 7rem 3.5rem; }
+.blog-header { display: flex; align-items: flex-end; justify-content: space-between; max-width: 1100px; margin: 0 auto 3.5rem; flex-wrap: wrap; gap: 1.5rem; }
+.blog-count { font-family: 'Playfair Display', serif; font-size: 4.5rem; font-weight: 900; line-height: 1; color: var(--gold-dim); }
+.blog-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; background: var(--gold-border); }
+.blog-card {
+  background: var(--black); padding: 2.5rem 2.5rem 2rem;
+  display: flex; flex-direction: column; cursor: pointer;
+  transition: background 0.25s; position: relative; overflow: hidden;
+}
+.blog-card::before {
+  content: ''; position: absolute; top: 0; left: 0;
+  width: 3px; height: 0; background: var(--gold);
+  transition: height 0.4s ease;
+}
+.blog-card:hover { background: var(--black3); }
+.blog-card:hover::before { height: 100%; }
+.card-num { font-family: 'Playfair Display', serif; font-style: italic; font-size: 2.8rem; font-weight: 900; color: var(--gold-dim); line-height: 1; margin-bottom: 1rem; transition: color 0.3s; }
+.blog-card:hover .card-num { color: rgba(42,125,225,0.3); }
+.card-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.7rem; transition: color 0.2s; }
+.blog-card:hover .card-title { color: var(--gold); }
+.card-desc { font-size: 0.85rem; line-height: 1.75; color: var(--muted); flex: 1; }
+.card-arrow { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1.5rem; font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); opacity: 0; transform: translateX(-5px); transition: opacity 0.3s, transform 0.3s; }
+.blog-card:hover .card-arrow { opacity: 1; transform: translateX(0); }
+
+/* ── CONTACT ── */
+#contact { background: var(--black2); text-align: center; padding: 9rem 3.5rem; position: relative; overflow: hidden; }
+#contact::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(42,125,225,0.09) 0%, transparent 70%); pointer-events: none; }
+.contact-inner { position: relative; z-index: 1; max-width: 620px; margin: 0 auto; }
+.contact-title { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem,6vw,5rem); font-weight: 900; line-height: 1.05; margin-bottom: 1.5rem; }
+.contact-title em { font-style: italic; color: var(--gold); }
+.contact-p { font-size: 1rem; color: var(--muted); line-height: 1.85; margin-bottom: 2.5rem; }
+.contact-link { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 1rem; color: var(--gold); border-bottom: 1px solid var(--gold-border); padding-bottom: 0.3rem; margin-bottom: 3rem; transition: color 0.2s, border-color 0.2s; }
+.contact-link:hover { color: var(--gold2); border-color: var(--gold); }
+
+footer { background: #050d1a; padding: 2rem 3.5rem; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--gold-border); font-size: 0.75rem; color: rgba(240,245,255,0.28); letter-spacing: 0.06em; flex-wrap: wrap; gap: 0.5rem; }
+footer em { color: var(--gold); font-style: normal; }
+
+/* ══════════════════════════════════════════
+   BLOG POST PAGE STYLES
+══════════════════════════════════════════ */
+#blog-pages { display: none; }
+#blog-pages.active { display: block; }
+
+.blog-post-page {
+  display: none;
+  min-height: 100vh;
+  padding: calc(var(--nav-h) + 4rem) 3.5rem 6rem;
+  animation: fadeUp 0.5s ease both;
+}
+.blog-post-page.active { display: block; }
+
+.post-header {
+  max-width: 760px; margin: 0 auto 3.5rem;
+  border-bottom: 1px solid var(--gold-border); padding-bottom: 2.5rem;
+}
+.post-tag {
+  display: inline-block; font-size: 0.65rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--gold);
+  border: 1px solid var(--gold-border); padding: 0.3rem 0.8rem; margin-bottom: 1.5rem;
+}
+.post-num-big {
+  font-family: 'Playfair Display', serif; font-style: italic;
+  font-size: 6rem; font-weight: 900; color: var(--gold-dim);
+  line-height: 1; margin-bottom: -0.5rem;
+}
+.post-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; line-height: 1.1;
+  margin-bottom: 1.2rem;
+}
+.post-title em { font-style: italic; color: var(--gold); }
+.post-meta { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+
+.post-body {
+  max-width: 760px; margin: 0 auto;
+}
+.post-body p {
+  font-size: 1rem; line-height: 1.95; color: rgba(240,245,255,0.75);
+  margin-bottom: 1.5rem;
+}
+.post-body h3 {
+  font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700;
+  color: var(--white); margin: 2.5rem 0 1rem;
+}
+.post-pull {
+  border-left: 3px solid var(--gold); padding-left: 1.5rem;
+  margin: 2.5rem 0;
+  font-family: 'Playfair Display', serif; font-style: italic;
+  font-size: 1.2rem; line-height: 1.6; color: var(--white);
+}
+
+/* Post navigation bar */
+.post-nav {
+  max-width: 760px; margin: 4rem auto 0;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; flex-wrap: wrap;
+  padding-top: 2.5rem; border-top: 1px solid var(--gold-border);
+}
+.post-nav-btn {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  padding: 0.75rem 1.6rem;
+  font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase;
+  font-weight: 500; cursor: pointer; transition: all 0.25s;
+  background: none; border: 1px solid var(--gold-border);
+  color: var(--muted); font-family: 'DM Sans', sans-serif;
+}
+.post-nav-btn:hover { border-color: var(--gold); color: var(--gold); }
+.post-nav-btn.primary { background: var(--gold); color: #fff; border-color: var(--gold); }
+.post-nav-btn.primary:hover { background: var(--gold2); }
+.post-nav-btn:disabled { opacity: 0.25; cursor: not-allowed; pointer-events: none; }
+
+.post-progress {
+  font-family: 'Playfair Display', serif; font-style: italic;
+  font-size: 0.9rem; color: var(--gold); letter-spacing: 0.05em;
+}
+
+/* Keep the dropdown visible with a delay on leave */
+li.has-dropdown {
+  position: relative;
+}
+
+li.has-dropdown .dropdown {
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 999;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  /* Add top padding to bridge any gap */
+  margin-top: 0;
+}
+
+/* Invisible padding bridge INSIDE the dropdown */
+li.has-dropdown .dropdown::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 0;
+  width: 100%;
+  height: 15px;
+  background: transparent;
+}
+
+li.has-dropdown:hover .dropdown {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ── MAIN SITE wrapper ── */
+#main-site { display: block; }
+#main-site.hidden { display: none; }
+
+/* ── REVEAL ── */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+@keyframes dropIn { from { opacity:0; transform:translateY(-20px); } to { opacity:1; transform:translateY(0); } }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  nav { padding: 0 1.5rem; }
+  .nav-links, .nav-cta { display: none; }
+  .hamburger { display: flex; }
+  #about, #blog-overview, #contact { padding: 5rem 1.5rem; }
+  .blog-post-page { padding: calc(var(--nav-h) + 3rem) 1.5rem 5rem; }
+  .about-wrap { grid-template-columns: 1fr; gap: 3rem; }
+  .about-chip { right: 0; }
+  .blog-grid { grid-template-columns: 1fr; }
+  .facts { grid-template-columns: 1fr; }
+  footer { justify-content: center; text-align: center; }
+  .post-nav { flex-direction: column; align-items: stretch; text-align: center; }
+  .post-nav-btn { justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ─── NAVBAR ─── -->
+<nav>
+  <a class="nav-logo" onclick="goHome()" style="cursor:pointer;">
+    Youssef Abou Ali
+    <span>ePortfolio · ENG 210</span>
+  </a>
+
+ <ul class="nav-links">
+  <li><a href="#" onclick="goHome(); return false;" class="active">Home</a></li>
+  <li><a href="#" onclick="goHome(); setTimeout(()=>document.getElementById('about').scrollIntoView({behavior:'smooth'}),50); return false;">About Me</a></li>
+
+  <li class="has-dropdown">
+    <button aria-haspopup="true">Blog <span class="chevron"></span></button>
+    <div class="dropdown">
+      <div class="dropdown-header">Blog Posts</div>
+      <a href="#" onclick="openBlog(1);return false;"><span class="post-num">1.<!--</span>   Computers &amp; Devices</a>-->
+      <a href="#" onclick="openBlog(2);return false;"><span class="post-num">2.<!--</span>  Laptops &amp; Desktops</a>-->
+      <a href="#" onclick="openBlog(3);return false;"><span class="post-num">3.<!--</span> Components Deep Dive</a>-->
+      <a href="#" onclick="openBlog(4);return false;"><span class="post-num">4.<!--</span>  Tablets &amp; Smartphones</a>-->
+      <a href="#" onclick="openBlog(5);return false;"><span class="post-num">5.<!--</span>   Monitors &amp; Screens</a>-->
+      <a href="#" onclick="openBlog(6);return false;"><span class="post-num">6.<!--</span>  Television Technology</a>-->
+      <a href="#" onclick="openBlog(7);return false;"><span class="post-num">7.<!--</span> Camera &amp; Photography</a>-->
+      <a href="#" onclick="openBlog(8);return false;"><span class="post-num">8.<!--</span>Home &amp; Office Audio</a>-->
+      <a href="#" onclick="openBlog(9);return false;"><span class="post-num">9.<!--</span>  GPS &amp; Navigation</a>-->
+      <a href="#" onclick="openBlog(10);return false;"><span class="post-num">10.</span> </a>
+    </div>
+  </li>
+
+  <!--<li><a href="#" onclick="goHome(); setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),50); return false;">Contact Me</a></li>-->
+</ul>
+
+  <a href="#" class="nav-cta" onclick="goHome(); setTimeout(()=&gt;document.getElementById('contact').scrollIntoView({behavior:'smooth'}),50); return false;">Contact Me</a>
+
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ─── MOBILE NAV ─── -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#" onclick="goHome();closeMobile();return false;">Home</a>
+  <a href="#" onclick="goHome();closeMobile();setTimeout(()=&gt;document.getElementById('about').scrollIntoView({behavior:'smooth'}),50);return false;">About Me</a>
+  <span class="mobile-sub-label">Blog</span>
+  <div class="mobile-sub">
+    <a href="#" onclick="openBlog(1);closeMobile();return false;">Computers &amp; Devices</a>
+    <a href="#" onclick="openBlog(2);closeMobile();return false;">Laptops &amp; Desktops</a>
+    <a href="#" onclick="openBlog(3);closeMobile();return false;">Components Deep Dive</a>
+    <a href="#" onclick="openBlog(4);closeMobile();return false;">Tablets &amp; Smartphones</a>
+    <a href="#" onclick="openBlog(5);closeMobile();return false;">Monitors &amp; Screens</a>
+    <a href="#" onclick="openBlog(6);closeMobile();return false;">Television Technology</a>
+    <a href="#" onclick="openBlog(7);closeMobile();return false;">Camera &amp; Photography</a>
+    <a href="#" onclick="openBlog(8);closeMobile();return false;">Home &amp; Office Audio</a>
+    <a href="#" onclick="openBlog(9);closeMobile();return false;">GPS &amp; Navigation</a>
+    <a href="#" onclick="openBlog(10);closeMobile();return false;">Accessories &amp; Extras</a>
+  </div>
+  <a href="#" onclick="goHome();closeMobile();setTimeout(()=&gt;document.getElementById('contact').scrollIntoView({behavior:'smooth'}),50);return false;">Contact Me</a>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     MAIN SITE
+══════════════════════════════════════════════════ -->
+<div id="main-site">
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+     <!--  <div class="hero-photo">
+        <img src="https://portfolio21.odoo.com/web/image/689-01fbc799/IMG_8356.svg" alt="Youssef Abou Ali" onerror="this.style.background='#1a1814';this.style.borderRadius='50%'">
+      </div> -->
+      <!--<span class="hero-badge">ENG 114 · ePortfolio</span>--> 
+      <h1>Hi, I'm <br> <em>Youssef</em><br><em>Abou Ali</em></h1>
+      <p class="hero-role">An Electrical Engineering Student</p>
+      <p class="hero-uni">At HBKU in Qatar</p>
+      <p class="hero-desc" style="font-size:20px;">
+        Welcome to my ENG 210 ePortfolio! I'm excited to share my journey with you
+        and the experiences that have shaped me. Here, you'll also find my essays,
+        presentations and reflections from the course. Feel free to explore, and I
+        hope you enjoy getting to know both me and my work from this semester.
+      </p>
+      <div class="hero-btns">
+        <a href="#about" class="btn btn-gold">Discover My Journey</a>
+        <a href="#blog-overview" class="btn btn-ghost">Read My Blog</a>
+      </div>
+    </div>
+    <div class="scroll-cue">
+      <div class="scroll-line"></div>Scroll
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-wrap">
+      <div class="about-img-outer reveal visible">
+        <div class="about-img-box">
+          <img src="https://portfolio21.odoo.com/web/image/689-01fbc799/IMG_8356.svg" alt="Youssef">
+        </div>
+        <div class="about-img-shadow"></div>
+        <div class="about-chip"><strong>EE</strong><span>Student</span></div>
+      </div>
+      <div class="about-body reveal visible">
+        <p class="eyebrow">About Me</p>
+        <!--<h2 class="sec-title">Youssef<br><em>Abou Ali</em></h2>-->
+        <div class="gold-line"></div>
+        <p>I'm an Electrical Engineering student at Hamad Bin Khalifa University in Qatar, with a deep interest in technology, devices, and the engineering systems that power modern life.</p>
+        <p>This portfolio documents my growth throughout the ENG 114 course — from technical writing to reflective thinking — showcasing my essays, presentations, and semester-long experiences.</p>
+        <div class="facts">
+          <div class="fact"><div class="fact-lbl">University</div><div class="fact-val">HBKU, Qatar</div></div>
+          <div class="fact"><div class="fact-lbl">Major</div><div class="fact-val">Electrical Engineering</div></div>
+          <div class="fact"><div class="fact-lbl">Course</div><div class="fact-val">ENG 114</div></div>
+          <div class="fact"><div class="fact-lbl">Location</div><div class="fact-val">Qatar</div></div>
+        </div>
+        <a href="#" onclick="goHome();setTimeout(()=&gt;document.getElementById('contact').scrollIntoView({behavior:'smooth'}),50);return false;" class="btn btn-gold">Get In Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG OVERVIEW -->
+  <section id="blog-overview">
+    <div class="blog-header reveal visible">
+      <div>
+        <p class="eyebrow">My Blog</p>
+        <h2 class="sec-title">Reflections &amp;<br><em>Discoveries</em></h2>
+        <div class="gold-line"></div>
+      </div>
+      <div class="blog-count">10</div>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card reveal visible" onclick="openBlog(1)">
+        <div class="card-num">01</div>
+       <!--<div class="card-title">Computers &amp; Devices</div>
+        <div class="card-desc">An exploration of the computing landscape — from machines we use daily to the evolving world of portable technology.</div>-->
+        <span class="card-arrow">Read Post →</span>
+      </div>
+      <div class="blog-card reveal visible" onclick="openBlog(2)">
+        <div class="card-num">02</div>
+        <!--<div class="card-title">Laptops &amp; Desktops</div>
+        <div class="card-desc">Breaking down the differences between mobile and stationary computing — performance trade-offs and personal picks.</div>-->
+        <span class="card-arrow">Read Post →</span>
+      </div>
+      <div class="blog-card reveal visible" onclick="openBlog(3)">
+        <div class="card-num">03</div>
+        <!-- <div class="card-title">Components Deep Dive</div>
+        <div class="card-desc">Inside the machine: CPUs, GPUs, RAM, and storage — what they do and why every engineer should understand them.</div>-->
+        <span class="card-arrow">Read Post →</span>
+      </div>
+      <div class="blog-card reveal visible" onclick="openBlog(4)">
+        <div class="card-num">04</div>
+        <!-- <div class="card-title">Tablets &amp; Smartphones</div>
+        <div class="card-desc">How mobile devices have reshaped productivity and what their rise means for the future of computing.</div>-->
+        <span class="card-arrow">Read Post →</span>
+      </div>
+      <div class="blog-card reveal visible" onclick="openBlog(5)">
+        <div class="card-num">05</div>
+         <!--<div class="card-title">Monitors &amp; Screens</div>
+        <div class="card-desc">Display technology from office screens to ultra-wide panels — resolution, refresh rates, and why your screen matters.</div>-->
+        <span class="card-arrow">Read Post →</span>
+      </div>
+      <div class="blog-card reveal visible" onclick="openBlog(6)">
+        <div class="card-num">06</div>
+        <!-- <div class="card-title">Television Technology</div>
+        <div class="card-desc">OLED vs QLED, 4K vs 8K — a technical look at the evolution of TV screens and what the next generation will bring.</div>-->
+        <span class="card-arrow">Read Post →</span>
+      </div>
+      <div class="blog-card reveal visible" onclick="openBlog(7)">
+        <div class="card-num">07</div>
+        <!-- <div class="card-title">Camera &amp; Photography</div>
+        <div class="card-desc">From sensor size to shutter speed — understanding camera technology and its connection to electrical engineering.</div>-->
+        <span class="card-arrow">Read Post →</span>
+      </div>
+      <div class="blog-card reveal visible" onclick="openBlog(8)">
+        <div class="card-num">08</div>
+         <!--<div class="card-title">Home &amp; Office Audio</div>
+        <div class="card-desc">The science of sound: amplifiers, speakers, and audio systems — the engineering behind great listening experiences.</div>-->
+        <span class="card-arrow">Read Post →</span>
+      </div>
+      <div class="blog-card reveal visible" onclick="openBlog(9)">
+        <div class="card-num">09</div>
+         <!--<div class="card-title">GPS &amp; Navigation</div>
+        <div class="card-desc">How satellites, signals, and algorithms guide us — the electrical engineering behind GPS and modern navigation.</div-->
+        <span class="card-arrow">Read Post →</span>
+      </div>
+      <div class="blog-card reveal visible" onclick="openBlog(10)">
+        <div class="card-num">10</div>
+       <!-- <div class="card-title">Accessories &amp; Extras</div>
+        <div class="card-desc">The peripherals that complete any setup — a reflection on overlooked components that define the full tech ecosystem.</div>-->
+        <span class="card-arrow">Read Post →</span>
+      </div>
+    </div>
+  </section>
+
+ <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-inner">
+      <div class="reveal visible">
+        <p class="eyebrow" style="text-align:center;">Contact</p>
+        <h2 class="contact-title">Get in<br><em>Touch</em></h2>
+        <div class="gold-line" style="margin:1.5rem auto;"></div>
+        <p class="contact-p">Interested in my work or want to connect? I'd love to hear from you — whether about engineering, tech, or just to say hello.</p>
+        <div>
+            
+          <a href="tel:" class="contact-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.82 19.79 19.79 0 01.01 4.18 2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg>
+             +974 31300351
+          </a>
+<br>
+          <a href="mailto:yoab89232@hbku.edu.qa" class="contact-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            yoab89232@hbku.edu.qa
+          </a>
+
+          <a href="https://maps.google.com/?q=Education+City,+Qatar+Foundation,+Al-Rayyan,+Doha,+Qatar" target="_blank" rel="noopener noreferrer" class="contact-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            Education City, Qatar Foundation, Al-Rayyan, Doha, Qatar
+          </a>
+
+        </div>
+      <!--  <a href="#" class="btn btn-gold" onclick="goHome();setTimeout(()=&gt;document.getElementById('about').scrollIntoView({behavior:'smooth'}),50);return false;">Discover My Journey</a>-->
+      </div>
+    </div>
+  </section>
+
+
+  <footer>
+    <span><em>Youssef Abou Ali</em></span>
+    <span>ENG 210 · HBKU Qatar</span>
+    <span>Spring 2026 <em></em></span>
+  </footer>
+
+</div><!-- /main-site -->
+
+
+<!-- ══════════════════════════════════════════════════
+     BLOG POST PAGES
+══════════════════════════════════════════════════ -->
+<div id="blog-pages">
+
+  <!-- POST 1 -->
+  <div class="blog-post-page" id="post-1">
+    <div class="post-header">
+      <span class="post-tag">Blog · Post 01 of 10</span>
+      <div class="post-num-big">01</div>
+      <!--<h1 class="post-title">Computers &amp; <em>Devices</em></h1>-->
+      <!--<p class="post-meta">ENG 114 · Youssef Abou Ali · HBKU Qatar</p>-->
+    </div>
+    <!--
+    <div class="post-body">
+      <p>In today's world, computers and devices are no longer luxuries — they are the backbone of nearly every professional discipline, including electrical engineering. From design simulations to data analysis, the tools we use define how we think and work.</p>
+      <h3>Why Devices Matter to Engineers</h3>
+      <p>As an electrical engineering student, I interact with computing devices in almost every class. Whether it's running circuit simulations, writing code, or collaborating on group projects, the device in my hands is an extension of my mind. Understanding its capabilities and limitations is part of the job.</p>
+      <div class="post-pull">"The best device is the one that disappears — letting you focus entirely on the problem you're solving."</div>
+      <p>This course has pushed me to reflect on the technology I take for granted. Every keyboard stroke, every pixel on screen — these are engineered experiences. Knowing that makes me appreciate both what came before and what's still to be built.</p>
+    </div>-->
+    <div class="post-nav">
+      <button class="post-nav-btn" disabled="">← Previous</button>
+      <span class="post-progress">1 / 10</span>
+      <button class="post-nav-btn primary" onclick="openBlog(2)">Next: →</button>
+    </div>
+  </div>
+
+  <!-- POST 2 -->
+  <div class="blog-post-page" id="post-2">
+    <div class="post-header">
+      <span class="post-tag">Blog · Post 02 of 10</span>
+      <div class="post-num-big">02</div>
+     <!-- <h1 class="post-title">Laptops &amp; <em>Desktops</em></h1>-->
+    </div>
+
+    <!--
+    <div class="post-body">
+      <p>The debate between laptops and desktops has been ongoing since portable computers became powerful enough to challenge their stationary counterparts. For students like me, the choice is rarely simple.</p>
+      <h3>Portability vs. Power</h3>
+      <p>A laptop gives me the freedom to work from the library, the cafeteria, or the lab. But a desktop delivers raw power — more RAM, better cooling, and a larger display that makes multitasking genuinely comfortable. Each has its place in an engineer's toolkit.</p>
+      <div class="post-pull">"Choosing between a laptop and desktop isn't just a technical decision — it's a statement about how you work."</div>
+      <p>After a semester of coursework, I've come to appreciate having both: the desktop for deep focus work at home, and the laptop for the flexibility of campus life. Neither alone is sufficient.</p>
+    </div>
+    -->
+    <div class="post-nav">
+      <button class="post-nav-btn" onclick="openBlog(1)">← Previous: </button>
+      <span class="post-progress">2 / 10</span>
+      <button class="post-nav-btn primary" onclick="openBlog(3)">Next: →</button>
+    </div>
+  </div>
+
+  <!-- POST 3 -->
+  <div class="blog-post-page" id="post-3">
+    <div class="post-header">
+      <span class="post-tag">Blog · Post 03 of 10</span>
+      <div class="post-num-big">03</div>
+      <!--<h1 class="post-title">Components <em>Deep Dive</em></h1>-->
+    </div>
+    <!--<div class="post-body">
+      <p>What makes a computer fast? The answer lies in its components — the CPUs, GPUs, memory modules, and storage drives working in concert. As an EE student, understanding these is not optional: it is foundational.</p>
+      <h3>The Heart of Every Machine</h3>
+      <p>The CPU is the brain, executing billions of instructions per second. The GPU, originally designed for graphics, has become essential for parallel computation in AI and engineering simulation. RAM determines how many tasks can run simultaneously without bottlenecks.</p>
+      <div class="post-pull">"Every component is an engineering decision — a trade-off between speed, power, heat, and cost."</div>
+      <p>This post reflects my growing curiosity about hardware. The more I learn, the more I see these components not just as consumer products but as elegant electrical solutions to complex computational problems.</p>
+    </div>-->
+    <div class="post-nav">
+      <button class="post-nav-btn" onclick="openBlog(2)">← Previous:</button>
+      <span class="post-progress">3 / 10</span>
+      <button class="post-nav-btn primary" onclick="openBlog(4)">Next:  →</button>
+    </div>
+  </div>
+
+  <!-- POST 4 -->
+  <div class="blog-post-page" id="post-4">
+    <div class="post-header">
+      <span class="post-tag">Blog · Post 04 of 10</span>
+      <div class="post-num-big">04</div>
+      <!--<h1 class="post-title">Tablets &amp; <em>Smartphones</em></h1>-->
+    </div>
+    <!--
+    <div class="post-body">
+      <p>The smartphone in my pocket is more powerful than computers that once occupied entire rooms. This is a fact worth pausing on. Mobile devices have compressed extraordinary processing power into a form factor light enough to forget.</p>
+      <h3>Mobile as the New Default</h3>
+      <p>For many students globally, a smartphone is their primary — sometimes only — computing device. This shift has changed how software is designed, how content is consumed, and how people expect technology to behave.</p>
+      <div class="post-pull">"Mobile-first isn't just a design trend — it reflects where human attention actually lives."</div>
+      <p>Tablets occupy an interesting middle ground. Too large to be a phone, too limited to fully replace a laptop, they succeed most in creative and reading contexts. I use mine almost exclusively for annotating papers and sketching circuit diagrams.</p>
+    </div>-->
+    <div class="post-nav">
+      <button class="post-nav-btn" onclick="openBlog(3)">← Previous: </button>
+      <span class="post-progress">4 / 10</span>
+      <button class="post-nav-btn primary" onclick="openBlog(5)">Next: →</button>
+    </div>
+  </div>
+
+  <!-- POST 5 -->
+  <div class="blog-post-page" id="post-5">
+    <div class="post-header">
+      <span class="post-tag">Blog · Post 05 of 10</span>
+      <div class="post-num-big">05</div>
+      <!--<h1 class="post-title">Monitors &amp; <em>Screens</em></h1>-->
+    </div>
+    <!--
+    <div class="post-body">
+      <p>We spend hours staring at screens, yet rarely think about how they work. A monitor is not just a window into a computer — it is a carefully engineered display of light, color, and timing that shapes how we perceive information.</p>
+      <h3>Resolution, Refresh, and Reality</h3>
+      <p>Resolution determines detail. Refresh rate determines smoothness. Color accuracy determines truth. For engineers who work with schematics, data visualizations, and code, these properties matter more than most people realize.</p>
+      <div class="post-pull">"A bad monitor is like looking through a smudged window — you think you see clearly, but you're missing the details."</div>
+      <p>Upgrading from a basic display to a high-resolution, color-accurate monitor changed how I work. The difference in clarity for circuit diagrams alone justified the investment.</p>
+    </div>-->
+    <div class="post-nav">
+      <button class="post-nav-btn" onclick="openBlog(4)">← Previous: </button>
+      <span class="post-progress">5 / 10</span>
+      <button class="post-nav-btn primary" onclick="openBlog(6)">Next:  →</button>
+    </div>
+  </div>
+
+  <!-- POST 6 -->
+  <div class="blog-post-page" id="post-6">
+    <div class="post-header">
+      <span class="post-tag">Blog · Post 06 of 10</span>
+      <div class="post-num-big">06</div>
+     <!-- <h1 class="post-title">Television <em>Technology</em></h1>-->
+    </div>
+    <!--
+    <div class="post-body">
+      <p>Television has undergone a transformation more dramatic than perhaps any other consumer technology. From black-and-white cathode ray tubes to paper-thin OLED panels with millions of self-illuminating pixels — the journey represents decades of electrical engineering breakthroughs.</p>
+      <h3>OLED vs QLED: A Technical Look</h3>
+      <p>OLED (Organic Light Emitting Diode) produces perfect blacks because each pixel generates its own light and can switch completely off. QLED (Quantum Light Emitting Diode) uses quantum dot technology to produce brighter, more saturated colors. Neither is objectively better — it depends on the viewing environment and use case.</p>
+      <div class="post-pull">"The screen you watch shapes the story you receive — engineering and art are inseparable in television."</div>
+      <p>As resolutions climb from 4K to 8K, the limiting factor is no longer the display but human vision itself. There is a point beyond which more pixels provide diminishing returns — a fascinating intersection of engineering and biology.</p>
+    </div>-->
+    <div class="post-nav">
+      <button class="post-nav-btn" onclick="openBlog(5)">← Previous:</button>
+      <span class="post-progress">6 / 10</span>
+      <button class="post-nav-btn primary" onclick="openBlog(7)">Next: →</button>
+    </div>
+  </div>
+
+  <!-- POST 7 -->
+  <div class="blog-post-page" id="post-7">
+    <div class="post-header">
+      <span class="post-tag">Blog · Post 07 of 10</span>
+      <div class="post-num-big">07</div>
+     <!-- <h1 class="post-title">Camera &amp; <em>Photography</em></h1>-->
+    </div>
+    <!--
+    <div class="post-body">
+      <p>A camera is, at its core, a light-measuring machine. It captures photons, converts them into electrical signals, and stores them as data. Photography is engineering made visible — literally.</p>
+      <h3>Sensors, Lenses, and Light</h3>
+      <p>The image sensor — whether CCD or CMOS — determines how well a camera performs in low light, how much detail it resolves, and how faithfully it reproduces color. Lens optics then shape and focus incoming light onto that sensor, introducing their own set of trade-offs: aperture, focal length, distortion.</p>
+      <div class="post-pull">"Every photograph is a series of engineering decisions made in fractions of a second."</div>
+      <p>Learning about camera technology deepened my appreciation for optoelectronics — a field I now want to explore further. The overlap between electrical engineering and photography is richer than I initially expected.</p>
+    </div>-->
+    <div class="post-nav">
+      <button class="post-nav-btn" onclick="openBlog(6)">← Previous:</button>
+      <span class="post-progress">7 / 10</span>
+      <button class="post-nav-btn primary" onclick="openBlog(8)">Next: →</button>
+    </div>
+  </div>
+
+  <!-- POST 8 -->
+  <div class="blog-post-page" id="post-8">
+    <div class="post-header">
+      <span class="post-tag">Blog · Post 08 of 10</span>
+      <div class="post-num-big">08</div>
+     <!---<h1 class="post-title">Home &amp; Office <em>Audio</em></h1>-->
+    </div>
+    <!--
+    <div class="post-body">
+      <p>Sound is a wave. Reproducing it faithfully through a speaker requires converting electrical signals into mechanical vibrations with extraordinary precision. Audio engineering sits at a fascinating intersection of physics, electronics, and human perception.</p>
+      <h3>From Amplifier to Air</h3>
+      <p>The signal chain in a home audio system — from source to amplifier to speaker — involves multiple stages of signal conditioning. Each stage introduces potential gains and losses. High-fidelity audio is about minimizing signal degradation at every step.</p>
+      <div class="post-pull">"Great audio doesn't announce itself — it disappears, leaving only the music."</div>
+      <p>For the home office, audio quality directly impacts focus and communication. A good microphone and clear headphones are productivity tools as much as they are entertainment devices. I now view my audio setup through this practical lens.</p>
+    </div>-->
+    <div class="post-nav">
+      <button class="post-nav-btn" onclick="openBlog(7)">← Previous: </button>
+      <span class="post-progress">8 / 10</span>
+      <button class="post-nav-btn primary" onclick="openBlog(9)">Next:  →</button>
+    </div>
+  </div>
+
+  <!-- POST 9 -->
+  <div class="blog-post-page" id="post-9">
+    <div class="post-header">
+      <span class="post-tag">Blog · Post 09 of 10</span>
+      <div class="post-num-big">09</div>
+   <!--  <h1 class="post-title">GPS &amp; <em>Navigation</em></h1>-->
+    </div>
+    <!--
+    <div class="post-body">
+      <p>The ability to know exactly where you are on Earth, to within a few meters, from a device in your pocket — is one of the most remarkable engineering achievements of the modern era. GPS is engineering invisibility at its finest: you use it constantly and almost never think about it.</p>
+      <h3>Signals from Space</h3>
+      <p>GPS works by measuring the time it takes for signals to travel from multiple satellites to a receiver. With signals from at least four satellites, the receiver can calculate its precise three-dimensional position. The accuracy depends on atomic clocks accurate to nanoseconds — a testament to the precision required.</p>
+      <div class="post-pull">"GPS turns the vastness of space into a personal coordinate — that is extraordinary."</div>
+      <p>As autonomous vehicles, drones, and smart infrastructure become more prevalent, the importance of precise positioning only grows. GPS is not a solved problem — it is an evolving one, and electrical engineers are at the center of its advancement.</p>
+    </div>-->
+    <div class="post-nav">
+      <button class="post-nav-btn" onclick="openBlog(8)">← Previous: </button>
+      <span class="post-progress">9 / 10</span>
+      <button class="post-nav-btn primary" onclick="openBlog(10)">Next:  →</button>
+    </div>
+  </div>
+
+  <!-- POST 10 -->
+  <div class="blog-post-page" id="post-10">
+    <div class="post-header">
+      <span class="post-tag">Blog · Post 10 of 10</span>
+      <div class="post-num-big">10</div>
+      <!--<h1 class="post-title">Accessories &amp; <em>Extras</em></h1>-->
+    </div>
+    <!--
+    <div class="post-body">
+      <p>The accessories that surround our primary devices are often dismissed as afterthoughts. Yet a good keyboard, a precise mouse, the right cable — these details define the quality of the daily experience in ways that are easy to underestimate.</p>
+      <h3>The Ecosystem Matters</h3>
+      <p>An engineer's desk is a system. Every component interacts with every other. The monitor's position affects posture. The keyboard's tactile response affects typing speed. The quality of cables affects signal integrity. None of these details exist in isolation.</p>
+      <div class="post-pull">"The best setups are invisible — every element works so well together that you forget it's there."</div>
+      <p>Finishing this blog series, I realize how much this semester has changed how I see everyday technology. What once seemed like background noise — a charger, a hub, a stand — now looks like a series of engineering decisions worth understanding. That shift in perspective is, perhaps, the most valuable thing I've gained from ENG 114.</p>
+      <p style="color:var(--gold);font-family:'Playfair Display',serif;font-style:italic;font-size:1.1rem;">Thank you for reading all 10 posts. — Youssef</p>
+    </div>-->
+    <div class="post-nav">
+      <button class="post-nav-btn" onclick="openBlog(9)">← Previous: </button>
+      <span class="post-progress">10 / 10</span>
+      <button class="post-nav-btn primary" onclick="goHome()">← Back to Portfolio</button>
+    </div>
+  </div>
+
+</div><!-- /blog-pages -->
+
+
+<!-- ─── SCRIPTS ─── -->
+<script>
+const mainSite  = document.getElementById('main-site');
+const blogPages = document.getElementById('blog-pages');
+let mobileOpen  = false;
+
+/* ── Navigate to a blog post ── */
+function openBlog(n) {
+  // Hide main site
+  mainSite.style.display  = 'none';
+  blogPages.style.display = 'block';
+
+  // Hide all posts
+  document.querySelectorAll('.blog-post-page').forEach(p => p.classList.remove('active'));
+
+  // Show requested post
+  const post = document.getElementById('post-' + n);
+  if (post) {
+    post.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
+
+/* ── Return to main portfolio ── */
+function goHome() {
+  mainSite.style.display  = 'block';
+  blogPages.style.display = 'none';
+  document.querySelectorAll('.blog-post-page').forEach(p => p.classList.remove('active'));
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ── Mobile nav ── */
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+
+hamburger.addEventListener('click', () => {
+  mobileOpen = !mobileOpen;
+  mobileNav.classList.toggle('open', mobileOpen);
+  const [s1,s2,s3] = hamburger.querySelectorAll('span');
+  if (mobileOpen) {
+    s1.style.transform = 'rotate(45deg) translate(4.5px,4.5px)';
+    s2.style.opacity   = '0';
+    s3.style.transform = 'rotate(-45deg) translate(4.5px,-4.5px)';
+  } else {
+    [s1,s2,s3].forEach(s => { s.style.transform=''; s.style.opacity=''; });
+  }
+});
+
+function closeMobile() {
+  mobileOpen = false;
+  mobileNav.classList.remove('open');
+  hamburger.querySelectorAll('span').forEach(s => { s.style.transform=''; s.style.opacity=''; });
+}
+
+/* ── Scroll reveal ── */
+const io = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 65);
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* ── Active nav on scroll ── */
+const navAs = document.querySelectorAll('.nav-links > li > a[href="#"]');
+</script>
+
+
+
+</body></html>
