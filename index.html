@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="UTF-8">
@@ -170,6 +169,7 @@ li.has-dropdown:hover .dropdown {
   font-size: 0.78rem; letter-spacing: 0.12em;
   text-transform: uppercase; font-weight: 500;
   transition: background 0.2s; white-space: nowrap;
+  cursor: pointer;
 }
 .nav-cta:hover { background: var(--gold2); }
 
@@ -272,6 +272,7 @@ li.has-dropdown:hover .dropdown {
   padding: 0.88rem 2.3rem;
   font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase;
   font-weight: 500; transition: all 0.25s;
+  cursor: pointer;
 }
 .btn-gold  { background: var(--gold); color: #fff; }
 .btn-gold:hover  { background: var(--gold2); }
@@ -348,7 +349,7 @@ li.has-dropdown:hover .dropdown {
 
 .resume-inner {
   padding: calc(var(--nav-h) + 6rem) 3.5rem 6rem;
-  max-width: 1100px; /* was 900px — wider to match other pages */
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -632,10 +633,9 @@ footer em { color: var(--gold); font-style: normal; }
     <li><a href="#" id="nav-resume" onclick="showPage('resume');return false;">Resume</a></li>
     <li><a href="#" id="nav-blog" onclick="showPage('blog');return false;">Blog</a></li>
     <li><a href="#" id="nav-work" onclick="showPage('work');return false;">My Work</a></li>
-
   </ul>
 
-  <a href="#" class="nav-cta" onclick="showPage('contact');return false;">Contact Me</a>
+  <a href="#" class="nav-cta" id="nav-contact" onclick="showPage('contact');return false;">Contact Me</a>
 
   <button class="hamburger" id="hamburger" aria-label="Open menu">
     <span></span><span></span><span></span>
@@ -645,23 +645,24 @@ footer em { color: var(--gold); font-style: normal; }
 <!-- ─── MOBILE NAV ─── -->
 <div class="mobile-nav" id="mobileNav">
   <a href="#" onclick="showPage('home');closeMobile();return false;">Home</a>
-  <a href="#" onclick="showPage('resume');closeMobile();return false;">Resume</a>
   <a href="#" onclick="showPage('about');closeMobile();return false;">About Me</a>
-  <span class="mobile-sub-label">Blog</span>
+  <a href="#" onclick="showPage('resume');closeMobile();return false;">Resume</a>
+  <a href="#" onclick="showPage('blog');closeMobile();return false;">Blog</a>
+  <a href="#" onclick="showPage('work');closeMobile();return false;">My Work</a>
+  <span class="mobile-sub-label">Blog Posts</span>
   <div class="mobile-sub">
     <a href="#" onclick="openBlog(1);closeMobile();return false;"><span class="post-num">1.</span> Shell Eco-marathon</a>
     <a href="#" onclick="openBlog(2);closeMobile();return false;"><span class="post-num">2.</span> Engineering &amp; Goals</a>
     <a href="#" onclick="openBlog(3);closeMobile();return false;"><span class="post-num">3.</span> My Teamwork Identity</a>
     <a href="#" onclick="openBlog(4);closeMobile();return false;"><span class="post-num">4.</span> Resume Reflection</a>
     <a class="coming-soon"><span class="post-num">5.</span></a>
-    <a class="coming-soon"><span class="post-num">6.</span> </a>
+    <a class="coming-soon"><span class="post-num">6.</span></a>
     <a class="coming-soon"><span class="post-num">7.</span></a>
     <a class="coming-soon"><span class="post-num">8.</span></a>
-    <a class="coming-soon"><span class="post-num">9.</span> </a>
+    <a class="coming-soon"><span class="post-num">9.</span></a>
     <a class="coming-soon"><span class="post-num">10.</span></a>
   </div>
   <a href="#" onclick="showPage('contact');closeMobile();return false;">Contact Me</a>
-  <a href="#" onclick="showPage('work');closeMobile();return false;">My Work</a>
 </div>
 
 <!-- ══════════════════════════════════════════════════
@@ -736,7 +737,7 @@ footer em { color: var(--gold); font-style: normal; }
      PAGE: RESUME
 ══════════════════════════════════════════════════ -->
 <div id="page-resume" class="page">
-  
+
   <div class="resume-inner">
     <div class="resume-header">
       <p class="eyebrow">Curriculum Vitae</p>
@@ -812,7 +813,6 @@ footer em { color: var(--gold); font-style: normal; }
     <span>ENG 210 · HBKU Qatar</span>
     <span>Spring 2026</span>
   </footer>
--->
 </div>
 
 
@@ -1103,6 +1103,9 @@ footer em { color: var(--gold); font-style: normal; }
 </div><!-- /page-blog-post -->
 
 
+<!-- ══════════════════════════════════════════════════
+     PAGE: MY WORK
+══════════════════════════════════════════════════ -->
 <div id="page-work" class="page">
   <div class="blog-overview-inner">
     <div class="blog-header">
@@ -1122,8 +1125,8 @@ footer em { color: var(--gold); font-style: normal; }
         <div class="card-title">Group Work Email — ENGL 220</div>
         <div class="card-desc" style="margin-bottom:0.8rem;">Jan 24, 2026</div>
         <div class="card-desc">
-          A professional email addressed to Dr. Naqaa Abbas sharing my past group work 
-          experiences, my preferences for team size and composition, and my weekly 
+          A professional email addressed to Dr. Naqaa Abbas sharing my past group work
+          experiences, my preferences for team size and composition, and my weekly
           availability for collaborative work this semester.
         </div>
         <span class="card-arrow">View PDF →</span>
@@ -1135,9 +1138,9 @@ footer em { color: var(--gold); font-style: normal; }
         <div class="card-title">Team Charter — Team Cocktail</div>
         <div class="card-desc" style="margin-bottom:0.8rem;">Feb 15, 2026</div>
         <div class="card-desc">
-          A signed team agreement between the five members of Team Cocktail. It outlines 
-          our broad and measurable goals, each member's personal goals and individual 
-          commitments, conflict resolution protocols, and what constitutes unacceptable 
+          A signed team agreement between the five members of Team Cocktail. It outlines
+          our broad and measurable goals, each member's personal goals and individual
+          commitments, conflict resolution protocols, and what constitutes unacceptable
           behavior within the team.
         </div>
         <span class="card-arrow">View PDF →</span>
@@ -1149,9 +1152,9 @@ footer em { color: var(--gold); font-style: normal; }
         <div class="card-title">Memo — Effective Collaborative Projects</div>
         <div class="card-desc" style="margin-bottom:0.8rem;">Feb 12, 2026</div>
         <div class="card-desc">
-          A professional memorandum written on behalf of Team Cocktail addressing new 
-          project team members. It covers the three main methods of organizing teamwork 
-          — divided, face-to-face, and layered — and explains key project documents such 
+          A professional memorandum written on behalf of Team Cocktail addressing new
+          project team members. It covers the three main methods of organizing teamwork
+          — divided, face-to-face, and layered — and explains key project documents such
           as team charters, task schedules, meeting minutes, and progress reports.
         </div>
         <span class="card-arrow">View PDF →</span>
@@ -1163,9 +1166,9 @@ footer em { color: var(--gold); font-style: normal; }
         <div class="card-title">Problem Statement Memo — Walkability in Education City</div>
         <div class="card-desc" style="margin-bottom:0.8rem;">Mar 7, 2026</div>
         <div class="card-desc">
-          A research memo investigating the lack of pedestrian walkability in Education 
-          City, Qatar. It identifies extreme heat, insufficient shading, and car-oriented 
-          infrastructure as root causes, and connects the issue to Qatar's QNV 2030 
+          A research memo investigating the lack of pedestrian walkability in Education
+          City, Qatar. It identifies extreme heat, insufficient shading, and car-oriented
+          infrastructure as root causes, and connects the issue to Qatar's QNV 2030
           sustainability goals.
         </div>
         <span class="card-arrow">View PDF →</span>
@@ -1177,9 +1180,9 @@ footer em { color: var(--gold); font-style: normal; }
         <div class="card-title">Solutions Memo — Walkability in Education City</div>
         <div class="card-desc" style="margin-bottom:0.8rem;">Mar 14, 2026</div>
         <div class="card-desc">
-          A follow-up memo proposing four solutions to EC's walkability problem: native 
-          tree planting, cool pavement coatings, climate-controlled walkways, and 
-          solar-powered misting systems. Each solution is evaluated for its advantages, 
+          A follow-up memo proposing four solutions to EC's walkability problem: native
+          tree planting, cool pavement coatings, climate-controlled walkways, and
+          solar-powered misting systems. Each solution is evaluated for its advantages,
           limitations, and alignment with NDS3 sustainability targets.
         </div>
         <span class="card-arrow">View PDF →</span>
@@ -1193,28 +1196,40 @@ footer em { color: var(--gold); font-style: normal; }
     <span>Spring 2026</span>
   </footer>
 </div>
+
 <!-- ─── SCRIPTS ─── -->
 <script>
 let mobileOpen = false;
 
-const allPages = ['home','about','resume','blog','contact','blog-post'];
+// All page IDs — must include every page that showPage() can navigate to
+const allPages = ['home','about','resume','blog','work','contact','blog-post'];
+
+// Nav items keyed by page ID
 const navItems = {
   'home':    document.getElementById('nav-home'),
   'about':   document.getElementById('nav-about'),
   'resume':  document.getElementById('nav-resume'),
-  'contact': document.getElementById('nav-contact'),
-  'blog':    document.getElementById('nav-blog'), 
+  'blog':    document.getElementById('nav-blog'),
+  'work':    document.getElementById('nav-work'),
+  'contact': document.getElementById('nav-contact')
 };
 
 function showPage(id) {
+  // Hide every page
   allPages.forEach(p => {
     const el = document.getElementById('page-' + p);
     if (el) { el.classList.remove('active'); el.scrollTop = 0; }
   });
+  // Show requested page
   const target = document.getElementById('page-' + id);
   if (target) { target.classList.add('active'); target.scrollTop = 0; }
-  Object.keys(navItems).forEach(k => { if (navItems[k]) navItems[k].classList.remove('active'); });
+
+  // Update active state on nav links
+  Object.keys(navItems).forEach(k => {
+    if (navItems[k]) navItems[k].classList.remove('active');
+  });
   if (navItems[id]) navItems[id].classList.add('active');
+
   window.scrollTo({ top: 0 });
 }
 
@@ -1227,6 +1242,11 @@ function openBlog(n) {
     const blogPostPage = document.getElementById('page-blog-post');
     if (blogPostPage) blogPostPage.scrollTop = 0;
   }
+  // Also mark the Blog nav link as active when viewing a post
+  Object.keys(navItems).forEach(k => {
+    if (navItems[k]) navItems[k].classList.remove('active');
+  });
+  if (navItems['blog']) navItems['blog'].classList.add('active');
 }
 
 const hamburger = document.getElementById('hamburger');
@@ -1251,1282 +1271,10 @@ function closeMobile() {
   hamburger.querySelectorAll('span').forEach(s => { s.style.transform=''; s.style.opacity=''; });
 }
 
-// On page load, check if we came back from a PDF
-window.addEventListener('load', () => {
-  const returnPage = sessionStorage.getItem('returnPage');
-  if (returnPage) {
-    sessionStorage.removeItem('returnPage');
-    showPage(returnPage);
-  }
-});
-
-// Use this function to open PDFs instead of window.location.href directly
+// Open PDFs and remember where to return to
 function openPDF(filename) {
   sessionStorage.setItem('returnPage', 'work');
   window.location.href = filename;
-}
-
-// ADD THIS AT THE VERY BOTTOM OF THE SCRIPT
-const _return = sessionStorage.getItem('returnPage');
-if (_return) {
-  sessionStorage.removeItem('returnPage');
-  showPage(_return);
-}
-
-</script>
-
-</body></html>
-=======
-<!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Youssef Abou Ali | ePortfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-
-:root {
-  --black:       #ffffff;
-  --black2:      #f2f6ff;
-  --black3:      #e6edf9;
-  --white:       #0d1f3c;
-  --gold:        #2462c4;
-  --gold2:       #4580e8;
-  --gold-dim:    rgba(36,98,196,0.09);
-  --gold-border: rgba(36,98,196,0.18);
-  --muted:       rgba(13,31,60,0.58);
-  --nav-h:       72px;
-}
-
-body {
-  background: var(--black2);
-  color: var(--white);
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 300;
-  overflow-x: hidden;
-}
-
-a { text-decoration: none; color: inherit; }
-
-/* ══════════════════════════════════════════
-   PAGE SYSTEM
-══════════════════════════════════════════ */
-.page {
-  display: none;
-  position: fixed;
-  inset: 0;
-  overflow-y: auto;
-  background: var(--black2);
-  z-index: 100;
-  animation: fadeUp 0.4s ease both;
-}
-.page.active { display: block; }
-
-#page-home {
-  display: block;
-  position: relative;
-  z-index: 1;
-}
-
-/* ── NAVBAR ── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0;
-  height: var(--nav-h);
-  display: flex; align-items: center;
-  padding: 0 3.5rem;
-  z-index: 1000;
-  background: rgba(255,255,255,0.97);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--gold-border);
-  box-shadow: 0 1px 24px rgba(36,98,196,0.07);
-}
-
-.nav-logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.1rem; font-weight: 700;
-  color: var(--gold); letter-spacing: 0.04em;
-  margin-right: auto; cursor: pointer;
-}
-.nav-logo span {
-  display: block; font-size: 0.58rem; letter-spacing: 0.18em;
-  text-transform: uppercase; color: var(--muted);
-  font-family: 'DM Sans', sans-serif; font-weight: 400; margin-top: 2px;
-}
-
-.nav-links {
-  display: flex; align-items: center;
-  list-style: none; gap: 0;
-}
-.nav-links > li { position: relative; }
-
-.nav-links > li > a,
-.nav-links > li > button {
-  display: flex; align-items: center; gap: 0.3rem;
-  padding: 0.55rem 1.1rem;
-  font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--muted); transition: color 0.2s;
-  background: none; border: none; cursor: pointer;
-  font-family: 'DM Sans', sans-serif; font-weight: 400;
-}
-.nav-links > li > a:hover,
-.nav-links > li > button:hover { color: var(--gold); }
-.nav-links > li > a.active { color: var(--gold); }
-
-.chevron {
-  width: 0; height: 0;
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-  border-top: 5px solid currentColor;
-  transition: transform 0.25s; margin-top: 1px;
-}
-.nav-links > li:hover .chevron { transform: rotate(180deg); }
-
-/* DROPDOWN */
-li.has-dropdown { position: relative; }
-li.has-dropdown .dropdown {
-  display: block;
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%) translateY(8px);
-  min-width: 270px;
-  background: var(--black);
-  border: 1px solid var(--gold-border);
-  box-shadow: 0 20px 56px rgba(36,98,196,0.14), 0 4px 16px rgba(0,0,0,0.08);
-  z-index: 2000;
-  transition: opacity 0.22s ease, visibility 0.22s ease, transform 0.22s ease;
-  margin-top: 0;
-}
-li.has-dropdown .dropdown::before {
-  content: '';
-  position: absolute;
-  top: -15px; left: 0;
-  width: 100%; height: 15px;
-  background: transparent;
-}
-li.has-dropdown:hover .dropdown {
-  visibility: visible;
-  opacity: 1;
-  pointer-events: all;
-  transform: translateX(-50%) translateY(0);
-}
-.dropdown-header {
-  padding: 0.9rem 1.25rem 0.55rem;
-  font-size: 0.63rem; letter-spacing: 0.2em;
-  text-transform: uppercase; color: var(--gold);
-  border-bottom: 1px solid var(--gold-border);
-}
-.dropdown a {
-  display: flex; align-items: center; gap: 0.75rem;
-  padding: 0.72rem 1.25rem;
-  font-size: 0.84rem; color: var(--muted);
-  transition: background 0.18s, color 0.18s;
-  border-bottom: 1px solid rgba(36,98,196,0.07);
-}
-.dropdown a:last-child { border-bottom: none; }
-.dropdown a:hover { background: var(--gold-dim); color: var(--white); }
-.post-num {
-  font-family: 'Playfair Display', serif;
-  font-style: italic; font-size: 0.72rem;
-  color: var(--gold); min-width: 1.5rem; opacity: 0.75;
-}
-
-.dropdown a.coming-soon {
-  opacity: 0.35;
-  pointer-events: none;
-  cursor: default;
-}
-
-.nav-cta {
-  margin-left: 1.5rem; padding: 0.55rem 1.5rem;
-  background: var(--gold); color: #fff;
-  font-size: 0.78rem; letter-spacing: 0.12em;
-  text-transform: uppercase; font-weight: 500;
-  transition: background 0.2s; white-space: nowrap;
-}
-.nav-cta:hover { background: var(--gold2); }
-
-.hamburger {
-  display: none; flex-direction: column; gap: 5px;
-  background: none; border: none; cursor: pointer;
-  padding: 4px; margin-left: auto;
-}
-.hamburger span {
-  display: block; width: 24px; height: 1.5px;
-  background: var(--white); transition: all 0.3s;
-}
-
-/* ── MOBILE NAV ── */
-.mobile-nav {
-  position: fixed; inset: 0;
-  background: rgba(242,246,255,0.98); backdrop-filter: blur(20px);
-  z-index: 999; padding: calc(var(--nav-h) + 2rem) 2rem 3rem;
-  transform: translateX(100%); transition: transform 0.35s ease;
-  overflow-y: auto;
-}
-.mobile-nav.open { transform: translateX(0); }
-.mobile-nav > a {
-  display: block; padding: 1rem 0;
-  font-family: 'Playfair Display', serif;
-  font-size: 1.4rem; font-weight: 700;
-  border-bottom: 1px solid var(--gold-border);
-  color: var(--white); transition: color 0.2s;
-}
-.mobile-nav > a:hover { color: var(--gold); }
-.mobile-sub-label {
-  font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--gold); padding: 1rem 0 0.4rem; display: block;
-}
-.mobile-sub a {
-  display: block; padding: 0.65rem 1rem;
-  font-size: 0.9rem; color: var(--muted);
-  border-bottom: 1px solid rgba(36,98,196,0.06);
-  transition: color 0.2s;
-}
-.mobile-sub a:hover { color: var(--gold); }
-.mobile-sub a.coming-soon { opacity: 0.35; pointer-events: none; }
-
-/* ══════════════════════════════════════════
-   HOME PAGE
-══════════════════════════════════════════ */
-.hero {
-  min-height: 100vh;
-  display: flex; align-items: center; justify-content: center;
-  text-align: center;
-  padding: calc(var(--nav-h) + 5rem) 2rem 6rem;
-  position: relative; overflow: hidden;
-  background: var(--black2);
-}
-.hero::before {
-  content: '';
-  position: absolute; inset: 0;
-  background-image:
-    linear-gradient(rgba(36,98,196,0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(36,98,196,0.06) 1px, transparent 1px);
-  background-size: 64px 64px;
-  animation: gridMove 25s linear infinite;
-}
-@keyframes gridMove { to { background-position: 64px 64px; } }
-.hero::after {
-  content: ''; position: absolute; inset: 0;
-  background: radial-gradient(ellipse 70% 65% at 50% 45%, rgba(36,98,196,0.07) 0%, transparent 68%);
-  pointer-events: none;
-}
-.hero-inner { position: relative; z-index: 1; max-width: 780px; }
-.hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2.8rem, 7vw, 6rem);
-  font-weight: 900; line-height: 1.05; margin-bottom: 0.5rem;
-  animation: fadeUp 0.8s 0.25s ease both; opacity: 0;
-  color: var(--white);
-}
-.hero h1 em { font-style: italic; color: var(--gold); }
-.hero-role {
-  font-family: 'Playfair Display', serif; font-style: italic;
-  font-size: clamp(1rem, 2.5vw, 1.35rem); color: var(--muted);
-  line-height: 1.6; margin-bottom: 0.3rem;
-  animation: fadeUp 0.8s 0.35s ease both; opacity: 0;
-}
-.hero-uni {
-  font-size: 0.88rem; color: var(--gold); letter-spacing: 0.06em; margin-bottom: 2.5rem;
-  animation: fadeUp 0.8s 0.45s ease both; opacity: 0;
-}
-.hero-desc {
-  font-size: 1.1rem; line-height: 1.9; color: var(--muted);
-  max-width: 56ch; margin: 0 auto 3rem;
-  animation: fadeUp 0.8s 0.55s ease both; opacity: 0;
-}
-.hero-btns {
-  display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
-  animation: fadeUp 0.8s 0.65s ease both; opacity: 0;
-}
-.btn {
-  display: inline-block;
-  padding: 0.88rem 2.3rem;
-  font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase;
-  font-weight: 500; transition: all 0.25s;
-}
-.btn-gold  { background: var(--gold); color: #fff; }
-.btn-gold:hover  { background: var(--gold2); }
-.btn-ghost {
-  background: transparent; color: var(--white);
-  border: 1px solid rgba(13,31,60,0.22);
-}
-.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
-.scroll-cue {
-  position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
-  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
-  font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase;
-  color: rgba(36,98,196,0.50); z-index: 1;
-  animation: fadeUp 1s 1.1s ease both; opacity: 0;
-}
-.scroll-line {
-  width: 1px; height: 38px;
-  background: linear-gradient(to bottom, var(--gold), transparent);
-  animation: pulse 2.2s ease-in-out infinite;
-}
-@keyframes pulse { 0%,100%{opacity:.4;transform:scaleY(1)} 50%{opacity:1;transform:scaleY(1.2)} }
-
-/* ══════════════════════════════════════════
-   ABOUT PAGE
-══════════════════════════════════════════ */
-#page-about {
-  background: var(--black2);
-}
-.about-inner {
-  padding: calc(var(--nav-h) + 5rem) 3.5rem 6rem;
-  max-width: 1100px; margin: 0 auto;
-}
-.about-wrap {
-  display: grid; grid-template-columns: 1fr 1.2fr;
-  gap: 6rem; align-items: center;
-}
-.about-img-outer { position: relative; }
-.about-img-box { position: relative; overflow: hidden; aspect-ratio: 4/5; }
-.about-img-box img {
-  width: 100%; height: 100%; object-fit: cover; object-position: top;
-  filter: grayscale(15%); display: block;
-}
-.about-img-box::after {
-  content: ''; position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(36,98,196,0.08), transparent 55%);
-}
-.about-img-shadow {
-  position: absolute; top: 18px; right: -18px; bottom: -18px; left: 18px;
-  border: 1px solid var(--gold-border); z-index: -1;
-}
-.about-chip {
-  position: absolute; bottom: -1.8rem; right: -1.8rem;
-  background: var(--gold); color: #fff;
-  padding: 1.1rem 1.4rem; text-align: center; z-index: 2;
-}
-.about-chip strong { display: block; font-size: 1.7rem; font-weight: 900; font-family: 'Playfair Display', serif; }
-.about-chip span { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; }
-.about-body p { font-size: 0.96rem; line-height: 1.9; color: var(--muted); margin-bottom: 1.2rem; }
-.facts { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--gold-border); margin: 2.5rem 0; }
-.fact { background: var(--black); padding: 1.15rem 1.4rem; }
-.fact-lbl { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem; }
-.fact-val { font-size: 0.88rem; color: var(--white); }
-.eyebrow { font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.7rem; }
-.sec-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem,3.5vw,2.9rem); font-weight: 700; line-height: 1.15; color: var(--white); }
-.sec-title em { font-style: italic; color: var(--gold); }
-.gold-line { width: 44px; height: 1px; background: var(--gold); margin: 1.2rem 0 2.5rem; }
-
-/* ══════════════════════════════════════════
-   RESUME PAGE
-══════════════════════════════════════════ */
-#page-resume {
-  background: var(--black2);
-}
-
-.resume-inner {
-  padding: calc(var(--nav-h) + 6rem) 3.5rem 6rem;
-  max-width: 1100px; /* was 900px — wider to match other pages */
-  margin: 0 auto;
-}
-
-.resume-header {
-  margin-bottom: 3rem;
-  border-bottom: 1px solid var(--gold-border);
-  padding-bottom: 2.5rem;
-}
-.resume-header h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; color: var(--white);
-}
-.resume-header h1 em { font-style: italic; color: var(--gold); }
-.resume-section { margin-bottom: 3rem; }
-.resume-section-title {
-  font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase;
-  color: var(--gold); border-bottom: 1px solid var(--gold-border);
-  padding-bottom: 0.6rem; margin-bottom: 1.5rem;
-}
-.resume-item { margin-bottom: 1.8rem; }
-.resume-item-header {
-  display: flex; justify-content: space-between; align-items: flex-start;
-  flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.4rem;
-}
-.resume-item-title { font-weight: 500; font-size: 1rem; color: var(--white); }
-.resume-item-date {
-  font-size: 0.75rem; color: var(--gold); letter-spacing: 0.06em;
-  font-family: 'Playfair Display', serif; font-style: italic;
-}
-.resume-item-sub { font-size: 0.85rem; color: var(--gold); margin-bottom: 0.5rem; }
-.resume-item-desc { font-size: 0.88rem; line-height: 1.75; color: var(--muted); }
-.resume-skills {
-  display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;
-}
-.resume-skill {
-  font-size: 0.75rem; padding: 0.3rem 0.8rem;
-  border: 1px solid var(--gold-border); color: var(--muted);
-  letter-spacing: 0.06em;
-}
-.resume-download {
-  display: inline-flex; align-items: center; gap: 0.6rem;
-  margin-top: 2rem;
-  padding: 0.88rem 2.3rem;
-  background: var(--gold); color: #fff;
-  font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase;
-  font-weight: 500; transition: background 0.2s;
-}
-.resume-download:hover { background: var(--gold2); }
-
-/* ══════════════════════════════════════════
-   BLOG OVERVIEW PAGE
-══════════════════════════════════════════ */
-#page-blog {
-  background: var(--black2);
-}
-.blog-overview-inner {
-  padding: calc(var(--nav-h) + 5rem) 3.5rem 6rem;
-  max-width: 1100px; margin: 0 auto;
-}
-.blog-header {
-  display: flex; align-items: flex-end; justify-content: space-between;
-  margin-bottom: 3.5rem; flex-wrap: wrap; gap: 1.5rem;
-}
-.blog-count { font-family: 'Playfair Display', serif; font-size: 4.5rem; font-weight: 900; line-height: 1; color: var(--gold-dim); }
-.blog-grid {
-  display: grid; grid-template-columns: repeat(2,1fr);
-  gap: 1px; background: var(--gold-border);
-}
-.blog-card {
-  background: var(--black); padding: 2.5rem 2.5rem 2rem;
-  display: flex; flex-direction: column; cursor: pointer;
-  transition: background 0.25s; position: relative; overflow: hidden;
-  box-shadow: 0 1px 4px rgba(36,98,196,0.04);
-}
-.blog-card::before {
-  content: ''; position: absolute; top: 0; left: 0;
-  width: 3px; height: 0; background: var(--gold);
-  transition: height 0.4s ease;
-}
-.blog-card:hover { background: var(--black3); }
-.blog-card:hover::before { height: 100%; }
-.card-num { font-family: 'Playfair Display', serif; font-style: italic; font-size: 2.8rem; font-weight: 900; color: var(--gold-dim); line-height: 1; margin-bottom: 1rem; transition: color 0.3s; }
-.blog-card:hover .card-num { color: rgba(36,98,196,0.18); }
-.card-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.7rem; transition: color 0.2s; color: var(--white); }
-.blog-card:hover .card-title { color: var(--gold); }
-.card-desc { font-size: 0.85rem; line-height: 1.75; color: var(--muted); flex: 1; }
-.card-arrow { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1.5rem; font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); opacity: 0; transform: translateX(-5px); transition: opacity 0.3s, transform 0.3s; }
-.blog-card:hover .card-arrow { opacity: 1; transform: translateX(0); }
-.blog-card.locked { cursor: default; }
-.blog-card.locked:hover { background: var(--black); }
-.blog-card.locked:hover::before { height: 0; }
-.blog-card.locked .card-arrow { display: none; }
-.coming-tag {
-  display: inline-block; margin-top: 1rem;
-  font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--gold); border: 1px solid var(--gold-border);
-  padding: 0.2rem 0.6rem; opacity: 0.5;
-}
-
-/* ══════════════════════════════════════════
-   CONTACT PAGE
-══════════════════════════════════════════ */
-#page-contact {
-  background: var(--black2);
-}
-.contact-inner-page {
-  min-height: 100vh;
-  display: flex; align-items: center; justify-content: center;
-  padding: calc(var(--nav-h) + 4rem) 3.5rem 6rem;
-  position: relative; overflow: hidden;
-}
-.contact-inner-page::before {
-  content: ''; position: absolute; inset: 0;
-  background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(36,98,196,0.06) 0%, transparent 70%);
-  pointer-events: none;
-}
-.contact-box { position: relative; z-index: 1; max-width: 620px; margin: 0 auto; text-align: center; }
-.contact-title { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem,6vw,5rem); font-weight: 900; line-height: 1.05; margin-bottom: 1.5rem; color: var(--white); }
-.contact-title em { font-style: italic; color: var(--gold); }
-.contact-p { font-size: 1rem; color: var(--muted); line-height: 1.85; margin-bottom: 2.5rem; }
-.contact-link { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 1rem; color: var(--gold); border-bottom: 1px solid var(--gold-border); padding-bottom: 0.3rem; margin-bottom: 1.5rem; transition: color 0.2s, border-color 0.2s; }
-.contact-link:hover { color: var(--gold2); border-color: var(--gold); }
-
-/* ══════════════════════════════════════════
-   BLOG POST PAGES
-══════════════════════════════════════════ */
-#page-blog-post {
-  background: var(--black2);
-}
-.blog-post-page {
-  display: none;
-  min-height: 100vh;
-  padding: calc(var(--nav-h) + 4rem) 3.5rem 6rem;
-  max-width: 900px;
-  margin: 0 auto;
-  animation: fadeUp 0.5s ease both;
-}
-.blog-post-page.active { display: block; }
-
-.post-header {
-  max-width: 1000px; margin: 0 auto 3.5rem;
-  border-bottom: 1px solid var(--gold-border); padding-bottom: 2.5rem;
-}
-.post-tag {
-  display: inline-block; font-size: 0.65rem; letter-spacing: 0.2em;
-  text-transform: uppercase; color: var(--gold);
-  border: 1px solid var(--gold-border); padding: 0.3rem 0.8rem; margin-bottom: 1.5rem;
-}
-.post-num-big {
-  font-family: 'Playfair Display', serif; font-style: italic;
-  font-size: 6rem; font-weight: 900; color: var(--gold-dim);
-  line-height: 1; margin-bottom: -0.5rem;
-}
-.post-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; line-height: 1.1;
-  margin-bottom: 1.2rem; color: var(--white);
-}
-.post-title em { font-style: italic; color: var(--gold); }
-.card-desc1 { font-size: 1rem; line-height: 1.75; color: var(--muted); }
-
-.post-body {
-  max-width: 1000px; margin: 0 auto;
-  text-align: justify;
-}
-.post-body p {
-  margin-bottom: 1.5rem;
-  line-height: 1.85;
-  font-size: 1.05rem;
-  color: rgba(13,31,60,0.78);
-}
-.post-image {
-  margin: 2.5rem auto;
-  max-width: 680px;
-  background: #fff;
-  padding: 10px 10px 40px;
-  box-shadow: 0 4px 24px rgba(36,98,196,0.10), 0 2px 8px rgba(0,0,0,0.06);
-  transform: rotate(-0.8deg);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(36,98,196,0.08);
-}
-.post-image:hover {
-  transform: rotate(0deg) scale(1.01);
-  box-shadow: 0 12px 40px rgba(36,98,196,0.14);
-}
-.post-image img { display: block; width: 100%; object-fit: cover; }
-#post-1 .post-image:nth-of-type(2) { transform: rotate(0.6deg); }
-#post-1 .post-image:nth-of-type(2):hover { transform: rotate(0deg) scale(1.01); }
-
-.post-image-duo {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin: 2.5rem 0;
-}
-.post-image-duo img {
-  display: block; width: 100%;
-  aspect-ratio: 4 / 3; object-fit: cover;
-  border-radius: 4px;
-  border: 1px solid var(--gold-border);
-}
-.post-body h3 {
-  font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700;
-  color: var(--white); margin: 2.5rem 0 1rem;
-}
-.post-pull {
-  border-left: 3px solid var(--gold); padding-left: 1.5rem;
-  margin: 2.5rem 0;
-  font-family: 'Playfair Display', serif; font-style: italic;
-  font-size: 1.2rem; line-height: 1.6; color: var(--white);
-}
-.post-nav {
-  max-width: 1000px; margin: 4rem auto 0;
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 1rem; flex-wrap: wrap;
-  padding-top: 2.5rem; border-top: 1px solid var(--gold-border);
-}
-.post-nav-btn {
-  display: inline-flex; align-items: center; gap: 0.6rem;
-  padding: 0.75rem 1.6rem;
-  font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase;
-  font-weight: 500; cursor: pointer; transition: all 0.25s;
-  background: none; border: 1px solid var(--gold-border);
-  color: var(--muted); font-family: 'DM Sans', sans-serif;
-}
-.post-nav-btn:hover { border-color: var(--gold); color: var(--gold); }
-.post-nav-btn.primary { background: var(--gold); color: #fff; border-color: var(--gold); }
-.post-nav-btn.primary:hover { background: var(--gold2); }
-.post-nav-btn:disabled { opacity: 0.25; cursor: not-allowed; pointer-events: none; }
-.post-progress {
-  font-family: 'Playfair Display', serif; font-style: italic;
-  font-size: 0.9rem; color: var(--gold); letter-spacing: 0.05em;
-}
-#page-work .blog-grid {
-  grid-template-columns: 1fr;
-}
-/* ── FOOTER ── */
-footer {
-  background: #dce8f8; padding: 2rem 3.5rem;
-  display: flex; align-items: center; justify-content: space-between;
-  border-top: 1px solid var(--gold-border);
-  font-size: 0.75rem; color: rgba(13,31,60,0.45);
-  letter-spacing: 0.06em; flex-wrap: wrap; gap: 0.5rem;
-}
-footer em { color: var(--gold); font-style: normal; }
-
-/* ── ANIMATIONS ── */
-@keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
-@keyframes dropIn { from { opacity:0; transform:translateY(-20px); } to { opacity:1; transform:translateY(0); } }
-
-/* ── RESPONSIVE ── */
-@media (max-width: 960px) {
-  nav { padding: 0 1.5rem; }
-  .nav-links, .nav-cta { display: none; }
-  .hamburger { display: flex; }
-  .about-inner, .resume-inner, .blog-overview-inner { padding: calc(var(--nav-h) + 3rem) 1.5rem 5rem; }
-  .blog-post-page { padding: calc(var(--nav-h) + 3rem) 1.5rem 5rem; }
-  .about-wrap { grid-template-columns: 1fr; gap: 3rem; }
-  .about-chip { right: 0; }
-  .blog-grid { grid-template-columns: 1fr; }
-  .facts { grid-template-columns: 1fr; }
-  footer { justify-content: center; text-align: center; }
-  .post-nav { flex-direction: column; align-items: stretch; text-align: center; }
-  .post-nav-btn { justify-content: center; }
-  .contact-inner-page { padding: calc(var(--nav-h) + 3rem) 1.5rem 5rem; }
-}
-</style>
-</head>
-<body>
-
-<!-- ─── NAVBAR ─── -->
-<nav>
-  <a class="nav-logo" onclick="showPage('home')" style="cursor:pointer;">
-    Youssef Abou Ali
-    <span>ePortfolio · ENG 210</span>
-  </a>
-
-  <ul class="nav-links">
-    <li><a href="#" id="nav-home" onclick="showPage('home');return false;" class="active">Home</a></li>
-    <li><a href="#" id="nav-about" onclick="showPage('about');return false;">About Me</a></li>
-    <li><a href="#" id="nav-resume" onclick="showPage('resume');return false;">Resume</a></li>
-    <li><a href="#" id="nav-blog" onclick="showPage('blog');return false;">Blog</a></li>
-    <li><a href="#" id="nav-work" onclick="showPage('work');return false;">My Work</a></li>
-
-  </ul>
-
-  <a href="#" class="nav-cta" onclick="showPage('contact');return false;">Contact Me</a>
-
-  <button class="hamburger" id="hamburger" aria-label="Open menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<!-- ─── MOBILE NAV ─── -->
-<div class="mobile-nav" id="mobileNav">
-  <a href="#" onclick="showPage('home');closeMobile();return false;">Home</a>
-  <a href="#" onclick="showPage('resume');closeMobile();return false;">Resume</a>
-  <a href="#" onclick="showPage('about');closeMobile();return false;">About Me</a>
-  <span class="mobile-sub-label">Blog</span>
-  <div class="mobile-sub">
-    <a href="#" onclick="openBlog(1);closeMobile();return false;"><span class="post-num">1.</span> Shell Eco-marathon</a>
-    <a href="#" onclick="openBlog(2);closeMobile();return false;"><span class="post-num">2.</span> Engineering &amp; Goals</a>
-    <a href="#" onclick="openBlog(3);closeMobile();return false;"><span class="post-num">3.</span> My Teamwork Identity</a>
-    <a href="#" onclick="openBlog(4);closeMobile();return false;"><span class="post-num">4.</span> Resume Reflection</a>
-    <a class="coming-soon"><span class="post-num">5.</span></a>
-    <a class="coming-soon"><span class="post-num">6.</span> </a>
-    <a class="coming-soon"><span class="post-num">7.</span></a>
-    <a class="coming-soon"><span class="post-num">8.</span></a>
-    <a class="coming-soon"><span class="post-num">9.</span> </a>
-    <a class="coming-soon"><span class="post-num">10.</span></a>
-  </div>
-  <a href="#" onclick="showPage('contact');closeMobile();return false;">Contact Me</a>
-  <a href="#" onclick="showPage('work');closeMobile();return false;">My Work</a>
-</div>
-
-<!-- ══════════════════════════════════════════════════
-     PAGE: HOME
-══════════════════════════════════════════════════ -->
-<div id="page-home" class="page active">
-  <section class="hero">
-    <div class="hero-inner">
-      <h1>Hi, I'm <br><em>Youssef</em><br><em>Abou Ali</em></h1>
-      <p class="hero-role">An Electrical Engineering Student</p>
-      <p class="hero-uni">At HBKU in Qatar</p>
-      <p class="hero-desc">
-        Welcome to my ENG 210 ePortfolio! I'm excited to share my journey with you
-        and the experiences that have shaped me. Here, you'll also find my essays,
-        presentations and reflections from the course. Feel free to explore, and I
-        hope you enjoy getting to know both me and my work from this semester.
-      </p>
-      <div class="hero-btns">
-        <a href="#" class="btn btn-gold" onclick="showPage('about');return false;">Discover My Journey</a>
-        <a href="#" class="btn btn-ghost" onclick="showPage('blog');return false;">Read My Blog</a>
-      </div>
-    </div>
-    <div class="scroll-cue">
-      <div class="scroll-line"></div>Scroll
-    </div>
-  </section>
-  <footer>
-    <span><em>Youssef Abou Ali</em></span>
-    <span>ENG 210 · HBKU Qatar</span>
-    <span>Spring 2026</span>
-  </footer>
-</div>
-
-<!-- ══════════════════════════════════════════════════
-     PAGE: ABOUT
-══════════════════════════════════════════════════ -->
-<div id="page-about" class="page">
-  <div class="about-inner">
-    <div class="about-wrap">
-      <div class="about-img-outer">
-        <div class="about-img-box">
-          <img src="https://portfolio21.odoo.com/web/image/689-01fbc799/IMG_8356.svg" alt="Youssef">
-        </div>
-        <div class="about-img-shadow"></div>
-        <div class="about-chip"><strong>EE</strong><span>Student</span></div>
-      </div>
-      <div class="about-body">
-        <p class="eyebrow">About Me</p>
-        <div class="gold-line"></div>
-        <p>I'm an Electrical Engineering student at Hamad Bin Khalifa University in Qatar, with a deep interest in technology, devices, and the engineering systems that power modern life.</p>
-        <p>This portfolio documents my growth throughout the ENG 210 course — from technical writing to reflective thinking — showcasing my essays, presentations, and semester-long experiences.</p>
-        <p>Originally from Lebanon, I bring a global perspective to my studies and a personal motivation to engineer solutions that address real challenges — particularly in energy access for underserved communities.</p>
-        <div class="facts">
-          <div class="fact"><div class="fact-lbl">University</div><div class="fact-val">HBKU, Qatar</div></div>
-          <div class="fact"><div class="fact-lbl">Major</div><div class="fact-val">Electrical Engineering</div></div>
-          <div class="fact"><div class="fact-lbl">Course</div><div class="fact-val">ENG 210</div></div>
-          <div class="fact"><div class="fact-lbl">Location</div><div class="fact-val">Qatar</div></div>
-        </div>
-        <a href="#" class="btn btn-gold" onclick="showPage('contact');return false;">Get In Touch</a>
-      </div>
-    </div>
-  </div>
-  <footer>
-    <span><em>Youssef Abou Ali</em></span>
-    <span>ENG 210 · HBKU Qatar</span>
-    <span>Spring 2026</span>
-  </footer>
-</div>
-
-
-<!-- ══════════════════════════════════════════════════
-     PAGE: RESUME
-══════════════════════════════════════════════════ -->
-<div id="page-resume" class="page">
-  
-  <div class="resume-inner">
-    <div class="resume-header">
-      <p class="eyebrow">Curriculum Vitae</p>
-      <h1 class="sec-title">Youssef<br><em>Abou Ali</em></h1>
-      <div class="gold-line"></div>
-      <p style="color:var(--muted); font-size:0.9rem;">Electrical Engineering Student · HBKU, Qatar</p>
-    </div>
-
-    <div class="resume-section">
-      <div class="resume-section-title">Education</div>
-      <div class="resume-item">
-        <div class="resume-item-header">
-          <span class="resume-item-title">Hamad Bin Khalifa University</span>
-          <span class="resume-item-date">2024 – Present</span>
-        </div>
-        <div class="resume-item-sub">B.Sc. Electrical Engineering · Qatar</div>
-        <div class="resume-item-desc">Strong GPA. Coursework includes circuits, programming, technical writing, and engineering communication.</div>
-      </div>
-      <div class="resume-item">
-        <div class="resume-item-header">
-          <span class="resume-item-title">Lebanese Baccalaureate</span>
-          <span class="resume-item-date">2024</span>
-        </div>
-        <div class="resume-item-sub">Scientific Stream · Lebanon</div>
-        <div class="resume-item-desc">Ranked 16th nationally. Strong foundation in mathematics, physics, and sciences.</div>
-      </div>
-    </div>
-
-    <div class="resume-section">
-      <div class="resume-section-title">Experience &amp; Activities</div>
-      <div class="resume-item">
-        <div class="resume-item-header">
-          <span class="resume-item-title">Shell Eco-marathon — VIP Tour</span>
-          <span class="resume-item-date">Jan 2026</span>
-        </div>
-        <div class="resume-item-sub">Guest · Qatar</div>
-        <div class="resume-item-desc">Attended a behind-the-scenes engineering tour with Chemical Engineer Majid Samarah. Engaged with university teams from Saudi Arabia, Indonesia, Philippines, and South Korea on vehicle design, energy systems, and teamwork.</div>
-      </div>
-      <div class="resume-item">
-        <div class="resume-item-header">
-          <span class="resume-item-title">STEAM Showcase — 1st Place</span>
-          <span class="resume-item-date">2024</span>
-        </div>
-        <div class="resume-item-sub">Team Lead · HBKU</div>
-        <div class="resume-item-desc">Co-led research project on the Qur'anic Botanic Garden in Qatar, winning the STEAM showcase competition. Demonstrated strong collaborative and research skills.</div>
-      </div>
-    </div>
-
-    <div class="resume-section">
-      <div class="resume-section-title">Skills</div>
-      <div class="resume-skills">
-        <span class="resume-skill">Electrical Circuits</span>
-        <span class="resume-skill">Python</span>
-        <span class="resume-skill">AI &amp; Machine Learning (in progress)</span>
-        <span class="resume-skill">Technical Writing</span>
-        <span class="resume-skill">Public Speaking</span>
-        <span class="resume-skill">Team Collaboration</span>
-        <span class="resume-skill">Arabic (Native)</span>
-        <span class="resume-skill">English (Fluent)</span>
-        <span class="resume-skill">French (Intermediate)</span>
-      </div>
-    </div>
-
-    <div class="resume-section">
-      <div class="resume-section-title">Interests</div>
-      <div class="resume-item-desc" style="color:var(--muted);font-size:0.9rem;line-height:1.8;">
-        Acting · Football · Renewable Energy · AI &amp; Technology · Community Development · Entrepreneurship
-      </div>
-    </div>
-  </div>
-  <footer>
-    <span><em>Youssef Abou Ali</em></span>
-    <span>ENG 210 · HBKU Qatar</span>
-    <span>Spring 2026</span>
-  </footer>
--->
-</div>
-
-
-<!-- ══════════════════════════════════════════════════
-     PAGE: BLOG OVERVIEW
-══════════════════════════════════════════════════ -->
-<div id="page-blog" class="page">
-  <div class="blog-overview-inner">
-    <div class="blog-header">
-      <div>
-        <p class="eyebrow">My Blog</p>
-        <h2 class="sec-title">Reflections &amp;<br><em>Discoveries</em></h2>
-        <div class="gold-line"></div>
-      </div>
-      <div class="blog-count">10</div>
-    </div>
-    <div class="blog-grid">
-      <div class="blog-card" onclick="openBlog(1)">
-        <div class="card-num">01</div>
-        <img src="blog1 image1.jpeg" alt="Shell Eco-marathon visit">
-        <div class="card-title">Shell Eco-marathon: a lifetime experience.</div>
-        <div class="card-desc">Jan 26 2026</div>
-        <span class="card-arrow">Read Post →</span>
-      </div>
-      <div class="blog-card" onclick="openBlog(2)">
-        <div class="card-num">02</div>
-        <div class="card-title">Engineering and Goals</div>
-        <div class="card-desc">Jan 25 2026</div>
-        <span class="card-arrow">Read Post →</span>
-      </div>
-      <div class="blog-card" onclick="openBlog(3)">
-        <div class="card-num">03</div>
-        <div class="card-title">My Teamwork Identity</div>
-        <div class="card-desc">Feb 3 2026</div>
-        <span class="card-arrow">Read Post →</span>
-      </div>
-      <div class="blog-card" onclick="openBlog(4)">
-        <div class="card-num">04</div>
-        <div class="card-title">Resume Reflection</div>
-        <div class="card-desc">Feb 16 2026</div>
-        <span class="card-arrow">Read Post →</span>
-      </div>
-      <div class="blog-card locked"><div class="card-num">05</div><span class="coming-tag"></span></div>
-      <div class="blog-card locked"><div class="card-num">06</div><span class="coming-tag"></span></div>
-      <div class="blog-card locked"><div class="card-num">07</div><span class="coming-tag"></span></div>
-      <div class="blog-card locked"><div class="card-num">08</div><span class="coming-tag"></span></div>
-      <div class="blog-card locked"><div class="card-num">09</div><span class="coming-tag"></span></div>
-      <div class="blog-card locked"><div class="card-num">10</div><span class="coming-tag"></span></div>
-    </div>
-  </div>
-  <footer>
-    <span><em>Youssef Abou Ali</em></span>
-    <span>ENG 210 · HBKU Qatar</span>
-    <span>Spring 2026</span>
-  </footer>
-</div>
-
-<!-- ══════════════════════════════════════════════════
-     PAGE: CONTACT
-══════════════════════════════════════════════════ -->
-<div id="page-contact" class="page">
-  <div class="contact-inner-page">
-    <div class="contact-box">
-      <p class="eyebrow">Contact</p>
-      <h2 class="contact-title">Get in<br><em>Touch</em></h2>
-      <div class="gold-line" style="margin:1.5rem auto;"></div>
-      <p class="contact-p">Interested in my work or want to connect? I'd love to hear from you — whether about engineering, tech, or just to say hello.</p>
-      <div>
-        <a href="tel:+97431300351" class="contact-link">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.82 19.79 19.79 0 01.01 4.18 2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg>
-          +974 31300351
-        </a><br>
-        <a href="mailto:yoab89232@hbku.edu.qa" class="contact-link">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-          yoab89232@hbku.edu.qa
-        </a><br>
-        <a href="https://maps.google.com/?q=Education+City,+Qatar+Foundation,+Al-Rayyan,+Doha,+Qatar" target="_blank" rel="noopener noreferrer" class="contact-link">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-          Education City, Qatar Foundation, Al-Rayyan, Doha, Qatar
-        </a>
-      </div>
-    </div>
-  </div>
-  <footer>
-    <span><em>Youssef Abou Ali</em></span>
-    <span>ENG 210 · HBKU Qatar</span>
-    <span>Spring 2026</span>
-  </footer>
-</div>
-
-<!-- ══════════════════════════════════════════════════
-     PAGE: BLOG POST VIEWER
-══════════════════════════════════════════════════ -->
-<div id="page-blog-post" class="page">
-
-  <!-- POST 1 -->
-  <div class="blog-post-page" id="post-1">
-    <div class="post-header">
-      <span class="post-tag">Blog · Post 01 of 10</span>
-      <div class="post-num-big">01</div>
-      <h1 class="post-title">Shell Eco-marathon: <em>a lifetime experience.</em></h1>
-      <div class="card-desc1">Jan 26 2026</div>
-    </div>
-    <div class="post-body">
-      <p>How can an email change one's life trajectory? It is a question I couldn't imagine myself asking before I visited the Shell Eco-marathon with Dr. Naqaa and my nine other lucky colleagues. Yes, lucky, as we had the chance to have a VIP behind-the-scenes tour with Chemical Engineer Majid Samarah. We passed by multiple teams, asking questions and having a close look at their work and struggles. We had conversations with the Riyadh University, HBKU, and Texas A&M University teams, as well as some international teams from Indonesia and the Philippines. They gave me a lot of insight into their work, the difference between urban cars and prototypes, the engines they use, how they divide the work among themselves, and the challenges they faced.</p>
-      <figure class="post-image">
-        <img src="blog1 image1.jpeg" alt="Shell Eco-marathon visit">
-      </figure>
-      <p>The team that really stood out to me was the South Korean team. I only asked them for a photo and observed them during the technical inspections. Despite the pressure, stress, and technical issues they faced, they were composed and calm, working coherently as a unit to overcome the obstacles they faced. What I saw was rooted in the idea that teamwork is the essence of success.</p>
-      <p>After finishing our tour, Engineer Majid invited us to his Majles and served us delicious coffee, where he shared moments of his career and gave us true life lessons. His talk was really inspiring and enjoyable; he was down-to-earth despite his accomplishments, which made me interested in learning more about his experiences. He told us how he got fired from his first job in Jordan, and the reason was an email. He wasn't disrespectful, impolite, or even wrong, but he was so excited that he delivered his ideas in the wrong way, using all caps and a red font, which was indeed misunderstood by his boss.</p>
-      <p>Nine months after being fired, he got a job at Shell, and 15 years later, he shared his wonderful experience with us, upcoming engineers. His story teaches that no matter how much value and uniqueness your ideas hold, if you deliver them poorly, they become worthless and may harm you. Therefore, being able to express yourself in the right way is equivalent to acquiring knowledge, because success doesn't only depend on your technical intelligence but also on your social and emotional intelligence.</p>
-      <p>For me, as an electrical engineer, this experience opened my eyes to a path I had limited knowledge of, especially regarding how electric and hybrid cars work. It aroused my interest and curiosity to acquire more knowledge. Talking to engineers and seeing teams work gave me an insight into what my future work will look like if I choose this path, which gave me more options to explore before graduating.</p>
-      <figure class="post-image">
-        <img src="blog1 image2.jpeg" alt="Shell Eco-marathon visit">
-      </figure>
-    </div>
-    <div class="post-nav">
-      <button class="post-nav-btn" disabled>← Previous</button>
-      <span class="post-progress">1 / 10</span>
-      <button class="post-nav-btn primary" onclick="openBlog(2)">Next →</button>
-    </div>
-  </div>
-
-  <!-- POST 2 -->
-  <div class="blog-post-page" id="post-2">
-    <div class="post-header">
-      <span class="post-tag">Blog · Post 02 of 10</span>
-      <div class="post-num-big">02</div>
-      <h1 class="post-title">Engineering &amp; <em>Goals.</em></h1>
-      <div class="card-desc1">Jan 25 2026</div>
-    </div>
-    <div class="post-body">
-      <p>For this week, we were asked to watch two videos. After I watched them, I learned much more about my career as an Electrical Engineer. I learned that my degree isn't just a series of classes and exams; it is an opportunity to make a change in the community. My electrical engineering coursework provides me with the ability to create and improve systems that transform lives. My goal isn't just to improve technology but to make using technology an easygoing experience, preventing as many drawbacks as possible.</p>
-      <p>One of the most important issues I would like to address is the issue of energy access, specifically for those without reliable or affordable power — an issue that a lot of people suffer from in my home country, Lebanon. I aim to develop cleaner, smarter, and cheaper energy options, recognizing that good power creates an easier life for all community members who depend on it for their careers and education.</p>
-      <p>In the years leading up to my graduation, I aim to develop the necessary skills that serve my goal, prioritizing AI skills as AI is becoming the cornerstone of successful workforces. After graduation, I want to work somewhere that blends innovation with social impact — a place where I get the opportunity to put into practice what I have learned. That might be a business that deals with renewable energy, a technology entity that gives back to the community, or even a startup that is determined to make a difference.</p>
-      <p>My ultimate goal is to have my own company, one that translates my vision into reality. I will be focused, have clear goals, and act in steps to ensure the accomplishment of tasks. To truly get things done, I understand that technical skills alone are not enough; I must also be an effective communicator. I will rely on strong written and oral communication to advocate for my ideas, report my findings, and secure support for my projects from management and stakeholders.</p>
-      <p>In my journey, I won't be on my own. I will prioritize collaborative work and expanding my social network, where I get to know new people, share experiences, and learn new things. Nonetheless, I will keep a mindset open to learning, where I face my weaknesses and insecurities rather than escaping them, where I lead by example and work day in and day out to turn my dreams into reality.</p>
-    </div>
-    <div class="post-nav">
-      <button class="post-nav-btn" onclick="openBlog(1)">← Previous</button>
-      <span class="post-progress">2 / 10</span>
-      <button class="post-nav-btn primary" onclick="openBlog(3)">Next →</button>
-    </div>
-  </div>
-
-  <!-- POST 3 -->
-  <div class="blog-post-page" id="post-3">
-    <div class="post-header">
-      <span class="post-tag">Blog · Post 03 of 10</span>
-      <div class="post-num-big">03</div>
-      <h1 class="post-title">My Teamwork <em>Identity.</em></h1>
-      <div class="card-desc1">Feb 3 2026</div>
-    </div>
-    <div class="post-body">
-      <p>This week, we experienced a unique in-class activity with Dr. Lule that helped us figure out who we are when working in groups. Later, we each took the tendency test individually. I expected to get a result related to leadership, coordination, or being open to all ideas. However, I got the "Questioner" — a person who accepts orders or ideas only when they make sense to them. I stick to the decisions I have made, but I question the rules and orders given to me. In other words, I will never do something without a valid reason. You should not expect me to obey orders blindly. Maybe that is why I didn't consider joining the military and decided to get an education abroad instead.</p>
-      <figure class="post-image-duo">
-        <img src="blog2 image1.jpeg" alt="Teamwork activity">
-        <img src="blog2 image2.jpeg" alt="Teamwork activity">
-      </figure>
-      <p>When working in teams, I need clarity, trust, and commitment. The test says Questioners do exhaustive research and check the overall work, which doesn't entirely apply to me. I search for the best ideas and sources, but once the work is divided, I trust my colleagues. My questions help my group maintain the right path. I question bad ideas, inaccurate facts, and things that just don't make sense or serve our goal, preventing us from wasting time. Additionally, I love ideas that stand out and show creativity and effort.</p>
-      <p>However, having this tendency can affect others because it takes more time to land on the right ideas. My overthinking also backfires on me, sometimes causing stress when the workload is high during exam seasons. For example, last semester in ENG 114, we had to develop a problem question for our research project on a space in Qatar. My teammates suggested many problems, but I kept offering counter-ideas because theirs didn't convince me. We eventually reached the right idea, which helped us win the STEAM showcase competition with our Qur'anic Botanic Garden presentation, but the initial process caused stress and frustration among the team. It felt like I was slowing down the meeting or rejecting everything, but I just wanted to finish the work efficiently and reap the best possible results.</p>
-      <p>To be a better teammate, I will start explaining why I am asking questions. Instead of just asking questions, which can sound like I am arguing, I will share my reason — which is to ensure we follow the professor's rules so we don't have to do the work twice. This shows my team that I am trying to help, not just being a difficult person. By respecting the group's goals while still getting the logical answers I need, I can turn my Questioner tendency into a real asset for my group and myself.</p>
-    </div>
-    <div class="post-nav">
-      <button class="post-nav-btn" onclick="openBlog(2)">← Previous</button>
-      <span class="post-progress">3 / 10</span>
-      <button class="post-nav-btn primary" onclick="openBlog(4)">Next →</button>
-    </div>
-  </div>
-
-  <!-- POST 4 -->
-  <div class="blog-post-page" id="post-4">
-    <div class="post-header">
-      <span class="post-tag">Blog · Post 04 of 10</span>
-      <div class="post-num-big">04</div>
-      <h1 class="post-title">Resume <em>Reflection.</em></h1>
-      <div class="card-desc1">Feb 16 2026</div>
-    </div>
-    <div class="post-body">
-      <p>When I looked closely at my resume, it felt overwhelming to try and fit all my experiences into a single, clear story. At first, I noticed that my past school achievements, like ranking 16th in the Lebanese Baccalaureate, felt a bit disconnected from my current goal of becoming an electrical engineer. However, adding my strong GPA helps bridge that gap by showing my consistent hard work. What surprised me most was realizing how my non-academic interests — like acting, public speaking, and playing football — actually helped build my professional skills. Seeing them written down proved I already have what it takes to communicate well and work easily within a team.</p>
-      <p>If I had to rate my resume right now, I would call it a work in progress. It has strong parts, especially regarding group projects. Mentioning my team's win at the STEAM showcase for our Qur'anic Botanic Garden research proves how well I function in a collaborative environment. Still, the resume primarily reflects my high school days and lacks the hands-on technical details that an electrical engineering student needs.</p>
-      <p>To improve my resume this semester, my main plan is to update it with my recent university work while keeping my true personality and passions. I am pushing to gain more engineering skills on my own, so I am working to finish online courses related to AI and programming. Also, instead of just listing generic skills that anyone can claim to have — like resilience and time management — I want to be specific and make my descriptions as personal as possible to set my resume apart.</p>
-      <p>Looking further ahead, my main goal is to make my resume stand out by getting real industry experience to match my classes. Joining a UREP research team with seniors from TAMUQ and Lusail University next semester is a big step that will give me valuable experimental research experience. I also plan to look for hands-on technical internships this summer in Qatar or Lebanon. Finally, I want my future resume to clearly show my dedication to giving back to the community. In the end, I want my resume to portray a professional with strong engineering skills, real leadership, and a genuine drive to build sustainable solutions.</p>
-    </div>
-    <div class="post-nav">
-      <button class="post-nav-btn" onclick="openBlog(3)">← Previous</button>
-      <span class="post-progress">4 / 10</span>
-      <button class="post-nav-btn primary" onclick="openBlog(5)">Next →</button>
-    </div>
-  </div>
-
-  <!-- POST 5 -->
-  <div class="blog-post-page" id="post-5">
-    <div class="post-header">
-      <span class="post-tag">Blog · Post 05 of 10</span>
-      <div class="post-num-big">05</div>
-      <h1 class="post-title"></h1>
-      <div class="card-desc1"></div>
-    </div>
-    <div class="post-body"></div>
-    <div class="post-nav">
-      <button class="post-nav-btn" onclick="openBlog(4)">← Previous</button>
-      <span class="post-progress">5 / 10</span>
-      <button class="post-nav-btn primary" onclick="openBlog(6)">Next →</button>
-    </div>
-  </div>
-
-  <!-- POST 6 -->
-  <div class="blog-post-page" id="post-6">
-    <div class="post-header">
-      <span class="post-tag">Blog · Post 06 of 10</span>
-      <div class="post-num-big">06</div>
-      <h1 class="post-title"></h1>
-      <div class="card-desc1"></div>
-    </div>
-    <div class="post-body"></div>
-    <div class="post-nav">
-      <button class="post-nav-btn" onclick="openBlog(5)">← Previous</button>
-      <span class="post-progress">6 / 10</span>
-      <button class="post-nav-btn primary" onclick="openBlog(7)">Next →</button>
-    </div>
-  </div>
-
-  <!-- POST 7 -->
-  <div class="blog-post-page" id="post-7">
-    <div class="post-header">
-      <span class="post-tag">Blog · Post 07 of 10</span>
-      <div class="post-num-big">07</div>
-      <h1 class="post-title"></h1>
-      <div class="card-desc1"></div>
-    </div>
-    <div class="post-body"></div>
-    <div class="post-nav">
-      <button class="post-nav-btn" onclick="openBlog(6)">← Previous</button>
-      <span class="post-progress">7 / 10</span>
-      <button class="post-nav-btn primary" onclick="openBlog(8)">Next →</button>
-    </div>
-  </div>
-
-  <!-- POST 8 -->
-  <div class="blog-post-page" id="post-8">
-    <div class="post-header">
-      <span class="post-tag">Blog · Post 08 of 10</span>
-      <div class="post-num-big">08</div>
-      <h1 class="post-title"></h1>
-      <div class="card-desc1"></div>
-    </div>
-    <div class="post-body"></div>
-    <div class="post-nav">
-      <button class="post-nav-btn" onclick="openBlog(7)">← Previous</button>
-      <span class="post-progress">8 / 10</span>
-      <button class="post-nav-btn primary" onclick="openBlog(9)">Next →</button>
-    </div>
-  </div>
-
-  <!-- POST 9 -->
-  <div class="blog-post-page" id="post-9">
-    <div class="post-header">
-      <span class="post-tag">Blog · Post 09 of 10</span>
-      <div class="post-num-big">09</div>
-      <h1 class="post-title"></h1>
-      <div class="card-desc1"></div>
-    </div>
-    <div class="post-body"></div>
-    <div class="post-nav">
-      <button class="post-nav-btn" onclick="openBlog(8)">← Previous</button>
-      <span class="post-progress">9 / 10</span>
-      <button class="post-nav-btn primary" onclick="openBlog(10)">Next →</button>
-    </div>
-  </div>
-
-  <!-- POST 10 -->
-  <div class="blog-post-page" id="post-10">
-    <div class="post-header">
-      <span class="post-tag">Blog · Post 10 of 10</span>
-      <div class="post-num-big">10</div>
-      <h1 class="post-title"></h1>
-      <div class="card-desc1"></div>
-    </div>
-    <div class="post-body"></div>
-    <div class="post-nav">
-      <button class="post-nav-btn" onclick="openBlog(9)">← Previous</button>
-      <span class="post-progress">10 / 10</span>
-      <button class="post-nav-btn primary" onclick="showPage('blog')">← Back to Blog</button>
-    </div>
-  </div>
-
-</div><!-- /page-blog-post -->
-
-
-<div id="page-work" class="page">
-  <div class="blog-overview-inner">
-    <div class="blog-header">
-      <div>
-        <p class="eyebrow">My Work</p>
-        <h2 class="sec-title">Documents &amp;<br><em>Assignments</em></h2>
-        <div class="gold-line"></div>
-      </div>
-      <div class="blog-count">5</div>
-    </div>
-
-    <div class="blog-grid">
-
-      <!-- 1. Email Assignment -->
-      <div class="blog-card" onclick="openPDF('Email assignment ENGL-220 youssef.pdf')">
-        <div class="card-num">01</div>
-        <div class="card-title">Group Work Email — ENGL 220</div>
-        <div class="card-desc" style="margin-bottom:0.8rem;">Jan 24, 2026</div>
-        <div class="card-desc">
-          A professional email addressed to Dr. Naqaa Abbas sharing my past group work 
-          experiences, my preferences for team size and composition, and my weekly 
-          availability for collaborative work this semester.
-        </div>
-        <span class="card-arrow">View PDF →</span>
-      </div>
-
-      <!-- 2. Team Charter -->
-      <div class="blog-card" onclick="openPDF('ENGL 220 Team Charter.pdf')">
-        <div class="card-num">02</div>
-        <div class="card-title">Team Charter — Team Cocktail</div>
-        <div class="card-desc" style="margin-bottom:0.8rem;">Feb 15, 2026</div>
-        <div class="card-desc">
-          A signed team agreement between the five members of Team Cocktail. It outlines 
-          our broad and measurable goals, each member's personal goals and individual 
-          commitments, conflict resolution protocols, and what constitutes unacceptable 
-          behavior within the team.
-        </div>
-        <span class="card-arrow">View PDF →</span>
-      </div>
-
-      <!-- 3. Memo Final Draft -->
-      <div class="blog-card" onclick="openPDF('MemoFinalDraft.pdf')">
-        <div class="card-num">03</div>
-        <div class="card-title">Memo — Effective Collaborative Projects</div>
-        <div class="card-desc" style="margin-bottom:0.8rem;">Feb 12, 2026</div>
-        <div class="card-desc">
-          A professional memorandum written on behalf of Team Cocktail addressing new 
-          project team members. It covers the three main methods of organizing teamwork 
-          — divided, face-to-face, and layered — and explains key project documents such 
-          as team charters, task schedules, meeting minutes, and progress reports.
-        </div>
-        <span class="card-arrow">View PDF →</span>
-      </div>
-
-      <!-- 4. Problem Statement Memo -->
-      <div class="blog-card" onclick="openPDF('Problem Statement_Memo.pdf')">
-        <div class="card-num">04</div>
-        <div class="card-title">Problem Statement Memo — Walkability in Education City</div>
-        <div class="card-desc" style="margin-bottom:0.8rem;">Mar 7, 2026</div>
-        <div class="card-desc">
-          A research memo investigating the lack of pedestrian walkability in Education 
-          City, Qatar. It identifies extreme heat, insufficient shading, and car-oriented 
-          infrastructure as root causes, and connects the issue to Qatar's QNV 2030 
-          sustainability goals.
-        </div>
-        <span class="card-arrow">View PDF →</span>
-      </div>
-
-      <!-- 5. Solution Memo -->
-      <div class="blog-card" onclick="openPDF('Solution Memo Final.pdf')">
-        <div class="card-num">05</div>
-        <div class="card-title">Solutions Memo — Walkability in Education City</div>
-        <div class="card-desc" style="margin-bottom:0.8rem;">Mar 14, 2026</div>
-        <div class="card-desc">
-          A follow-up memo proposing four solutions to EC's walkability problem: native 
-          tree planting, cool pavement coatings, climate-controlled walkways, and 
-          solar-powered misting systems. Each solution is evaluated for its advantages, 
-          limitations, and alignment with NDS3 sustainability targets.
-        </div>
-        <span class="card-arrow">View PDF →</span>
-      </div>
-
-    </div>
-  </div>
-  <footer>
-    <span><em>Youssef Abou Ali</em></span>
-    <span>ENG 210 · HBKU Qatar</span>
-    <span>Spring 2026</span>
-  </footer>
-</div>
-<!-- ─── SCRIPTS ─── -->
-<script>
-let mobileOpen = false;
-
-const allPages = ['home','about','resume','blog','contact','blog-post'];
-const navItems = {
-  'home':    document.getElementById('nav-home'),
-  'about':   document.getElementById('nav-about'),
-  'resume':  document.getElementById('nav-resume'),
-  'contact': document.getElementById('nav-contact'),
-  'blog':    document.getElementById('nav-blog'), 
-};
-
-function showPage(id) {
-  allPages.forEach(p => {
-    const el = document.getElementById('page-' + p);
-    if (el) { el.classList.remove('active'); el.scrollTop = 0; }
-  });
-  const target = document.getElementById('page-' + id);
-  if (target) { target.classList.add('active'); target.scrollTop = 0; }
-  Object.keys(navItems).forEach(k => { if (navItems[k]) navItems[k].classList.remove('active'); });
-  if (navItems[id]) navItems[id].classList.add('active');
-  window.scrollTo({ top: 0 });
-}
-
-function openBlog(n) {
-  showPage('blog-post');
-  document.querySelectorAll('.blog-post-page').forEach(p => p.classList.remove('active'));
-  const post = document.getElementById('post-' + n);
-  if (post) {
-    post.classList.add('active');
-    const blogPostPage = document.getElementById('page-blog-post');
-    if (blogPostPage) blogPostPage.scrollTop = 0;
-  }
-}
-
-const hamburger = document.getElementById('hamburger');
-const mobileNav = document.getElementById('mobileNav');
-
-hamburger.addEventListener('click', () => {
-  mobileOpen = !mobileOpen;
-  mobileNav.classList.toggle('open', mobileOpen);
-  const [s1,s2,s3] = hamburger.querySelectorAll('span');
-  if (mobileOpen) {
-    s1.style.transform = 'rotate(45deg) translate(4.5px,4.5px)';
-    s2.style.opacity   = '0';
-    s3.style.transform = 'rotate(-45deg) translate(4.5px,-4.5px)';
-  } else {
-    [s1,s2,s3].forEach(s => { s.style.transform=''; s.style.opacity=''; });
-  }
-});
-
-function closeMobile() {
-  mobileOpen = false;
-  mobileNav.classList.remove('open');
-  hamburger.querySelectorAll('span').forEach(s => { s.style.transform=''; s.style.opacity=''; });
 }
 
 // On page load, check if we came back from a PDF
@@ -2537,21 +1285,6 @@ window.addEventListener('load', () => {
     showPage(returnPage);
   }
 });
-
-// Use this function to open PDFs instead of window.location.href directly
-function openPDF(filename) {
-  sessionStorage.setItem('returnPage', 'work');
-  window.location.href = filename;
-}
-
-// ADD THIS AT THE VERY BOTTOM OF THE SCRIPT
-const _return = sessionStorage.getItem('returnPage');
-if (_return) {
-  sessionStorage.removeItem('returnPage');
-  showPage(_return);
-}
-
 </script>
 
 </body></html>
->>>>>>> 7c2d705 (your message here)
