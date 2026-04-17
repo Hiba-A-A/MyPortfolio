@@ -429,6 +429,15 @@ nav {
   font-size: 0.8rem;
   margin-top: 2rem;
 }
+
+/* Special "Final Project" card styling - makes card #6 stand out */
+.final-card {
+  background: linear-gradient(135deg, rgba(36,98,196,0.06), rgba(36,98,196,0.02)) !important;
+  border-left: 3px solid var(--gold);
+}
+.final-card .card-num { color: rgba(36,98,196,0.25) !important; }
+.final-card .card-title { color: var(--gold) !important; }
+
 .final-intro {
   color: var(--muted);
   font-size: 1.05rem;
@@ -437,6 +446,18 @@ nav {
   margin-top: 0.8rem;
 }
 .final-intro strong { color: var(--white); font-weight: 500; }
+
+/* Back button on Final Project page */
+.back-button {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  margin-bottom: 2rem;
+  padding: 0.7rem 1.4rem;
+  font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase;
+  font-weight: 500; cursor: pointer; transition: all 0.25s;
+  background: none; border: 1px solid var(--gold-border);
+  color: var(--muted); font-family: 'DM Sans', sans-serif;
+}
+.back-button:hover { border-color: var(--gold); color: var(--gold); }
 
 /* ══════════════════════════════════════════
    CONTACT PAGE
@@ -640,7 +661,6 @@ footer em { color: var(--gold); font-style: normal; }
     <li><a href="#" id="nav-resume" onclick="showPage('resume');return false;">Resume</a></li>
     <li><a href="#" id="nav-blog" onclick="showPage('blog');return false;">Blog</a></li>
     <li><a href="#" id="nav-work" onclick="showPage('work');return false;">My Work</a></li>
-    <li><a href="#" id="nav-final" onclick="showPage('final');return false;">Final Project</a></li>
   </ul>
 
   <a href="#" class="nav-cta" id="nav-contact" onclick="showPage('contact');return false;">Contact Me</a>
@@ -657,7 +677,6 @@ footer em { color: var(--gold); font-style: normal; }
   <a href="#" onclick="showPage('resume');closeMobile();return false;">Resume</a>
   <a href="#" onclick="showPage('blog');closeMobile();return false;">Blog</a>
   <a href="#" onclick="showPage('work');closeMobile();return false;">My Work</a>
-  <a href="#" onclick="showPage('final');closeMobile();return false;">Final Project</a>
   <span class="mobile-sub-label">Blog Posts</span>
   <div class="mobile-sub">
     <a href="#" onclick="openBlog(1);closeMobile();return false;"><span class="post-num">1.</span> Shell Eco-marathon</a>
@@ -868,13 +887,12 @@ footer em { color: var(--gold); font-style: normal; }
          <div class="card-desc">Mar 15 2026</div>
          <span class="card-arrow">Read Post →</span>
       </div>
-
-<div class="blog-card" onclick="openBlog(6)">
-  <div class="card-num">06</div>
-  <div class="card-title">The Poster Workshop</div>
-  <div class="card-desc">April 5 2026</div>
-  <span class="card-arrow">Read Post →</span>
-</div>
+      <div class="blog-card" onclick="openBlog(6)">
+        <div class="card-num">06</div>
+        <div class="card-title">The Poster Workshop</div>
+        <div class="card-desc">April 5 2026</div>
+        <span class="card-arrow">Read Post →</span>
+      </div>
       <div class="blog-card locked"><div class="card-num">07</div><span class="coming-tag"></span></div>
       <div class="blog-card locked"><div class="card-num">08</div><span class="coming-tag"></span></div>
       <div class="blog-card locked"><div class="card-num">09</div><span class="coming-tag"></span></div>
@@ -1056,7 +1074,7 @@ footer em { color: var(--gold); font-style: normal; }
     </div>
   </div>
 
-<!-- POST 6 -->
+  <!-- POST 6 -->
   <div class="blog-post-page" id="post-6">
     <div class="post-header">
       <span class="post-tag">Blog · Post 06 of 10</span>
@@ -1155,7 +1173,7 @@ footer em { color: var(--gold); font-style: normal; }
         <h2 class="sec-title">Documents &amp;<br><em>Assignments</em></h2>
         <div class="gold-line"></div>
       </div>
-      <div class="blog-count">5</div>
+      <div class="blog-count">6</div>
     </div>
 
     <div class="blog-grid">
@@ -1229,6 +1247,19 @@ footer em { color: var(--gold); font-style: normal; }
         <span class="card-arrow">View PDF →</span>
       </div>
 
+      <!-- 6. Final Project (highlighted, opens new page) -->
+      <div class="blog-card final-card" onclick="showPage('final')">
+        <div class="card-num">06</div>
+        <div class="card-title">Final Project — Walkability in Education City</div>
+        <div class="card-desc" style="margin-bottom:0.8rem;">Spring 2026</div>
+        <div class="card-desc">
+          The complete semester-long technical research project by <em>Team Cocktail</em>:
+          technical report drafts, team presentation, and the final research poster —
+          all documenting our analysis of walkability solutions for Education City, Qatar.
+        </div>
+        <span class="card-arrow">Open Final Project →</span>
+      </div>
+
     </div>
   </div>
   <footer>
@@ -1243,20 +1274,20 @@ footer em { color: var(--gold); font-style: normal; }
 ══════════════════════════════════════════════════ -->
 <div id="page-final" class="page">
   <div class="blog-overview-inner">
+    <button class="back-button" onclick="showPage('work')">← Back to My Work</button>
+
     <div class="blog-header">
       <div>
         <p class="eyebrow">Final Project</p>
         <h2 class="sec-title">Walkability in<br><em>Education City</em></h2>
         <div class="gold-line"></div>
-        <!--<p class="final-intro">
+        <p class="final-intro">
           A semester-long technical research project by <strong>Team Cocktail</strong>
           (Aazim Rafeeq, Hiba Syed, Kel Doliente, Khaldoun Saadeddine, and myself)
           investigating the lack of pedestrian walkability in Education City, Qatar.
-          The project analyzes four potential solutions — Park and Plant, cool pavement
-          coatings, climate-controlled walkways, and solar-powered misting systems —
-          and recommends the most effective approach using a weighted decision matrix
-          aligned with QNV 2030 goals.
-        </p>-->
+          The project analyzes four potential solutions and recommends the most effective
+          approach using a weighted decision matrix aligned with QNV 2030 goals.
+        </p>
       </div>
       <div class="blog-count">4</div>
     </div>
@@ -1345,7 +1376,6 @@ const navItems = {
   'resume':  document.getElementById('nav-resume'),
   'blog':    document.getElementById('nav-blog'),
   'work':    document.getElementById('nav-work'),
-  'final':   document.getElementById('nav-final'),
   'contact': document.getElementById('nav-contact')
 };
 
@@ -1360,7 +1390,12 @@ function showPage(id) {
   Object.keys(navItems).forEach(k => {
     if (navItems[k]) navItems[k].classList.remove('active');
   });
-  if (navItems[id]) navItems[id].classList.add('active');
+  // When on the Final Project page, keep "My Work" highlighted in the navbar
+  if (id === 'final' && navItems['work']) {
+    navItems['work'].classList.add('active');
+  } else if (navItems[id]) {
+    navItems[id].classList.add('active');
+  }
 
   window.scrollTo({ top: 0 });
 }
