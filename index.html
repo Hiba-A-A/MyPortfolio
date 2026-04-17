@@ -196,8 +196,8 @@ nav {
   animation: fadeUp 0.8s 0.45s ease both; opacity: 0;
 }
 .hero-desc {
-  font-size: 1.15rem; line-height: 1.9; color: var(--muted);
-  max-width: 58ch; margin: 0 auto 3rem;
+  font-size: 1.3rem; line-height: 1.9; color: var(--muted);
+  max-width: 1800px; margin: 0 auto 3rem;
   animation: fadeUp 0.8s 0.55s ease both; opacity: 0;
 }
 .hero-btns {
@@ -238,7 +238,7 @@ nav {
 #page-about { background: var(--black2); }
 .about-inner {
   padding: calc(var(--nav-h) + 5rem) 3.5rem 6rem;
-  max-width: 1300px; margin: 0 auto;
+  max-width: 1800px; margin: 0 auto;
 }
 .about-wrap {
   display: grid;
@@ -291,14 +291,14 @@ nav {
 .sec-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem,3.5vw,3rem); font-weight: 700; line-height: 1.15; color: var(--white); }
 .sec-title em { font-style: italic; color: var(--gold); }
 .gold-line { width: 44px; height: 1px; background: var(--gold); margin: 1.2rem 0 2.5rem; }
-
+.font-sizee{font-size: 200px;}
 /* ══════════════════════════════════════════
    RESUME PAGE
 ══════════════════════════════════════════ */
 #page-resume { background: var(--black2); }
 .resume-inner {
   padding: calc(var(--nav-h) + 6rem) 3.5rem 6rem;
-  max-width: 1200px; margin: 0 auto;
+  max-width: 1800px; margin: 0 auto;
 }
 .resume-header {
   margin-bottom: 3rem;
@@ -343,7 +343,7 @@ nav {
 #page-blog { background: var(--black2); }
 .blog-overview-inner {
   padding: calc(var(--nav-h) + 5rem) 3.5rem 6rem;
-  max-width: 1300px; margin: 0 auto;
+  max-width: 1800px; margin: 0 auto;
 }
 .blog-header {
   display: flex; align-items: flex-end; justify-content: space-between;
@@ -362,7 +362,7 @@ nav {
 }
 .blog-card img {
   width: 100%;
-  height: 220px;
+  height: 350px;
   object-fit: cover;
   object-position: center;
   margin-bottom: 1.2rem;
@@ -399,7 +399,7 @@ nav {
 ══════════════════════════════════════════ */
 #page-work .blog-overview-inner,
 #page-final .blog-overview-inner {
-  max-width: 1300px;
+  max-width: 1500px;
 }
 #page-work .blog-grid,
 #page-final .blog-grid {
@@ -644,6 +644,91 @@ footer em { color: var(--gold); font-style: normal; }
   #page-work .card-title, #page-final .card-title { font-size: 1.25rem; }
   #page-work .card-num, #page-final .card-num { font-size: 2.6rem; }
 }
+
+
+/* ══════════════════════════════════════════
+   MY TEAM PAGE
+══════════════════════════════════════════ */
+#page-team { background: var(--black2); }
+.team-inner {
+  padding: calc(var(--nav-h) + 5rem) 3.5rem 6rem;
+  max-width: 1500px; margin: 0 auto;
+}
+.team-header-center {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.team-header-center h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 900; line-height: 1.1;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+.team-header-center h2 em { font-style: italic; color: var(--gold); }
+.team-quote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--muted);
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+}
+.team-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.team-photo {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background: linear-gradient(135deg, var(--gold-dim), rgba(36,98,196,0.18));
+  border: 1px solid var(--gold-border);
+  margin-bottom: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--gold);
+  position: relative;
+  overflow: hidden;
+}
+.team-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+.team-role {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+.team-bio {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--muted);
+}
+@media (max-width: 1100px) {
+  .team-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 700px) {
+  .team-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .team-inner { padding: calc(var(--nav-h) + 3rem) 1.5rem 5rem; }
+}
+@media (max-width: 480px) {
+  .team-grid { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
@@ -660,6 +745,7 @@ footer em { color: var(--gold); font-style: normal; }
     <li><a href="#" id="nav-about" onclick="showPage('about');return false;">About Me</a></li>
     <li><a href="#" id="nav-resume" onclick="showPage('resume');return false;">Resume</a></li>
     <li><a href="#" id="nav-blog" onclick="showPage('blog');return false;">Blog</a></li>
+    <li><a href="#" id="nav-team" onclick="showPage('team');return false;">My Team</a></li> 
     <li><a href="#" id="nav-work" onclick="showPage('work');return false;">My Work</a></li>
   </ul>
 
@@ -676,6 +762,7 @@ footer em { color: var(--gold); font-style: normal; }
   <a href="#" onclick="showPage('about');closeMobile();return false;">About Me</a>
   <a href="#" onclick="showPage('resume');closeMobile();return false;">Resume</a>
   <a href="#" onclick="showPage('blog');closeMobile();return false;">Blog</a>
+  <a href="#" onclick="showPage('team');closeMobile();return false;">My Team</a>
   <a href="#" onclick="showPage('work');closeMobile();return false;">My Work</a>
   <span class="mobile-sub-label">Blog Posts</span>
   <div class="mobile-sub">
@@ -737,9 +824,9 @@ footer em { color: var(--gold); font-style: normal; }
       <div class="about-body">
         <p class="eyebrow">About Me</p>
         <div class="gold-line"></div>
-        <p>I am an Electrical Engineering student in Qatar, originally from Lebanon. My passion for the field began in my early teens when my curiosity led me to work alongside a local electrician. That hands-on experience sparked a lasting fascination with engineering and fueled my dedication to designing the technologies that power the modern world.</p>
-        <p>Because I believe strongly in maintaining a balanced life, I have always made time for pursuits outside of my major. Back in Lebanon, I played semi-professional football starting at age 14, led my high school acting team in over 30 performances, and spent a year volunteering with the Red Cross. Today, I continue to value that balance as a player on the university football team here in Qatar.</p>
-        <p>These activities have fundamentally shaped my character, building the communication and teamwork skills that are essential for success in ENG 210. This ePortfolio documents my academic growth, showcasing how I draw on these diverse interpersonal experiences to enhance my technical writing and clearly communicate complex concepts.</p>
+        <p class="font-sizee">I am an Electrical Engineering student in Qatar, originally from Lebanon. My passion for the field began in my early teens when my curiosity led me to work alongside a local electrician. That hands-on experience sparked a lasting fascination with engineering and fueled my dedication to designing the technologies that power the modern world.</p>
+        <p class="font-sizee">Because I believe strongly in maintaining a balanced life, I have always made time for pursuits outside of my major. Back in Lebanon, I played semi-professional football starting at age 14, led my high school acting team in over 30 performances, and spent a year volunteering with the Red Cross. Today, I continue to value that balance as a player on the university football team here in Qatar.</p>
+        <p class="font-sizee">These activities have fundamentally shaped my character, building the communication and teamwork skills that are essential for success in ENG 210. This ePortfolio documents my academic growth, showcasing how I draw on these diverse interpersonal experiences to enhance my technical writing and clearly communicate complex concepts.</p>
         <div class="facts">
           <div class="fact"><div class="fact-lbl">University</div><div class="fact-val">HBKU, Qatar</div></div>
           <div class="fact"><div class="fact-lbl">Major</div><div class="fact-val">Electrical Engineering</div></div>
@@ -889,6 +976,7 @@ footer em { color: var(--gold); font-style: normal; }
       </div>
       <div class="blog-card" onclick="openBlog(6)">
         <div class="card-num">06</div>
+        <img src="blog6 cover.png" alt="Planning the chaos">
         <div class="card-title">The Poster Workshop</div>
         <div class="card-desc">April 5 2026</div>
         <span class="card-arrow">Read Post →</span>
@@ -1165,6 +1253,65 @@ footer em { color: var(--gold); font-style: normal; }
 
 </div><!-- /page-blog-post -->
 
+
+<!-- ══════════════════════════════════════════════════
+     PAGE: MY TEAM
+══════════════════════════════════════════════════ -->
+<div id="page-team" class="page">
+  <div class="team-inner">
+
+    <div class="team-header-center">
+      <h2>Meet my <em>team!!</em></h2>
+      <p class="team-quote">"Coming together is a beginning, staying together is progress, and working together is a success." — Henry Ford</p>
+    </div>
+
+    <div class="team-grid">
+
+      <!-- Member 1: Youssef -->
+      <div class="team-member">
+        <div class="team-photo"><img src="youssef.jpeg" alt="Youssef Abou Ali"></div>
+        <div class="team-role">Organizer and Final Touch</div>
+        <p class="team-bio">Hi, my name is Youssef Abou Ali, an Electrical Engineering student at HBKU. I played a significant role in the ideation process of our drafts, I always make sure our work is organised and I add the final touch. A fun fact about me is that I can play 5 different positions on a football field ⚽️</p>
+      </div>
+
+      <!-- Member 2: Kel -->
+      <div class="team-member">
+          <div class="team-photo"><img src="Kel.jpeg">
+</div>
+        <div class="team-role">Creative Thinker</div>
+        <p class="team-bio">Hi, my name is Kel Doliente, a Mechanical Engineering student at HBKU. I proposed the idea of pursuing tree-canopied walkways for our ENGL 220 course. An insignificant fun fact about me is that I am red-green colorblind 👁.</p>
+      </div>
+
+      <!-- Member 3: Khaldoun -->
+      <div class="team-member">
+                  <div class="team-photo"><img src="Khaldoun.jpeg" alt="Khaldoun Saadeddine">
+</div>
+        <div class="team-role">Leader</div>
+        <p class="team-bio">Hi, I’m Khaldoun Saadeddine, a mechanical engineering student at HBKU. I conducted research on the possible solution of having enclosed, air conditioned walkways. In addition I supported the group by working on the visual aspect of assignments. A little fun fact about me is that i had more than 20 pets in my childhood.</p>
+      </div>
+
+      <!-- Member 4: Hiba -->
+      <div class="team-member">
+        <div class="team-photo"><img src="Hiba.jpeg" alt="Hiba Syed"></div>
+        <div class="team-role">Research Specialist</div>
+        <p class="team-bio">Hi! My name is Hiba Syed. I study chemical engineering in HBKU. I did extensive research on the cool pavement coatings solution and also supported my group in making all the documents and keeping it professional. A little fun fact about me is that I hold a black belt in the korean martial art taekwondo.</p>
+      </div>
+
+      <!-- Member 5: Aazim -->
+      <div class="team-member">
+        <div class="team-photo"><img src="aazim.png" alt="Aazim Rahman"></div>
+        <div class="team-role">Coordinator</div>
+        <p class="team-bio"></p>
+      </div>
+
+    </div>
+  </div>
+  <footer>
+    <span><em>Youssef Abou Ali</em></span>
+    <span>ENG 210 · HBKU Qatar</span>
+    <span>Spring 2026</span>
+  </footer>
+</div>
 <!-- ══════════════════════════════════════════════════
      PAGE: MY WORK
 ══════════════════════════════════════════════════ -->
@@ -1370,7 +1517,7 @@ footer em { color: var(--gold); font-style: normal; }
 let mobileOpen = false;
 
 // All page IDs — must include every page that showPage() can navigate to
-const allPages = ['home','about','resume','blog','work','final','contact','blog-post'];
+const allPages = ['home','about','resume','blog','team','work','final','contact','blog-post'];
 
 // Nav items keyed by page ID
 const navItems = {
@@ -1378,6 +1525,7 @@ const navItems = {
   'about':   document.getElementById('nav-about'),
   'resume':  document.getElementById('nav-resume'),
   'blog':    document.getElementById('nav-blog'),
+  'team':    document.getElementById('nav-team'),
   'work':    document.getElementById('nav-work'),
   'contact': document.getElementById('nav-contact')
 };
