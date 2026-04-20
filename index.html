@@ -990,10 +990,14 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
         <div class="card-desc">April 5 2026</div>
         <span class="card-arrow">Read Post →</span>
       </div>
-      <div class="blog-card locked"><div class="card-num">07</div><span class="coming-tag"></span></div>
-      <div class="blog-card locked"><div class="card-num">08</div><span class="coming-tag"></span></div>
-      <div class="blog-card locked"><div class="card-num">09</div><span class="coming-tag"></span></div>
-      <div class="blog-card locked"><div class="card-num">10</div><span class="coming-tag"></span></div>
+      <div class="blog-card" onclick="openBlog(7)">
+  <div class="card-num">07</div>
+  <img src="blog7 cover.png" alt="Final Reflection">
+  <div class="card-title">Final Reflection</div>
+  <div class="card-desc">April 20, 2026</div>
+  <span class="card-arrow">Read Post →</span>
+</div>
+   
     </div>
   </div>
   <footer>
@@ -1196,69 +1200,39 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
     </div>
   </div>
 
-  <!-- POST 7 -->
-  <div class="blog-post-page" id="post-7">
-    <div class="post-header">
-      <span class="post-tag">Blog · Post 07 of 10</span>
-      <div class="post-num-big">07</div>
-      <h1 class="post-title"></h1>
-      <div class="card-desc1"></div>
-    </div>
-    <div class="post-body"></div>
-    <div class="post-nav">
-      <button class="post-nav-btn" onclick="openBlog(6)">← Previous</button>
-      <span class="post-progress">7 / 10</span>
-      <button class="post-nav-btn primary" onclick="openBlog(8)">Next →</button>
-    </div>
+<!-- POST 7 -->
+<div class="blog-post-page" id="post-7">
+  <div class="post-header">
+    <span class="post-tag">Blog · Post 07 of 10</span>
+    <div class="post-num-big">07</div>
+    <h1 class="post-title">Final Reflection</h1>
+    <div class="card-desc1">April 20, 2026 ·
+       A look back at growth, trust, and the lessons that shaped my journey through ENG 210.</div>
   </div>
+  <div class="post-body">
+    <p>If one word could describe my path in this course, it is "growth." In ENG 210, I did not just build strong technical skills; I also developed a more professional character that is ready for any work environment or team setting.</p>
 
-  <!-- POST 8 -->
-  <div class="blog-post-page" id="post-8">
-    <div class="post-header">
-      <span class="post-tag">Blog · Post 08 of 10</span>
-      <div class="post-num-big">08</div>
-      <h1 class="post-title"></h1>
-      <div class="card-desc1"></div>
-    </div>
-    <div class="post-body"></div>
-    <div class="post-nav">
-      <button class="post-nav-btn" onclick="openBlog(7)">← Previous</button>
-      <span class="post-progress">8 / 10</span>
-      <button class="post-nav-btn primary" onclick="openBlog(9)">Next →</button>
-    </div>
-  </div>
+    <p>It all started with our first assignment: an email explaining our group preferences. I honestly wrote that I wanted to work with my friends, which would have meant staying within my comfort zone. Instead, I found myself in Team Cocktail, a group composed of individuals with diverse backgrounds and entirely different ways of thinking. Yet, we were united by a single goal: succeeding in this course.</p>
 
-  <!-- POST 9 -->
-  <div class="blog-post-page" id="post-9">
-    <div class="post-header">
-      <span class="post-tag">Blog · Post 09 of 10</span>
-      <div class="post-num-big">09</div>
-      <h1 class="post-title"></h1>
-      <div class="card-desc1"></div>
-    </div>
-    <div class="post-body"></div>
-    <div class="post-nav">
-      <button class="post-nav-btn" onclick="openBlog(8)">← Previous</button>
-      <span class="post-progress">9 / 10</span>
-      <button class="post-nav-btn primary" onclick="openBlog(10)">Next →</button>
-    </div>
-  </div>
+    <p>Stepping out of my comfort zone taught me the absolute necessity of team communication and trust. Because we each brought different perspectives to the table, success required relying heavily on one another. More importantly, I learned to truly trust my teammates. I realized that a team functions best when you trust others to complete their assigned parts, praise their good work, and respectfully support their weaknesses. This made our workflow much faster and built mutual respect among the group.</p>
 
-  <!-- POST 10 -->
-  <div class="blog-post-page" id="post-10">
-    <div class="post-header">
-      <span class="post-tag">Blog · Post 10 of 10</span>
-      <div class="post-num-big">10</div>
-      <h1 class="post-title"></h1>
-      <div class="card-desc1"></div>
-    </div>
-    <div class="post-body"></div>
-    <div class="post-nav">
-      <button class="post-nav-btn" onclick="openBlog(9)">← Previous</button>
-      <span class="post-progress">10 / 10</span>
-      <button class="post-nav-btn primary" onclick="showPage('blog')">← Back to Blog</button>
-    </div>
+    <p>Along with trust, I learned the value of receiving feedback. In technical writing, there is no room for arrogance. No matter how strong an initial idea may seem, there is always room for development. Embracing constructive criticism allowed us to continually refine our work, turning our first drafts into polished documents. Specifically, the invaluable feedback we received from Ms. Lana and Ms. Olena on our initial work was instrumental in refining our delivery and turning our final presentation into an outstanding one.</p>
+
+    <p>Working on our technical report regarding campus walkability also improved my critical thinking and logic. The research process taught us how to analyze a real-world problem, study the facts, and propose a practical solution. Because of this, I now feel I have a strong foundation to take any new idea, study it deeply, and present it confidently to others.</p>
+
+    <p>Managing this research as a group also taught us how to handle deadlines effectively. We learned that when a team cooperates and divides work fairly, you can manage the stress of due dates and achieve great results together.</p>
+
+    <p>Ultimately, my experience in this course taught me that technical communication is not just a supplementary subject; it is an essential foundation for every future engineer. If you want to succeed in the workplace, knowing how to communicate your ideas and work effectively with people is what truly makes the difference.</p>
   </div>
+  <div class="post-nav">
+    <button class="post-nav-btn" onclick="openBlog(6)">← Previous</button>
+    <span class="post-progress">7 / 10</span>
+    <button class="post-nav-btn primary" onclick="showPage('blog')">← Back to Blog</button>
+   
+  </div>
+</div>
+
+
 
 </div><!-- /page-blog-post -->
 
@@ -1271,7 +1245,7 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
 
     <div class="team-header-center">
       <h2>Meet my <em>team!!</em></h2>
-      <p class="team-quote">"Coming together is a beginning, staying together is progress, and working together is a success." — Henry Ford</p>
+      <p style="font-size: 30px;" class="team-quote">Team Cocktail 🍹 </p>
     </div>
 
     <div class="team-grid">
@@ -1310,7 +1284,7 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
       <div class="team-member">
         <div class="team-photo"><img src="aazim.png" alt="Aazim Rahman"></div>
         <div class="team-role">Coordinator</div>
-        <p class="team-bio"></p>
+        <p class="team-bio">Hi! I'm Aazim and I'm a frontend developer intern learning cybersecurity who's pursuing Electrical Engineering. I like to think I work on logistics, interpreting information well to make sure the team produces a desired output.</p>
       </div>
 
     </div>
