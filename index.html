@@ -938,7 +938,7 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
     <li><a href="#" id="nav-resume" onclick="showPage('resume');return false;">Resume</a></li>
     <li><a href="#" id="nav-blog" onclick="showPage('blog');return false;">Blog</a></li>
     <li><a href="#" id="nav-team" onclick="showPage('team');return false;">My Team</a></li>
-    <li><a href="#" id="nav-work" onclick="showPage('work');return false;">My Work</a></li>
+    <li><a href="#" id="nav-work" onclick="showPage('work');return false;">Projects</a></li>
   </ul>
   <a href="#" class="nav-cta" id="nav-contact" onclick="showPage('contact');return false;">Contact Me</a>
   <button class="hamburger" id="hamburger" aria-label="Open menu">
@@ -953,7 +953,7 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
   <a href="#" onclick="showPage('resume');closeMobile();return false;">Resume</a>
   <a href="#" onclick="showPage('blog');closeMobile();return false;">Blog</a>
   <a href="#" onclick="showPage('team');closeMobile();return false;">My Team</a>
-  <a href="#" onclick="showPage('work');closeMobile();return false;">My Work</a>
+  <a href="#" onclick="showPage('work');closeMobile();return false;">Projects</a>
   <span class="mobile-sub-label">Blog Posts</span>
   <div class="mobile-sub">
     <a href="#" onclick="openBlog(1);closeMobile();return false;"><span class="post-num">1.</span> Shell Eco-marathon</a>
@@ -1441,7 +1441,7 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
 
     <div class="work-header">
       <div>
-        <p class="eyebrow">My Work</p>
+        <p class="eyebrow">Projects</p>
         <h2 class="sec-title">Documents &amp;<br><em>Assignments</em></h2>
         <div class="gold-line"></div>
       </div>
@@ -1582,13 +1582,13 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
     <span>Spring 2026</span>
   </footer>
 </div>
-
+```html
 <!-- ══════════════════════════════════════════════════
      PAGE: FINAL PROJECT  (redesigned with image cards)
 ══════════════════════════════════════════════════ -->
 <div id="page-final" class="page">
   <div class="blog-overview-inner">
-    <button class="back-button" onclick="showPage('work')">← Back to My Work</button>
+    <button class="back-button" onclick="showPage('work')">← Back to Projects</button>
 
     <div class="blog-header">
       <div>
@@ -1598,9 +1598,7 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
         <p class="final-intro">
           A semester-long technical research project by <strong>Team Cocktail</strong>
           (Aazim Rafeeq, Hiba Syed, Kel Doliente, Khaldoun Saadeddine, and myself)
-          investigating the lack of pedestrian walkability in Education City, Qatar.
-          The project analyzes four potential solutions and recommends the most effective
-          approach using a weighted decision matrix aligned with QNV 2030 goals.
+          investigating pedestrian walkability in Education City, Qatar.
         </p>
       </div>
       <div class="blog-count">4</div>
@@ -1611,8 +1609,7 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
       <!-- 01 · Technical Report — First Draft -->
       <div class="final-card" onclick="openFinalFile('Technical Report.pdf')">
         <div class="final-card-img">
-          <!-- Technical report / research document -->
-          <img src="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?w=700&q=80&fit=crop" alt="Technical report">
+          <img src="technical 2.webp" alt="Technical report">
           <div class="final-card-img-overlay"></div>
         </div>
         <div class="final-card-body">
@@ -1620,11 +1617,8 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
           <div class="final-card-title">Technical Report — First Draft</div>
           <div class="final-card-date">Apr 10, 2026</div>
           <div class="final-card-desc">
-            The initial full-length technical report examining Education City's walkability challenge.
-            Covers abstract, introduction, methodology, and results for all four proposed solutions,
-            followed by a weighted decision matrix identifying <em>Park and Plant</em>
-            (native Sidra and Ghaf tree planting) as the highest-scoring solution at 4.00/5.0.
-            Findings are tied directly to QNV 2030 and NDS3 sustainability targets.
+            Initial technical report covering the walkability issue, proposed solutions,
+            and decision matrix recommending <em>Park and Plant</em>.
           </div>
           <span class="final-card-arrow">View PDF →</span>
         </div>
@@ -1633,8 +1627,7 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
       <!-- 02 · Technical Report — Final Draft (locked) -->
       <div class="final-card locked">
         <div class="final-card-img">
-          <!-- Greyed-out document image -->
-          <img src="https://images.unsplash.com/photo-1512314889357-e157c22f938d?w=700&q=80&fit=crop" alt="Final draft coming soon">
+          <img src="technical report1 image.png" alt="Final draft coming soon">
           <div class="final-card-img-overlay"></div>
         </div>
         <div class="final-card-body">
@@ -1642,19 +1635,16 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
           <div class="final-card-title">Technical Report — Final Draft</div>
           <div class="final-card-date">Coming soon</div>
           <div class="final-card-desc">
-            The revised and polished version of the technical report, incorporating Dr. Naqaa's
-            feedback, refined analysis, and the team's final recommendations. Will be uploaded
-            once peer-review and instructor feedback have been addressed.
+            Final revised version with updated analysis, feedback, and refined recommendations.
           </div>
           <span class="coming-tag">Coming Soon</span>
         </div>
       </div>
 
       <!-- 03 · Presentation -->
-      <div class="final-card" onclick="openFinalFile('Walkability Presentation.pdf')">
+      <div class="final-card" onclick="openFinalFile('Walkability Presentation 1.pdf')">
         <div class="final-card-img">
-          <!-- Presentation / public speaking -->
-          <img src="https://images.unsplash.com/photo-1558008258-3256797b43f3?w=700&q=80&fit=crop" alt="Team presentation">
+          <img src="pres1.png" alt="Team presentation">
           <div class="final-card-img-overlay"></div>
         </div>
         <div class="final-card-body">
@@ -1662,21 +1652,17 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
           <div class="final-card-title">Team Presentation — Walkability</div>
           <div class="final-card-date">Spring 2026</div>
           <div class="final-card-desc">
-            A visual presentation deck delivered by Team Cocktail summarizing the core findings
-            of the technical report. Walks the audience through the walkability problem, four
-            candidate solutions with their advantages and trade-offs, the decision matrix
-            criteria (thermal comfort, sustainability, coverage &amp; scalability, feasibility),
-            and our final recommendation of the Park and Plant initiative.
+            Presentation summarizing the problem, evaluated solutions,
+            decision criteria, and final recommendation.
           </div>
           <span class="final-card-arrow">View PDF →</span>
         </div>
       </div>
 
       <!-- 04 · Final Poster -->
-      <div class="final-card" onclick="openFinalFile('Final Poster.pdf')">
+      <div class="final-card" onclick="openFinalFile('poster1.pdf')">
         <div class="final-card-img">
-          <!-- Trees / green canopy / sustainable design -->
-          <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=700&q=80&fit=crop" alt="Final poster">
+          <img src="pres2.png" alt="Final poster">
           <div class="final-card-img-overlay"></div>
         </div>
         <div class="final-card-body">
@@ -1684,11 +1670,8 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
           <div class="final-card-title">Final Poster — Walkability in Education City</div>
           <div class="final-card-date">Spring 2026</div>
           <div class="final-card-desc">
-            A full-quality research poster presenting the project at a glance: the walkability
-            problem in EC (57% private vehicle use vs. only 17% walking), the four proposed
-            solutions, alignment with QNV 2030's major criteria, and our chosen solution —
-            <em>Park and Plant</em> — with its advantages and the criteria considered.
-            Designed for public display and final project presentations.
+            Research poster highlighting the walkability challenge,
+            proposed solutions, and chosen initiative.
           </div>
           <span class="final-card-arrow">View Poster →</span>
         </div>
@@ -1702,6 +1685,8 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
     <span>Spring 2026</span>
   </footer>
 </div>
+```
+
 
 <!-- ─── SCRIPTS ─── -->
 <script>
