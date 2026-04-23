@@ -33,9 +33,6 @@ body {
 
 a { text-decoration: none; color: inherit; }
 
-/* ══════════════════════════════════════════
-   PAGE SYSTEM
-══════════════════════════════════════════ */
 .page {
   display: none;
   position: fixed;
@@ -60,7 +57,6 @@ nav {
   border-bottom: 1px solid var(--gold-border);
   box-shadow: 0 1px 20px rgba(10,58,140,0.07);
 }
-
 .nav-logo {
   font-family: 'Playfair Display', serif;
   font-size: 1.1rem; font-weight: 700;
@@ -72,13 +68,11 @@ nav {
   text-transform: uppercase; color: var(--muted);
   font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 500; margin-top: 2px;
 }
-
 .nav-links {
   display: flex; align-items: center;
   list-style: none; gap: 0;
 }
 .nav-links > li { position: relative; }
-
 .nav-links > li > a,
 .nav-links > li > button {
   display: flex; align-items: center; gap: 0.3rem;
@@ -91,7 +85,6 @@ nav {
 .nav-links > li > a:hover,
 .nav-links > li > button:hover { color: var(--gold); }
 .nav-links > li > a.active { color: var(--gold); }
-
 .nav-cta {
   margin-left: 1.2rem; padding: 0.55rem 1.35rem;
   background: var(--gold); color: #fff;
@@ -100,7 +93,6 @@ nav {
   transition: background 0.2s; white-space: nowrap; cursor: pointer;
 }
 .nav-cta:hover { background: var(--gold2); }
-
 .hamburger {
   display: none; flex-direction: column; gap: 5px;
   background: none; border: none; cursor: pointer;
@@ -172,7 +164,6 @@ nav {
   pointer-events: none;
 }
 .hero-inner { position: relative; z-index: 1; max-width: 900px; }
-
 .hero h1 {
   font-family: 'Playfair Display', serif;
   font-size: clamp(3rem, 6.5vw, 6.2rem);
@@ -181,7 +172,6 @@ nav {
   color: var(--white); letter-spacing: -0.01em;
 }
 .hero h1 em { font-style: italic; color: var(--gold); }
-
 .hero-role {
   font-family: 'Playfair Display', serif; font-style: italic;
   font-size: clamp(1.1rem, 2.2vw, 1.4rem); color: var(--white);
@@ -214,7 +204,6 @@ nav {
   border: 1.5px solid rgba(13,31,60,0.22);
 }
 .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
-
 .scroll-cue {
   position: absolute; bottom: 2.3rem; left: 50%; transform: translateX(-50%);
   display: flex; flex-direction: column; align-items: center; gap: 0.45rem;
@@ -262,7 +251,6 @@ nav {
 }
 .about-chip strong { display: block; font-size: 1.7rem; font-weight: 900; font-family: 'Playfair Display', serif; }
 .about-chip span { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; }
-
 .about-body p {
   font-size: 1.05rem; line-height: 1.95;
   color: var(--white); margin-bottom: 1.4rem; text-align: justify;
@@ -275,7 +263,6 @@ nav {
 .fact { background: var(--black); padding: 1.15rem 1.5rem; }
 .fact-lbl { font-size: 0.67rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem; font-weight: 700; }
 .fact-val { font-size: 1rem; color: var(--white); font-weight: 600; }
-
 .eyebrow { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; font-weight: 700; }
 .sec-title { font-family: 'Playfair Display', serif; font-size: clamp(2.1rem, 3.6vw, 3.1rem); font-weight: 900; line-height: 1.1; color: var(--white); letter-spacing: -0.01em; }
 .sec-title em { font-style: italic; color: var(--gold); }
@@ -375,47 +362,6 @@ nav {
 }
 
 /* ══════════════════════════════════════════
-   MY WORK + FINAL PROJECT
-══════════════════════════════════════════ */
-#page-work .blog-overview-inner,
-#page-final .blog-overview-inner { max-width: 1300px; }
-#page-work .blog-grid,
-#page-final .blog-grid { grid-template-columns: repeat(2, 1fr); }
-#page-work .blog-card,
-#page-final .blog-card { padding: 1.8rem 1.8rem 1.5rem; }
-#page-work .card-num,
-#page-final .card-num { font-size: 2.1rem; margin-bottom: 0.55rem; }
-#page-work .card-title,
-#page-final .card-title { font-size: 1.1rem; margin-bottom: 0.5rem; line-height: 1.35; }
-#page-work .card-desc,
-#page-final .card-desc { font-size: 0.9rem; line-height: 1.7; }
-#page-work .card-arrow,
-#page-final .card-arrow { font-size: 0.7rem; margin-top: 0.95rem; }
-
-.final-card {
-  background: linear-gradient(135deg, rgba(10,58,140,0.07), rgba(10,58,140,0.02)) !important;
-  border-left: 3px solid var(--gold);
-}
-.final-card .card-num { color: rgba(10,58,140,0.3) !important; }
-.final-card .card-title { color: var(--gold) !important; }
-
-.final-intro {
-  color: var(--muted); font-size: 0.98rem;
-  line-height: 1.85; max-width: 76ch; margin-top: 0.7rem;
-}
-.final-intro strong { color: var(--gold); font-weight: 700; }
-
-.back-button {
-  display: inline-flex; align-items: center; gap: 0.55rem;
-  margin-bottom: 1.8rem; padding: 0.6rem 1.25rem;
-  font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase;
-  font-weight: 700; cursor: pointer; transition: all 0.25s;
-  background: none; border: 1.5px solid var(--gold-border);
-  color: var(--muted); font-family: 'Plus Jakarta Sans', sans-serif;
-}
-.back-button:hover { border-color: var(--gold); color: var(--gold); }
-
-/* ══════════════════════════════════════════
    CONTACT PAGE
 ══════════════════════════════════════════ */
 #page-contact { background: var(--black2); }
@@ -448,7 +394,6 @@ nav {
   animation: fadeUp 0.5s ease both;
 }
 .blog-post-page.active { display: block; }
-
 .post-header {
   max-width: 900px; margin: 0 auto 3.2rem;
   border-bottom: 1px solid var(--gold-border); padding-bottom: 2.4rem;
@@ -471,13 +416,11 @@ nav {
 }
 .post-title em { font-style: italic; color: var(--gold); }
 .card-desc1 { font-size: 1rem; line-height: 1.75; color: var(--muted); font-weight: 500; }
-
 .post-body { max-width: 900px; margin: 0 auto; text-align: justify; }
 .post-body p {
   margin-bottom: 1.5rem; line-height: 1.95;
   font-size: 1.1rem; color: var(--white); font-weight: 400;
 }
-
 .post-image {
   margin: 2.4rem auto; max-width: 700px;
   background: #fff; padding: 10px 10px 38px;
@@ -490,7 +433,6 @@ nav {
 .post-image img { display: block; width: 100%; object-fit: cover; }
 #post-1 .post-image:nth-of-type(2) { transform: rotate(0.6deg); }
 #post-1 .post-image:nth-of-type(2):hover { transform: rotate(0deg) scale(1.01); }
-
 .post-image-duo {
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 10px; margin: 2.4rem 0;
@@ -522,8 +464,6 @@ nav {
   font-family: 'Playfair Display', serif; font-style: italic;
   font-size: 1.05rem; color: var(--gold); letter-spacing: 0.04em; font-weight: 700;
 }
-
-/* ── VIDEO EMBEDS ── */
 .post-videos {
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 1rem; margin: 2.4rem 0;
@@ -550,36 +490,8 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
 /* ── ANIMATIONS ── */
 @keyframes fadeUp { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
 
-/* ── RESPONSIVE ── */
-@media (max-width: 1100px) {
-  nav { padding: 0 1.8rem; }
-  .nav-links > li > a { padding: 0.5rem 0.78rem; font-size: 0.75rem; }
-  .nav-cta { margin-left: 0.8rem; padding: 0.5rem 1.05rem; font-size: 0.74rem; }
-  .blog-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 960px) {
-  nav { padding: 0 1.4rem; }
-  .nav-links, .nav-cta { display: none; }
-  .hamburger { display: flex; }
-  .about-inner, .resume-inner, .blog-overview-inner { padding: calc(var(--nav-h) + 2.8rem) 1.5rem 5rem; }
-  .blog-post-page { padding: calc(var(--nav-h) + 2.5rem) 1.4rem 5rem; }
-  .about-wrap { grid-template-columns: 1fr; gap: 2.8rem; }
-  .about-img-outer { position: static; max-width: 380px; margin: 0 auto; }
-  .about-chip { right: 0; }
-  .blog-grid { grid-template-columns: 1fr; }
-  #page-work .blog-grid, #page-final .blog-grid { grid-template-columns: 1fr; }
-  .facts { grid-template-columns: 1fr; }
-  footer { justify-content: center; text-align: center; padding: 1.4rem 1.5rem; }
-  .post-nav { flex-direction: column; align-items: stretch; text-align: center; }
-  .post-nav-btn { justify-content: center; }
-  .contact-inner-page { padding: calc(var(--nav-h) + 2.8rem) 1.5rem 5rem; }
-  #page-work .blog-card, #page-final .blog-card { padding: 1.5rem 1.4rem 1.3rem; }
-  #page-work .card-title, #page-final .card-title { font-size: 1.02rem; }
-  #page-work .card-num, #page-final .card-num { font-size: 1.8rem; }
-}
-
 /* ══════════════════════════════════════════
-   MY WORK — editorial list layout
+   MY WORK — redesigned with images
 ══════════════════════════════════════════ */
 #page-work { background: var(--black2); }
 
@@ -603,43 +515,81 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
   color: var(--muted); font-weight: 600; margin-top: 0.2rem;
 }
 
-/* ── Document rows ── */
-.work-list { margin-bottom: 2.5rem; }
+/* ── Document card rows (now with image) ── */
+.work-list { margin-bottom: 2.5rem; display: flex; flex-direction: column; gap: 1px; }
 
 .work-row {
   display: grid;
-  grid-template-columns: 3.5rem 1fr auto auto;
-  align-items: center;
-  gap: 0 2rem;
-  padding: 1.8rem 1.5rem;
+  grid-template-columns: 220px 3rem 1fr auto auto;
+  align-items: stretch;
+  gap: 0;
   background: var(--black);
   border-bottom: 1px solid var(--gold-border);
   cursor: pointer;
   position: relative;
-  transition: background 0.22s, padding-left 0.22s;
+  transition: background 0.22s;
   overflow: hidden;
 }
 .work-row::before {
   content: ''; position: absolute; left: 0; top: 0; bottom: 0;
   width: 3px; background: var(--gold);
   transform: scaleY(0); transform-origin: bottom;
-  transition: transform 0.3s ease;
+  transition: transform 0.35s ease;
+  z-index: 2;
 }
-.work-row:hover { background: var(--black3); padding-left: 2rem; }
-.work-row:hover::before { transform: scaleY(1); }
 .work-row:first-child { border-top: 1px solid var(--gold-border); }
+.work-row:hover { background: var(--black3); }
+.work-row:hover::before { transform: scaleY(1); }
 
+/* Image column */
+.work-row-img {
+  width: 220px;
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+}
+.work-row-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease, filter 0.4s ease;
+  filter: grayscale(15%);
+}
+.work-row:hover .work-row-img img {
+  transform: scale(1.06);
+  filter: grayscale(0%);
+}
+/* Subtle overlay on image */
+.work-row-img::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to right, transparent 60%, var(--black) 100%);
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.work-row:hover .work-row-img::after {
+  background: linear-gradient(to right, transparent 60%, var(--black3) 100%);
+}
+
+/* Number column */
 .work-row-num {
   font-family: 'Playfair Display', serif; font-style: italic;
-  font-size: 1.5rem; font-weight: 900; color: var(--gold-dim);
-  line-height: 1; transition: color 0.2s; align-self: start; padding-top: 0.1rem;
+  font-size: 1.4rem; font-weight: 900; color: var(--gold-dim);
+  line-height: 1; transition: color 0.2s;
+  padding: 1.8rem 0.5rem 1.8rem 1.2rem;
+  display: flex; align-items: flex-start; padding-top: 2rem;
 }
 .work-row:hover .work-row-num { color: rgba(36,98,196,0.3); }
 
-.work-row-body { min-width: 0; }
+/* Content */
+.work-row-body {
+  min-width: 0;
+  padding: 1.8rem 1.5rem 1.8rem 0.8rem;
+  display: flex; flex-direction: column; justify-content: center;
+}
 .work-row-title {
   font-family: 'Playfair Display', serif;
-  font-size: 1.15rem; font-weight: 700; color: var(--white);
+  font-size: 1.12rem; font-weight: 700; color: var(--white);
   line-height: 1.3; margin-bottom: 0.55rem;
   display: flex; align-items: baseline; gap: 0.7rem; flex-wrap: wrap;
   transition: color 0.2s;
@@ -647,20 +597,22 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
 .work-row:hover .work-row-title { color: var(--gold); }
 .work-row-course {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.67rem; font-weight: 700; font-style: normal;
+  font-size: 0.65rem; font-weight: 700; font-style: normal;
   letter-spacing: 0.15em; text-transform: uppercase;
   color: var(--gold); border: 1px solid var(--gold-border);
   padding: 0.18rem 0.6rem; line-height: 1;
 }
 .work-row-desc {
-  font-size: 0.9rem; line-height: 1.75;
+  font-size: 0.88rem; line-height: 1.75;
   color: var(--muted); max-width: 62ch;
 }
 
+/* Meta column */
 .work-row-meta {
   display: flex; flex-direction: column;
   align-items: flex-end; gap: 0.45rem; white-space: nowrap;
-  align-self: start; padding-top: 0.15rem;
+  padding: 1.8rem 1.2rem 1.8rem 0;
+  justify-content: flex-start; padding-top: 2rem;
 }
 .work-row-date {
   font-family: 'Playfair Display', serif; font-style: italic;
@@ -671,12 +623,14 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
   color: var(--muted); font-weight: 700;
 }
 
+/* CTA */
 .work-row-cta {
   font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
   font-weight: 700; color: var(--white); white-space: nowrap;
   opacity: 0; transform: translateX(-6px);
   transition: opacity 0.25s, transform 0.25s, color 0.2s;
-  align-self: center;
+  padding: 1.8rem 1.6rem 1.8rem 0;
+  display: flex; align-items: center;
 }
 .work-row-cta span { color: var(--gold); }
 .work-row:hover .work-row-cta { opacity: 1; transform: translateX(0); color: var(--gold); }
@@ -695,6 +649,37 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
 }
 .work-featured:hover { box-shadow: 0 12px 48px rgba(36,98,196,0.14); }
 
+/* Featured card with image strip */
+.work-featured-img {
+  width: 100%; height: 240px;
+  overflow: hidden; position: relative;
+}
+.work-featured-img img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.6s ease, filter 0.4s ease;
+  filter: grayscale(20%);
+}
+.work-featured:hover .work-featured-img img {
+  transform: scale(1.04);
+  filter: grayscale(0%);
+}
+.work-featured-img::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, rgba(13,31,60,0.55) 100%);
+  pointer-events: none;
+}
+/* Overlay title on image */
+.work-featured-img-title {
+  position: absolute; bottom: 1.4rem; left: 1.8rem; right: 1.8rem;
+  z-index: 2;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 2.5vw, 2.1rem); font-weight: 900;
+  line-height: 1.1; color: #fff; letter-spacing: -0.01em;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+.work-featured-img-title em { font-style: italic; color: rgba(255,255,255,0.85); }
+
 .work-featured-label {
   font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase;
   font-weight: 700; color: #fff; background: var(--gold);
@@ -702,25 +687,17 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
 }
 .work-featured-inner {
   display: grid; grid-template-columns: 1fr 1fr;
-  gap: 3rem; padding: 2.5rem 3rem 3rem; align-items: end;
+  gap: 3rem; padding: 2rem 3rem 2.8rem; align-items: end;
 }
 .work-featured-num {
   font-family: 'Playfair Display', serif; font-style: italic;
-  font-size: 5rem; font-weight: 900; line-height: 1;
-  color: rgba(36,98,196,0.12); margin-bottom: -0.5rem;
+  font-size: 4rem; font-weight: 900; line-height: 1;
+  color: rgba(36,98,196,0.10); margin-bottom: -0.4rem;
 }
-.work-featured-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 900;
-  line-height: 1.1; color: var(--gold); letter-spacing: -0.01em;
-  margin-bottom: 1.1rem;
-}
-.work-featured-title em { font-style: italic; }
 .work-featured-desc {
   font-size: 0.95rem; line-height: 1.85; color: var(--muted);
 }
 .work-featured-desc strong { color: var(--gold); font-weight: 700; }
-
 .work-featured-right {
   display: flex; flex-direction: column;
   justify-content: flex-end; gap: 1.8rem;
@@ -743,23 +720,111 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
 }
 .work-featured:hover .work-featured-cta { gap: 0.9rem; }
 
-/* ── Responsive ── */
-@media (max-width: 960px) {
-  .work-inner { padding: calc(var(--nav-h) + 2.8rem) 1.5rem 5rem; }
-  .work-row {
-    grid-template-columns: 2.8rem 1fr;
-    grid-template-rows: auto auto;
-    gap: 0.4rem 1.2rem;
-  }
-  .work-row-meta { flex-direction: row; align-items: center; gap: 0.7rem; grid-column: 2; }
-  .work-row-cta { display: none; }
-  .work-featured-inner { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.8rem 1.8rem 2.2rem; }
-  .work-featured-num { font-size: 3.5rem; }
+/* ══════════════════════════════════════════
+   FINAL PROJECT PAGE — image cards
+══════════════════════════════════════════ */
+#page-final { background: var(--black2); }
+#page-final .blog-overview-inner { max-width: 1300px; }
+
+.final-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
 }
-@media (max-width: 600px) {
-  .work-row { padding: 1.4rem 1rem; }
-  .work-row:hover { padding-left: 1.4rem; }
+
+.final-card {
+  background: var(--black);
+  display: flex; flex-direction: column;
+  cursor: pointer;
+  position: relative; overflow: hidden;
+  transition: background 0.25s;
+  box-shadow: 0 1px 4px rgba(10,58,140,0.04);
 }
+.final-card::before {
+  content: ''; position: absolute; top: 0; left: 0;
+  width: 3px; height: 0; background: var(--gold);
+  transition: height 0.4s ease; z-index: 2;
+}
+.final-card:hover { background: var(--black3); }
+.final-card:hover::before { height: 100%; }
+.final-card.locked { cursor: default; }
+.final-card.locked:hover { background: var(--black); }
+.final-card.locked:hover::before { height: 0; }
+
+/* Image on final cards */
+.final-card-img {
+  width: 100%; height: 200px;
+  overflow: hidden; position: relative;
+}
+.final-card-img img {
+  width: 100%; height: 100%; object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease, filter 0.4s ease;
+  filter: grayscale(20%);
+}
+.final-card:hover .final-card-img img {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+}
+.final-card-img-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, transparent 45%, rgba(13,31,60,0.5) 100%);
+  pointer-events: none;
+}
+.final-card.locked .final-card-img img {
+  filter: grayscale(60%) opacity(0.6);
+}
+
+/* Card body */
+.final-card-body {
+  padding: 1.5rem 1.6rem 1.4rem;
+  display: flex; flex-direction: column; flex: 1;
+}
+.final-card-num {
+  font-family: 'Playfair Display', serif; font-style: italic;
+  font-size: 1.8rem; font-weight: 900; color: var(--gold-dim);
+  line-height: 1; margin-bottom: 0.5rem;
+  transition: color 0.3s;
+}
+.final-card:hover .final-card-num { color: rgba(36,98,196,0.22); }
+.final-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.08rem; font-weight: 700; line-height: 1.35;
+  margin-bottom: 0.4rem; transition: color 0.2s; color: var(--white);
+}
+.final-card:hover .final-card-title { color: var(--gold); }
+.final-card-date {
+  font-size: 0.78rem; color: var(--muted); margin-bottom: 0.9rem;
+  font-weight: 600; letter-spacing: 0.04em;
+}
+.final-card-desc {
+  font-size: 0.86rem; line-height: 1.7; color: var(--muted); flex: 1;
+}
+.final-card-arrow {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  margin-top: 1rem; font-size: 0.7rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--gold);
+  opacity: 0; transform: translateX(-5px);
+  transition: opacity 0.3s, transform 0.3s; font-weight: 700;
+}
+.final-card:hover .final-card-arrow { opacity: 1; transform: translateX(0); }
+
+/* ── back button ── */
+.back-button {
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  margin-bottom: 1.8rem; padding: 0.6rem 1.25rem;
+  font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase;
+  font-weight: 700; cursor: pointer; transition: all 0.25s;
+  background: none; border: 1.5px solid var(--gold-border);
+  color: var(--muted); font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.back-button:hover { border-color: var(--gold); color: var(--gold); }
+
+.final-intro {
+  color: var(--muted); font-size: 0.98rem;
+  line-height: 1.85; max-width: 76ch; margin-top: 0.7rem;
+}
+.final-intro strong { color: var(--gold); font-weight: 700; }
 
 /* ══════════════════════════════════════════
    MY TEAM PAGE
@@ -801,12 +866,62 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
 }
 .team-bio { font-size: 0.92rem; line-height: 1.8; color: var(--muted); }
 
-@media (max-width: 1100px) { .team-grid { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 700px) {
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
+@media (max-width: 1100px) {
+  nav { padding: 0 1.8rem; }
+  .nav-links > li > a { padding: 0.5rem 0.78rem; font-size: 0.75rem; }
+  .nav-cta { margin-left: 0.8rem; padding: 0.5rem 1.05rem; font-size: 0.74rem; }
+  .blog-grid { grid-template-columns: repeat(2, 1fr); }
+  .team-grid { grid-template-columns: repeat(3, 1fr); }
+  .work-row { grid-template-columns: 180px 3rem 1fr auto; }
+  .work-row-cta { display: none; }
+  .final-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 960px) {
+  nav { padding: 0 1.4rem; }
+  .nav-links, .nav-cta { display: none; }
+  .hamburger { display: flex; }
+  .about-inner, .resume-inner, .blog-overview-inner { padding: calc(var(--nav-h) + 2.8rem) 1.5rem 5rem; }
+  .blog-post-page { padding: calc(var(--nav-h) + 2.5rem) 1.4rem 5rem; }
+  .about-wrap { grid-template-columns: 1fr; gap: 2.8rem; }
+  .about-img-outer { position: static; max-width: 380px; margin: 0 auto; }
+  .about-chip { right: 0; }
+  .blog-grid { grid-template-columns: 1fr; }
+  .facts { grid-template-columns: 1fr; }
+  footer { justify-content: center; text-align: center; padding: 1.4rem 1.5rem; }
+  .post-nav { flex-direction: column; align-items: stretch; text-align: center; }
+  .post-nav-btn { justify-content: center; }
+  .contact-inner-page { padding: calc(var(--nav-h) + 2.8rem) 1.5rem 5rem; }
+  /* Work page responsive */
+  .work-inner { padding: calc(var(--nav-h) + 2.8rem) 1.5rem 5rem; }
+  .work-row {
+    grid-template-columns: 130px 2.5rem 1fr auto;
+    min-height: 120px;
+  }
+  .work-row-img { width: 130px; }
+  .work-row-meta { padding: 1.2rem 1rem 1.2rem 0; }
+  .work-featured-inner { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.8rem 1.8rem 2.2rem; }
+  .work-featured-img { height: 180px; }
+  /* Final project responsive */
+  .final-grid { grid-template-columns: 1fr; }
   .team-grid { grid-template-columns: 1fr 1fr; gap: 1.4rem; }
   .team-inner { padding: calc(var(--nav-h) + 2.8rem) 1.4rem 5rem; }
 }
-@media (max-width: 480px) { .team-grid { grid-template-columns: 1fr; } }
+
+@media (max-width: 600px) {
+  .work-row {
+    grid-template-columns: 110px 2.2rem 1fr;
+    min-height: 110px;
+  }
+  .work-row-img { width: 110px; }
+  .work-row-meta { display: none; }
+  .blog-grid { grid-template-columns: 1fr; }
+  .final-grid { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
@@ -817,18 +932,15 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
     Youssef Abou Ali
     <span>ePortfolio · ENG 210</span>
   </a>
-
   <ul class="nav-links">
     <li><a href="#" id="nav-home" onclick="showPage('home');return false;" class="active">Home</a></li>
     <li><a href="#" id="nav-about" onclick="showPage('about');return false;">About Me</a></li>
     <li><a href="#" id="nav-resume" onclick="showPage('resume');return false;">Resume</a></li>
     <li><a href="#" id="nav-blog" onclick="showPage('blog');return false;">Blog</a></li>
-    <li><a href="#" id="nav-team" onclick="showPage('team');return false;">My Team</a></li> 
+    <li><a href="#" id="nav-team" onclick="showPage('team');return false;">My Team</a></li>
     <li><a href="#" id="nav-work" onclick="showPage('work');return false;">My Work</a></li>
   </ul>
-
   <a href="#" class="nav-cta" id="nav-contact" onclick="showPage('contact');return false;">Contact Me</a>
-
   <button class="hamburger" id="hamburger" aria-label="Open menu">
     <span></span><span></span><span></span>
   </button>
@@ -874,8 +986,7 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
         <a href="#" class="btn btn-gold" onclick="showPage('about');return false;">Discover My Journey</a>
         <a href="#" class="btn btn-ghost" onclick="showPage('blog');return false;">Read My Blog</a>
       </div>
-    </div>    
-    
+    </div>
   </section>
   <footer>
     <span><em>Youssef Abou Ali</em></span>
@@ -900,9 +1011,9 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
       <div class="about-body">
         <p class="eyebrow">About Me</p>
         <div class="gold-line"></div>
-        <p class="font-sizee">I am an Electrical Engineering student in Qatar, originally from Lebanon. My passion for the field began in my early teens when my curiosity led me to work alongside a local electrician. That hands-on experience sparked a lasting fascination with engineering and fueled my dedication to designing the technologies that power the modern world.</p>
-        <p class="font-sizee">Because I believe strongly in maintaining a balanced life, I have always made time for pursuits outside of my major. Back in Lebanon, I played semi-professional football starting at age 14, led my high school acting team in over 30 performances, and spent a year volunteering with the Red Cross. Today, I continue to value that balance as a player on the university football team here in Qatar.</p>
-        <p class="font-sizee">These activities have fundamentally shaped my character, building the communication and teamwork skills that are essential for success in ENG 210. This ePortfolio documents my academic growth, showcasing how I draw on these diverse interpersonal experiences to enhance my technical writing and clearly communicate complex concepts.</p>
+        <p>I am an Electrical Engineering student in Qatar, originally from Lebanon. My passion for the field began in my early teens when my curiosity led me to work alongside a local electrician. That hands-on experience sparked a lasting fascination with engineering and fueled my dedication to designing the technologies that power the modern world.</p>
+        <p>Because I believe strongly in maintaining a balanced life, I have always made time for pursuits outside of my major. Back in Lebanon, I played semi-professional football starting at age 14, led my high school acting team in over 30 performances, and spent a year volunteering with the Red Cross. Today, I continue to value that balance as a player on the university football team here in Qatar.</p>
+        <p>These activities have fundamentally shaped my character, building the communication and teamwork skills that are essential for success in ENG 210. This ePortfolio documents my academic growth, showcasing how I draw on these diverse interpersonal experiences to enhance my technical writing and clearly communicate complex concepts.</p>
         <div class="facts">
           <div class="fact"><div class="fact-lbl">University</div><div class="fact-val">HBKU, Qatar</div></div>
           <div class="fact"><div class="fact-lbl">Major</div><div class="fact-val">Electrical Engineering</div></div>
@@ -931,7 +1042,6 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
       <div class="gold-line"></div>
       <p style="color:var(--muted); font-size:0.95rem;">Electrical Engineering Student · HBKU, Qatar</p>
     </div>
-
     <div class="resume-section">
       <div class="resume-section-title">Education</div>
       <div class="resume-item">
@@ -951,7 +1061,6 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
         <div class="resume-item-desc">Ranked 16th nationally. Strong foundation in mathematics, physics, and sciences.</div>
       </div>
     </div>
-
     <div class="resume-section">
       <div class="resume-section-title">Experience &amp; Activities</div>
       <div class="resume-item">
@@ -971,7 +1080,6 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
         <div class="resume-item-desc">Co-led research project on the Qur'anic Botanic Garden in Qatar, winning the STEAM showcase competition. Demonstrated strong collaborative and research skills.</div>
       </div>
     </div>
-
     <div class="resume-section">
       <div class="resume-section-title">Skills</div>
       <div class="resume-skills">
@@ -986,7 +1094,6 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
         <span class="resume-skill">French (Intermediate)</span>
       </div>
     </div>
-
     <div class="resume-section">
       <div class="resume-section-title">Interests</div>
       <div class="resume-item-desc" style="color:var(--muted);font-size:0.95rem;line-height:1.8;">
@@ -1012,28 +1119,28 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
         <h2 class="sec-title">Reflections &amp;<br><em>Discoveries</em></h2>
         <div class="gold-line"></div>
       </div>
-      <div class="blog-count">10</div>
+      <div class="blog-count">07</div>
     </div>
     <div class="blog-grid">
-      <div class="blog-card" onclick="openBlog(1)">
-        <div class="card-num">01</div>
-        <img src="blog1 image1.jpeg" alt="Shell Eco-marathon visit">
-        <div class="card-title">Shell Eco-marathon: a lifetime experience.</div>
-        <div class="card-desc">Jan 25 2026</div>
+      <div class="blog-card" onclick="openBlog(7)">
+        <div class="card-num">07</div>
+        <img src="blog7 cover.png" alt="Final Reflection">
+        <div class="card-title">Final Reflection</div>
+        <div class="card-desc">April 20, 2026</div>
         <span class="card-arrow">Read Post →</span>
       </div>
-      <div class="blog-card" onclick="openBlog(2)">
-        <div class="card-num">02</div>
-        <img src="blog 2 cover.png" alt="Engineering and goals">
-        <div class="card-title">Engineering and Goals</div>
-        <div class="card-desc">Jan 25 2026</div>
+      <div class="blog-card" onclick="openBlog(6)">
+        <div class="card-num">06</div>
+        <img src="blog6 cover.png" alt="The poster workshop">
+        <div class="card-title">The Poster Workshop</div>
+        <div class="card-desc">April 5 2026</div>
         <span class="card-arrow">Read Post →</span>
       </div>
-      <div class="blog-card" onclick="openBlog(3)">
-        <div class="card-num">03</div>
-        <img src="blog3cover.png" alt="Teamwork identity">
-        <div class="card-title">My Teamwork Identity</div>
-        <div class="card-desc">Feb 3 2026</div>
+      <div class="blog-card" onclick="openBlog(5)">
+        <div class="card-num">05</div>
+        <img src="blog 5 cover.jpeg" alt="Planning the chaos">
+        <div class="card-title">Planning the Chaos</div>
+        <div class="card-desc">Mar 15 2026</div>
         <span class="card-arrow">Read Post →</span>
       </div>
       <div class="blog-card" onclick="openBlog(4)">
@@ -1043,28 +1150,27 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
         <div class="card-desc">Feb 16 2026</div>
         <span class="card-arrow">Read Post →</span>
       </div>
-      <div class="blog-card" onclick="openBlog(5)">
-         <div class="card-num">05</div>
-         <img src="blog 5 cover.jpeg" alt="Planning the chaos">
-         <div class="card-title">Planning the Chaos</div>
-         <div class="card-desc">Mar 15 2026</div>
-         <span class="card-arrow">Read Post →</span>
-      </div>
-      <div class="blog-card" onclick="openBlog(6)">
-        <div class="card-num">06</div>
-        <img src="blog6 cover.png" alt="Planning the chaos">
-        <div class="card-title">The Poster Workshop</div>
-        <div class="card-desc">April 5 2026</div>
+      <div class="blog-card" onclick="openBlog(3)">
+        <div class="card-num">03</div>
+        <img src="blog3cover.png" alt="Teamwork identity">
+        <div class="card-title">My Teamwork Identity</div>
+        <div class="card-desc">Feb 3 2026</div>
         <span class="card-arrow">Read Post →</span>
       </div>
-      <div class="blog-card" onclick="openBlog(7)">
-  <div class="card-num">07</div>
-  <img src="blog7 cover.png" alt="Final Reflection">
-  <div class="card-title">Final Reflection</div>
-  <div class="card-desc">April 20, 2026</div>
-  <span class="card-arrow">Read Post →</span>
-</div>
-   
+      <div class="blog-card" onclick="openBlog(2)">
+        <div class="card-num">02</div>
+        <img src="blog 2 cover.png" alt="Engineering and goals">
+        <div class="card-title">Engineering and Goals</div>
+        <div class="card-desc">Jan 25 2026</div>
+        <span class="card-arrow">Read Post →</span>
+      </div>
+      <div class="blog-card" onclick="openBlog(1)">
+        <div class="card-num">01</div>
+        <img src="blog1 image1.jpeg" alt="Shell Eco-marathon visit">
+        <div class="card-title">Shell Eco-marathon: a lifetime experience.</div>
+        <div class="card-desc">Jan 25 2026</div>
+        <span class="card-arrow">Read Post →</span>
+      </div>
     </div>
   </div>
   <footer>
@@ -1122,16 +1228,12 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
     </div>
     <div class="post-body">
       <p>How can an email change one's life trajectory? It is a question I couldn't imagine myself asking before I visited the Shell Eco-marathon with Dr. Naqaa and my nine other lucky colleagues. Yes, lucky, as we had the chance to have a VIP behind-the-scenes tour with Chemical Engineer Majid Samarah. We passed by multiple teams, asking questions and having a close look at their work and struggles. We had conversations with the Riyadh University, HBKU, and Texas A&M University teams, as well as some international teams from Indonesia and the Philippines. They gave me a lot of insight into their work, the difference between urban cars and prototypes, the engines they use, how they divide the work among themselves, and the challenges they faced.</p>
-      <figure class="post-image">
-        <img src="blog1 image1.jpeg" alt="Shell Eco-marathon visit">
-      </figure>
+      <figure class="post-image"><img src="blog1 image1.jpeg" alt="Shell Eco-marathon visit"></figure>
       <p>The team that really stood out to me was the South Korean team. I only asked them for a photo and observed them during the technical inspections. Despite the pressure, stress, and technical issues they faced, they were composed and calm, working coherently as a unit to overcome the obstacles they faced. What I saw was rooted in the idea that teamwork is the essence of success.</p>
       <p>After finishing our tour, Engineer Majid invited us to his Majles and served us delicious coffee, where he shared moments of his career and gave us true life lessons. His talk was really inspiring and enjoyable; he was down-to-earth despite his accomplishments, which made me interested in learning more about his experiences. He told us how he got fired from his first job in Jordan, and the reason was an email. He wasn't disrespectful, impolite, or even wrong, but he was so excited that he delivered his ideas in the wrong way, using all caps and a red font, which was indeed misunderstood by his boss.</p>
       <p>Nine months after being fired, he got a job at Shell, and 15 years later, he shared his wonderful experience with us, upcoming engineers. His story teaches that no matter how much value and uniqueness your ideas hold, if you deliver them poorly, they become worthless and may harm you. Therefore, being able to express yourself in the right way is equivalent to acquiring knowledge, because success doesn't only depend on your technical intelligence but also on your social and emotional intelligence.</p>
       <p>For me, as an electrical engineer, this experience opened my eyes to a path I had limited knowledge of, especially regarding how electric and hybrid cars work. It aroused my interest and curiosity to acquire more knowledge. Talking to engineers and seeing teams work gave me an insight into what my future work will look like if I choose this path, which gave me more options to explore before graduating.</p>
-      <figure class="post-image">
-        <img src="blog1 image2.jpeg" alt="Shell Eco-marathon visit">
-      </figure>
+      <figure class="post-image"><img src="blog1 image2.jpeg" alt="Shell Eco-marathon visit"></figure>
     </div>
     <div class="post-nav">
       <button class="post-nav-btn" disabled>← Previous</button>
@@ -1150,7 +1252,6 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
     </div>
     <div class="post-body">
       <p>For this week, we were asked to watch two videos. After I watched them, I learned much more about my career as an Electrical Engineer. I learned that my degree isn't just a series of classes and exams; it is an opportunity to make a change in the community. My electrical engineering coursework provides me with the ability to create and improve systems that transform lives. My goal isn't just to improve technology but to make using technology an easygoing experience, preventing as many drawbacks as possible.</p>
-
       <div class="post-videos">
         <div class="post-video">
           <iframe src="https://www.youtube.com/embed/xGw8nHPM36A" title="Video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -1159,7 +1260,6 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
           <iframe src="https://www.youtube.com/embed/2haT4TgjR7o" title="Video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
       </div>
-
       <p>One of the most important issues I would like to address is the issue of energy access, specifically for those without reliable or affordable power — an issue that a lot of people suffer from in my home country, Lebanon. I aim to develop cleaner, smarter, and cheaper energy options, recognizing that good power creates an easier life for all community members who depend on it for their careers and education.</p>
       <p>In the years leading up to my graduation, I aim to develop the necessary skills that serve my goal, prioritizing AI skills as AI is becoming the cornerstone of successful workforces. After graduation, I want to work somewhere that blends innovation with social impact — a place where I get the opportunity to put into practice what I have learned. That might be a business that deals with renewable energy, a technology entity that gives back to the community, or even a startup that is determined to make a difference.</p>
       <p>My ultimate goal is to have my own company, one that translates my vision into reality. I will be focused, have clear goals, and act in steps to ensure the accomplishment of tasks. To truly get things done, I understand that technical skills alone are not enough; I must also be an effective communicator. I will rely on strong written and oral communication to advocate for my ideas, report my findings, and secure support for my projects from management and stakeholders.</p>
@@ -1228,13 +1328,9 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
     </div>
     <div class="post-body">
       <p>"What if I didn't travel?" This small question made me want to write this blog. On Feb 22, I decided to surprise my family by traveling to Lebanon to spend spring break with them. I had a great week. I enjoyed quality time with my family, cousins, and friends, all while keeping up with my schoolwork. On March 1, my return flight was scheduled, but suddenly all flights to Qatar were canceled due to the conflicts in the region. I was stuck in Lebanon. I did not know what to feel. Sad because of how the situation turned out, or happy because I was staying longer with my family.</p>
-         <figure style=" width:380px ;height:auto" class="post-image">
-        <img  src="airplane.jpeg" alt="Planning the chaos">
-      </figure>
+      <figure style="width:380px;height:auto" class="post-image"><img src="airplane.jpeg" alt="Planning the chaos"></figure>
       <p>A couple of days passed, and the war started in Lebanon. Beirut and the south were bombed heavily. Things quickly became unsafe and unstable, with power cuts and weak Wi-Fi. This made me very stressed and made it hard to focus on my studies. I felt so anxious, but deep down I knew that everything would pass and that what really matters is that my loved ones and I are safe. I realized that I cannot control what happens around me, but I can control how I react. I set new goals, stopped worrying about the mess, and focused on finding solutions, and pushed myself to keep studying every single day.</p>
-      <figure class="post-image">
-        <img src="blog 5 cover.jpeg" alt="Planning the chaos">
-      </figure>
+      <figure class="post-image"><img src="mea.jpeg" alt="Planning the chaos"></figure>
       <p>Another big challenge was getting used to studying online and at home with my family after studying abroad for six months. After getting used to a routine, everything suddenly changed. So, I put more effort into managing my time and studying. I wanted to make sure I got the results I deserved, even with everything going on. It has not been easy, but it has taught me how resilient I can be. But what if I stayed in Qatar? How would I deal with this situation away from my family? This taught me one thing: God plans our lives for what is best for us, and we should keep that in mind to deal with life's hardships.</p>
       <p>As we end this holy month, I hope Lebanon and Qatar stay safe. I hope everything calms down, and I can go back to Qatar to continue the semester and return to my family in better conditions, to the safe and peaceful Lebanon that we miss every day.</p>
     </div>
@@ -1267,93 +1363,67 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
     </div>
   </div>
 
-<!-- POST 7 -->
-<div class="blog-post-page" id="post-7">
-  <div class="post-header">
-    <span class="post-tag">Blog · Post 07 of 10</span>
-    <div class="post-num-big">07</div>
-    <h1 class="post-title">Final Reflection</h1>
-    <div class="card-desc1">April 20, 2026 ·
-       A look back at growth, trust, and the lessons that shaped my journey through ENG 210.</div>
+  <!-- POST 7 -->
+  <div class="blog-post-page" id="post-7">
+    <div class="post-header">
+      <span class="post-tag">Blog · Post 07 of 10</span>
+      <div class="post-num-big">07</div>
+      <h1 class="post-title">Final Reflection</h1>
+      <div class="card-desc1">April 20, 2026 · A look back at growth, trust, and the lessons that shaped my journey through ENG 210.</div>
+    </div>
+    <div class="post-body">
+      <p>If one word could describe my path in this course, it is "growth." In ENG 210, I did not just build strong technical skills; I also developed a more professional character that is ready for any work environment or team setting.</p>
+      <p>It all started with our first assignment: an email explaining our group preferences. I honestly wrote that I wanted to work with my friends, which would have meant staying within my comfort zone. Instead, I found myself in Team Cocktail, a group composed of individuals with diverse backgrounds and entirely different ways of thinking. Yet, we were united by a single goal: succeeding in this course.</p>
+      <p>Stepping out of my comfort zone taught me the absolute necessity of team communication and trust. Because we each brought different perspectives to the table, success required relying heavily on one another. More importantly, I learned to truly trust my teammates. I realized that a team functions best when you trust others to complete their assigned parts, praise their good work, and respectfully support their weaknesses. This made our workflow much faster and built mutual respect among the group.</p>
+      <p>Along with trust, I learned the value of receiving feedback. In technical writing, there is no room for arrogance. No matter how strong an initial idea may seem, there is always room for development. Embracing constructive criticism allowed us to continually refine our work, turning our first drafts into polished documents. Specifically, the invaluable feedback we received from Ms. Lana and Ms. Olena on our initial work was instrumental in refining our delivery and turning our final presentation into an outstanding one.</p>
+      <p>Working on our technical report regarding campus walkability also improved my critical thinking and logic. The research process taught us how to analyze a real-world problem, study the facts, and propose a practical solution. Because of this, I now feel I have a strong foundation to take any new idea, study it deeply, and present it confidently to others.</p>
+      <p>Managing this research as a group also taught us how to handle deadlines effectively. We learned that when a team cooperates and divides work fairly, you can manage the stress of due dates and achieve great results together.</p>
+      <p>Ultimately, my experience in this course taught me that technical communication is not just a supplementary subject; it is an essential foundation for every future engineer. If you want to succeed in the workplace, knowing how to communicate your ideas and work effectively with people is what truly makes the difference.</p>
+    </div>
+    <div class="post-nav">
+      <button class="post-nav-btn" onclick="openBlog(6)">← Previous</button>
+      <span class="post-progress">7 / 10</span>
+      <button class="post-nav-btn primary" onclick="showPage('blog')">← Back to Blog</button>
+    </div>
   </div>
-  <div class="post-body">
-    <p>If one word could describe my path in this course, it is "growth." In ENG 210, I did not just build strong technical skills; I also developed a more professional character that is ready for any work environment or team setting.</p>
-
-    <p>It all started with our first assignment: an email explaining our group preferences. I honestly wrote that I wanted to work with my friends, which would have meant staying within my comfort zone. Instead, I found myself in Team Cocktail, a group composed of individuals with diverse backgrounds and entirely different ways of thinking. Yet, we were united by a single goal: succeeding in this course.</p>
-
-    <p>Stepping out of my comfort zone taught me the absolute necessity of team communication and trust. Because we each brought different perspectives to the table, success required relying heavily on one another. More importantly, I learned to truly trust my teammates. I realized that a team functions best when you trust others to complete their assigned parts, praise their good work, and respectfully support their weaknesses. This made our workflow much faster and built mutual respect among the group.</p>
-
-    <p>Along with trust, I learned the value of receiving feedback. In technical writing, there is no room for arrogance. No matter how strong an initial idea may seem, there is always room for development. Embracing constructive criticism allowed us to continually refine our work, turning our first drafts into polished documents. Specifically, the invaluable feedback we received from Ms. Lana and Ms. Olena on our initial work was instrumental in refining our delivery and turning our final presentation into an outstanding one.</p>
-
-    <p>Working on our technical report regarding campus walkability also improved my critical thinking and logic. The research process taught us how to analyze a real-world problem, study the facts, and propose a practical solution. Because of this, I now feel I have a strong foundation to take any new idea, study it deeply, and present it confidently to others.</p>
-
-    <p>Managing this research as a group also taught us how to handle deadlines effectively. We learned that when a team cooperates and divides work fairly, you can manage the stress of due dates and achieve great results together.</p>
-
-    <p>Ultimately, my experience in this course taught me that technical communication is not just a supplementary subject; it is an essential foundation for every future engineer. If you want to succeed in the workplace, knowing how to communicate your ideas and work effectively with people is what truly makes the difference.</p>
-  </div>
-  <div class="post-nav">
-    <button class="post-nav-btn" onclick="openBlog(6)">← Previous</button>
-    <span class="post-progress">7 / 10</span>
-    <button class="post-nav-btn primary" onclick="showPage('blog')">← Back to Blog</button>
-   
-  </div>
-</div>
-
-
 
 </div><!-- /page-blog-post -->
-
 
 <!-- ══════════════════════════════════════════════════
      PAGE: MY TEAM
 ══════════════════════════════════════════════════ -->
 <div id="page-team" class="page">
   <div class="team-inner">
-
     <div class="team-header-center">
       <h2>Meet my <em>team!!</em></h2>
-      <p style="font-size: 30px;" class="team-quote">Team Cocktail 🍹 </p>
+      <p style="font-size: 30px;" class="team-quote">Team Cocktail 🍹</p>
     </div>
-
     <div class="team-grid">
-
-      <!-- Member 1: Youssef -->
       <div class="team-member">
         <div class="team-photo"><img src="youssef.jpeg" alt="Youssef Abou Ali"></div>
         <div class="team-role">Organizer and Final Touch</div>
         <p class="team-bio">Hi, my name is Youssef Abou Ali, an Electrical Engineering student at HBKU. I played a significant role in the ideation process of our drafts, I always make sure our work is organised and I add the final touch. A fun fact about me is that I can play 5 different positions on a football field ⚽️</p>
       </div>
-
-      <!-- Member 2: Kel -->
       <div class="team-member">
-          <div class="team-photo"><img src="Kel.jpeg">
-</div>
+        <div class="team-photo"><img src="Kel.jpeg"></div>
         <div class="team-role">Creative Thinker</div>
         <p class="team-bio">Hi, my name is Kel Doliente, a Mechanical Engineering student at HBKU. I proposed the idea of pursuing tree-canopied walkways for our ENGL 220 course. An insignificant fun fact about me is that I am red-green colorblind 👁.</p>
       </div>
-
-      <!-- Member 3: Khaldoun -->
       <div class="team-member">
-                  <div class="team-photo"><img src="Khaldoun.jpeg" alt="Khaldoun Saadeddine">
-</div>
+        <div class="team-photo"><img src="Khaldoun.jpeg" alt="Khaldoun Saadeddine"></div>
         <div class="team-role">Leader</div>
-        <p class="team-bio">Hi, I’m Khaldoun Saadeddine, a mechanical engineering student at HBKU. I conducted research on the possible solution of having enclosed, air conditioned walkways. In addition I supported the group by working on the visual aspect of assignments. A little fun fact about me is that i had more than 20 pets in my childhood.</p>
+        <p class="team-bio">Hi, I'm Khaldoun Saadeddine, a mechanical engineering student at HBKU. I conducted research on the possible solution of having enclosed, air conditioned walkways. In addition I supported the group by working on the visual aspect of assignments. A little fun fact about me is that i had more than 20 pets in my childhood.</p>
       </div>
-
-      <!-- Member 4: Hiba -->
       <div class="team-member">
         <div class="team-photo"><img src="Hiba.jpeg" alt="Hiba Syed"></div>
         <div class="team-role">Research Specialist</div>
         <p class="team-bio">Hi! My name is Hiba Syed. I study chemical engineering in HBKU. I did extensive research on the cool pavement coatings solution and also supported my group in making all the documents and keeping it professional. A little fun fact about me is that I hold a black belt in the korean martial art taekwondo.</p>
       </div>
-
-      <!-- Member 5: Aazim -->
       <div class="team-member">
         <div class="team-photo"><img src="aazim.png" alt="Aazim Rahman"></div>
         <div class="team-role">Coordinator</div>
         <p class="team-bio">Hi! I'm Aazim and I'm a frontend developer intern learning cybersecurity who's pursuing Electrical Engineering. I like to think I work on logistics, interpreting information well to make sure the team produces a desired output.</p>
       </div>
-
     </div>
   </div>
   <footer>
@@ -1362,8 +1432,9 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
     <span>Spring 2026</span>
   </footer>
 </div>
+
 <!-- ══════════════════════════════════════════════════
-     PAGE: MY WORK
+     PAGE: MY WORK  (redesigned with images)
 ══════════════════════════════════════════════════ -->
 <div id="page-work" class="page">
   <div class="work-inner">
@@ -1380,10 +1451,15 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
       </div>
     </div>
 
-    <!-- Document list -->
+    <!-- ── Document list ── -->
     <div class="work-list">
 
+      <!-- 01 · Email -->
       <div class="work-row" onclick="openPDF('Email assignment ENGL-220 youssef.pdf')">
+        <div class="work-row-img">
+          <!-- Professional email / communication -->
+          <img src="email.png" alt="Professional email">
+        </div>
         <div class="work-row-num">01</div>
         <div class="work-row-body">
           <div class="work-row-title">Group Work Email<span class="work-row-course">ENGL 220</span></div>
@@ -1396,7 +1472,12 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
         <div class="work-row-cta">View PDF <span>→</span></div>
       </div>
 
+      <!-- 02 · Team Charter -->
       <div class="work-row" onclick="openPDF('ENGL 220 Team Charter.pdf')">
+        <div class="work-row-img">
+          <!-- Handshake / team agreement -->
+          <img src="team.jpg" alt="Team charter">
+        </div>
         <div class="work-row-num">02</div>
         <div class="work-row-body">
           <div class="work-row-title">Team Charter<span class="work-row-course">Team Cocktail</span></div>
@@ -1409,7 +1490,12 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
         <div class="work-row-cta">View PDF <span>→</span></div>
       </div>
 
+      <!-- 03 · Memo – Collaborative Projects -->
       <div class="work-row" onclick="openPDF('MemoFinalDraft.pdf')">
+        <div class="work-row-img">
+          <!-- People collaborating around a table -->
+          <img src="collaborative-work-enviroment.jpg" alt="Collaborative projects">
+        </div>
         <div class="work-row-num">03</div>
         <div class="work-row-body">
           <div class="work-row-title">Effective Collaborative Projects<span class="work-row-course">Memo</span></div>
@@ -1422,7 +1508,12 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
         <div class="work-row-cta">View PDF <span>→</span></div>
       </div>
 
+      <!-- 04 · Memo – Problem Statement Walkability -->
       <div class="work-row" onclick="openPDF('Problem Statement_Memo.pdf')">
+        <div class="work-row-img">
+          <!-- People walking on sunny campus -->
+          <img src="HBKU-education-city.jpeg" alt="Walkability problem">
+        </div>
         <div class="work-row-num">04</div>
         <div class="work-row-body">
           <div class="work-row-title">Problem Statement — Walkability<span class="work-row-course">Memo</span></div>
@@ -1435,7 +1526,12 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
         <div class="work-row-cta">View PDF <span>→</span></div>
       </div>
 
+      <!-- 05 · Memo – Solutions -->
       <div class="work-row" onclick="openPDF('Solution Memo Final.pdf')">
+        <div class="work-row-img">
+          <!-- Green trees / sustainable canopy -->
+          <img src="Park_and_Plant_Initiative_-_Communal_Gardens.jpg" alt="Sustainable walkability solutions">
+        </div>
         <div class="work-row-num">05</div>
         <div class="work-row-body">
           <div class="work-row-title">Solutions Memo — Walkability<span class="work-row-course">Memo</span></div>
@@ -1450,13 +1546,21 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
 
     </div><!-- /work-list -->
 
-    <!-- Final Project — featured card -->
+    <!-- ── Final Project featured card ── -->
     <div class="work-featured" onclick="showPage('final')">
       <div class="work-featured-label">Final Project</div>
+
+      <!-- Hero image with title overlay -->
+      <div class="work-featured-img">
+        <img src="Education_City_Mosque_and_Oxygen_Park.jpg" alt="Education City walkability">
+        <div class="work-featured-img-title">
+          Walkability in<br><em>Education City</em>
+        </div>
+      </div>
+
       <div class="work-featured-inner">
         <div class="work-featured-left">
           <div class="work-featured-num">06</div>
-          <h3 class="work-featured-title">Walkability in<br><em>Education City</em></h3>
           <p class="work-featured-desc">The complete semester-long technical research project by <strong>Team Cocktail</strong> — technical report drafts, team presentation, and final research poster documenting our analysis of walkability solutions for Education City, Qatar.</p>
         </div>
         <div class="work-featured-right">
@@ -1478,8 +1582,9 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
     <span>Spring 2026</span>
   </footer>
 </div>
+
 <!-- ══════════════════════════════════════════════════
-     PAGE: FINAL PROJECT
+     PAGE: FINAL PROJECT  (redesigned with image cards)
 ══════════════════════════════════════════════════ -->
 <div id="page-final" class="page">
   <div class="blog-overview-inner">
@@ -1501,68 +1606,95 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
       <div class="blog-count">4</div>
     </div>
 
-    <div class="blog-grid">
+    <div class="final-grid">
 
-      <!-- 1. Technical Report — First Draft -->
-      <div class="blog-card" onclick="openFinalFile('Technical Report.pdf')">
-        <div class="card-num">01</div>
-        <div class="card-title">Technical Report — First Draft</div>
-        <div class="card-desc" style="margin-bottom:0.8rem;">Apr 10, 2026</div>
-        <div class="card-desc">
-          The initial full-length technical report examining Education City's walkability challenge.
-          It covers the abstract, introduction, methodology, and results for all four proposed
-          solutions, followed by a weighted decision matrix analysis that identifies
-          <em>Park and Plant</em> (native Sidra and Ghaf tree planting) as the highest-scoring
-          solution at 4.00/5.0. The report ties findings directly to QNV 2030 and NDS3
-          sustainability targets.
+      <!-- 01 · Technical Report — First Draft -->
+      <div class="final-card" onclick="openFinalFile('Technical Report.pdf')">
+        <div class="final-card-img">
+          <!-- Technical report / research document -->
+          <img src="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?w=700&q=80&fit=crop" alt="Technical report">
+          <div class="final-card-img-overlay"></div>
         </div>
-        <span class="card-arrow">View PDF →</span>
+        <div class="final-card-body">
+          <div class="final-card-num">01</div>
+          <div class="final-card-title">Technical Report — First Draft</div>
+          <div class="final-card-date">Apr 10, 2026</div>
+          <div class="final-card-desc">
+            The initial full-length technical report examining Education City's walkability challenge.
+            Covers abstract, introduction, methodology, and results for all four proposed solutions,
+            followed by a weighted decision matrix identifying <em>Park and Plant</em>
+            (native Sidra and Ghaf tree planting) as the highest-scoring solution at 4.00/5.0.
+            Findings are tied directly to QNV 2030 and NDS3 sustainability targets.
+          </div>
+          <span class="final-card-arrow">View PDF →</span>
+        </div>
       </div>
 
-      <!-- 2. Technical Report — Final Draft (locked until uploaded) -->
-      <div class="blog-card locked">
-        <div class="card-num">02</div>
-        <div class="card-title">Technical Report — Final Draft</div>
-        <div class="card-desc" style="margin-bottom:0.8rem;">Coming soon</div>
-        <div class="card-desc">
-          The revised and polished version of the technical report, incorporating Dr. Naqaa's
-          feedback, refined analysis, and the team's final recommendations. Will be uploaded
-          once peer-review and instructor feedback have been addressed.
+      <!-- 02 · Technical Report — Final Draft (locked) -->
+      <div class="final-card locked">
+        <div class="final-card-img">
+          <!-- Greyed-out document image -->
+          <img src="https://images.unsplash.com/photo-1512314889357-e157c22f938d?w=700&q=80&fit=crop" alt="Final draft coming soon">
+          <div class="final-card-img-overlay"></div>
         </div>
-        <span class="coming-tag">Coming Soon</span>
+        <div class="final-card-body">
+          <div class="final-card-num">02</div>
+          <div class="final-card-title">Technical Report — Final Draft</div>
+          <div class="final-card-date">Coming soon</div>
+          <div class="final-card-desc">
+            The revised and polished version of the technical report, incorporating Dr. Naqaa's
+            feedback, refined analysis, and the team's final recommendations. Will be uploaded
+            once peer-review and instructor feedback have been addressed.
+          </div>
+          <span class="coming-tag">Coming Soon</span>
+        </div>
       </div>
 
-      <!-- 3. Presentation -->
-      <div class="blog-card" onclick="openFinalFile('Walkability Presentation.pdf')">
-        <div class="card-num">03</div>
-        <div class="card-title">Team Presentation — Walkability</div>
-        <div class="card-desc" style="margin-bottom:0.8rem;">Spring 2026</div>
-        <div class="card-desc">
-          A visual presentation deck delivered by Team Cocktail summarizing the core findings
-          of the technical report. It walks the audience through the walkability problem, the
-          four candidate solutions with their advantages and trade-offs, the decision matrix
-          criteria (thermal comfort, sustainability, coverage &amp; scalability, feasibility),
-          and our final recommendation of the Park and Plant initiative.
+      <!-- 03 · Presentation -->
+      <div class="final-card" onclick="openFinalFile('Walkability Presentation.pdf')">
+        <div class="final-card-img">
+          <!-- Presentation / public speaking -->
+          <img src="https://images.unsplash.com/photo-1558008258-3256797b43f3?w=700&q=80&fit=crop" alt="Team presentation">
+          <div class="final-card-img-overlay"></div>
         </div>
-        <span class="card-arrow">View PDF →</span>
+        <div class="final-card-body">
+          <div class="final-card-num">03</div>
+          <div class="final-card-title">Team Presentation — Walkability</div>
+          <div class="final-card-date">Spring 2026</div>
+          <div class="final-card-desc">
+            A visual presentation deck delivered by Team Cocktail summarizing the core findings
+            of the technical report. Walks the audience through the walkability problem, four
+            candidate solutions with their advantages and trade-offs, the decision matrix
+            criteria (thermal comfort, sustainability, coverage &amp; scalability, feasibility),
+            and our final recommendation of the Park and Plant initiative.
+          </div>
+          <span class="final-card-arrow">View PDF →</span>
+        </div>
       </div>
 
-      <!-- 4. Final Poster -->
-      <div class="blog-card" onclick="openFinalFile('Final Poster.pdf')">
-        <div class="card-num">04</div>
-        <div class="card-title">Final Poster — Walkability in Education City</div>
-        <div class="card-desc" style="margin-bottom:0.8rem;">Spring 2026</div>
-        <div class="card-desc">
-          A full-quality research poster presenting the project at a glance: the walkability
-          problem in EC (57% private vehicle use vs. only 17% walking), the four proposed
-          solutions, alignment with QNV 2030's major criteria, and our chosen solution —
-          <em>Park and Plant</em> — with its advantages and the criteria considered.
-          Designed for public display and final project presentations.
+      <!-- 04 · Final Poster -->
+      <div class="final-card" onclick="openFinalFile('Final Poster.pdf')">
+        <div class="final-card-img">
+          <!-- Trees / green canopy / sustainable design -->
+          <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=700&q=80&fit=crop" alt="Final poster">
+          <div class="final-card-img-overlay"></div>
         </div>
-        <span class="card-arrow">View Poster →</span>
+        <div class="final-card-body">
+          <div class="final-card-num">04</div>
+          <div class="final-card-title">Final Poster — Walkability in Education City</div>
+          <div class="final-card-date">Spring 2026</div>
+          <div class="final-card-desc">
+            A full-quality research poster presenting the project at a glance: the walkability
+            problem in EC (57% private vehicle use vs. only 17% walking), the four proposed
+            solutions, alignment with QNV 2030's major criteria, and our chosen solution —
+            <em>Park and Plant</em> — with its advantages and the criteria considered.
+            Designed for public display and final project presentations.
+          </div>
+          <span class="final-card-arrow">View Poster →</span>
+        </div>
       </div>
 
-    </div>
+    </div><!-- /final-grid -->
   </div>
   <footer>
     <span><em>Youssef Abou Ali</em></span>
@@ -1575,10 +1707,8 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
 <script>
 let mobileOpen = false;
 
-// All page IDs — must include every page that showPage() can navigate to
 const allPages = ['home','about','resume','blog','team','work','final','contact','blog-post'];
 
-// Nav items keyed by page ID
 const navItems = {
   'home':    document.getElementById('nav-home'),
   'about':   document.getElementById('nav-about'),
@@ -1600,13 +1730,11 @@ function showPage(id) {
   Object.keys(navItems).forEach(k => {
     if (navItems[k]) navItems[k].classList.remove('active');
   });
-  // When on the Final Project page, keep "My Work" highlighted in the navbar
   if (id === 'final' && navItems['work']) {
     navItems['work'].classList.add('active');
   } else if (navItems[id]) {
     navItems[id].classList.add('active');
   }
-
   window.scrollTo({ top: 0 });
 }
 
@@ -1647,19 +1775,16 @@ function closeMobile() {
   hamburger.querySelectorAll('span').forEach(s => { s.style.transform=''; s.style.opacity=''; });
 }
 
-// Open PDFs from My Work page and remember where to return to
 function openPDF(filename) {
   sessionStorage.setItem('returnPage', 'work');
   window.location.href = filename;
 }
 
-// Open files from Final Project page and remember where to return to
 function openFinalFile(filename) {
   sessionStorage.setItem('returnPage', 'final');
   window.location.href = filename;
 }
 
-// On page load, check if we came back from a PDF
 window.addEventListener('load', () => {
   const returnPage = sessionStorage.getItem('returnPage');
   if (returnPage) {
