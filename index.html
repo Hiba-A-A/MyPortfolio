@@ -1030,84 +1030,28 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
     <span>Spring 2026</span>
   </footer>
 </div>
-
 <!-- ══════════════════════════════════════════════════
      PAGE: RESUME
 ══════════════════════════════════════════════════ -->
-<div id="page-resume" class="page">
-  <div class="resume-inner">
-    <div class="resume-header">
-      <p class="eyebrow">Curriculum Vitae</p>
-      <h1 class="sec-title">Youssef<br><em>Abou Ali</em></h1>
-      <div class="gold-line"></div>
-      <p style="color:var(--muted); font-size:0.95rem;">Electrical Engineering Student · HBKU, Qatar</p>
-    </div>
-    <div class="resume-section">
-      <div class="resume-section-title">Education</div>
-      <div class="resume-item">
-        <div class="resume-item-header">
-          <span class="resume-item-title">Hamad Bin Khalifa University</span>
-          <span class="resume-item-date">2024 – Present</span>
-        </div>
-        <div class="resume-item-sub">B.Sc. Electrical Engineering · Qatar</div>
-        <div class="resume-item-desc">Strong GPA. Coursework includes circuits, programming, technical writing, and engineering communication.</div>
-      </div>
-      <div class="resume-item">
-        <div class="resume-item-header">
-          <span class="resume-item-title">Lebanese Baccalaureate</span>
-          <span class="resume-item-date">2024</span>
-        </div>
-        <div class="resume-item-sub">Scientific Stream · Lebanon</div>
-        <div class="resume-item-desc">Ranked 16th nationally. Strong foundation in mathematics, physics, and sciences.</div>
-      </div>
-    </div>
-    <div class="resume-section">
-      <div class="resume-section-title">Experience &amp; Activities</div>
-      <div class="resume-item">
-        <div class="resume-item-header">
-          <span class="resume-item-title">Shell Eco-marathon — VIP Tour</span>
-          <span class="resume-item-date">Jan 2026</span>
-        </div>
-        <div class="resume-item-sub">Guest · Qatar</div>
-        <div class="resume-item-desc">Attended a behind-the-scenes engineering tour with Chemical Engineer Majid Samarah. Engaged with university teams from Saudi Arabia, Indonesia, Philippines, and South Korea on vehicle design, energy systems, and teamwork.</div>
-      </div>
-      <div class="resume-item">
-        <div class="resume-item-header">
-          <span class="resume-item-title">STEAM Showcase — 1st Place</span>
-          <span class="resume-item-date">2024</span>
-        </div>
-        <div class="resume-item-sub">Team Lead · HBKU</div>
-        <div class="resume-item-desc">Co-led research project on the Qur'anic Botanic Garden in Qatar, winning the STEAM showcase competition. Demonstrated strong collaborative and research skills.</div>
-      </div>
-    </div>
-    <div class="resume-section">
-      <div class="resume-section-title">Skills</div>
-      <div class="resume-skills">
-        <span class="resume-skill">Electrical Circuits</span>
-        <span class="resume-skill">Python</span>
-        <span class="resume-skill">AI &amp; Machine Learning (in progress)</span>
-        <span class="resume-skill">Technical Writing</span>
-        <span class="resume-skill">Public Speaking</span>
-        <span class="resume-skill">Team Collaboration</span>
-        <span class="resume-skill">Arabic (Native)</span>
-        <span class="resume-skill">English (Fluent)</span>
-        <span class="resume-skill">French (Intermediate)</span>
-      </div>
-    </div>
-    <div class="resume-section">
-      <div class="resume-section-title">Interests</div>
-      <div class="resume-item-desc" style="color:var(--muted);font-size:0.95rem;line-height:1.8;">
-        Acting · Football · Renewable Energy · AI &amp; Technology · Community Development · Entrepreneurship
-      </div>
-    </div>
-  </div>
-  <footer>
-    <span><em>Youssef Abou Ali</em></span>
-    <span>ENG 210 · HBKU Qatar</span>
-    <span>Spring 2026</span>
-  </footer>
-</div>
+<div id="page-resume" class="page" style="overflow:hidden;">
 
+
+  <!-- Full-screen PDF embed -->
+  <iframe
+    id="resume-pdf-frame"
+    src=""
+    style="
+      position: fixed;
+  
+      left: 0; right: 0; bottom: 0;
+      width: 100%;
+      height: calc(100vh - var(--nav-h));
+      border: none;
+      background: #525659;
+    "
+  ></iframe>
+
+</div>
 <!-- ══════════════════════════════════════════════════
      PAGE: BLOG OVERVIEW
 ══════════════════════════════════════════════════ -->
@@ -1777,6 +1721,24 @@ window.addEventListener('load', () => {
     showPage(returnPage);
   }
 });
+function showPage(id) {
+  allPages.forEach(p => {
+    const el = document.getElementById('page-' + p);
+    if (el) { el.classList.remove('active'); el.scrollTop = 0; }
+  });
+  const target = document.getElementById('page-' + id);
+  if (target) { target.classList.add('active'); target.scrollTop = 0; }
+
+  // Lazy-load PDF only on first visit
+  if (id === 'resume') {
+    const frame = document.getElementById('resume-pdf-frame');
+    if (frame && !frame.src.includes('resume.pdf')) {
+      frame.src = 'Resume.pdf';
+    }
+  }
+
+  // ... rest of your existing showPage code (nav active states etc.)
+}
 </script>
 
 </body></html>
