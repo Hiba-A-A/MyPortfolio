@@ -1814,7 +1814,7 @@ function closeMobile() {
 // ── Resume tab switcher ──────────────────────────────────────
 var currentDoc = 'cv';
 var docs = {
-  cv:    { file: 'resume.pdf',               label: 'CV' },
+  cv:    { file: 'resume.pdf',               label: 'Resume' },
   cover: { file: 'Cover Letter Youssef.pdf', label: 'Cover Letter' }
 };
 
@@ -1824,8 +1824,8 @@ function switchDoc(type) {
   var tabCv    = document.getElementById('tab-cv');
   var tabCover = document.getElementById('tab-cover');
 
-  if (frame) frame.src = docs[type].file;
-
+ 
+if (frame) frame.src = docs[type].file + '#toolbar=0';
   if (tabCv) {
     tabCv.style.background = type === 'cv' ? 'var(--gold)' : 'none';
     tabCv.style.color      = type === 'cv' ? '#fff'        : 'var(--gold)';
