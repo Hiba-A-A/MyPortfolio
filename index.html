@@ -954,19 +954,6 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
   <a href="#" onclick="showPage('blog');closeMobile();return false;">Blog</a>
   <a href="#" onclick="showPage('team');closeMobile();return false;">My Team</a>
   <a href="#" onclick="showPage('work');closeMobile();return false;">Projects</a>
-  <span class="mobile-sub-label">Blog Posts</span>
-  <div class="mobile-sub">
-    <a href="#" onclick="openBlog(1);closeMobile();return false;"><span class="post-num">1.</span> Shell Eco-marathon</a>
-    <a href="#" onclick="openBlog(2);closeMobile();return false;"><span class="post-num">2.</span> Engineering &amp; Goals</a>
-    <a href="#" onclick="openBlog(3);closeMobile();return false;"><span class="post-num">3.</span> My Teamwork Identity</a>
-    <a href="#" onclick="openBlog(4);closeMobile();return false;"><span class="post-num">4.</span> Resume Reflection</a>
-    <a href="#" onclick="openBlog(5);closeMobile();return false;"><span class="post-num">5.</span> Planning the Chaos</a>
-    <a href="#" onclick="openBlog(6);closeMobile();return false;"><span class="post-num">6.</span> The Poster Workshop</a>
-    <a class="coming-soon"><span class="post-num">7.</span></a>
-    <a class="coming-soon"><span class="post-num">8.</span></a>
-    <a class="coming-soon"><span class="post-num">9.</span></a>
-    <a class="coming-soon"><span class="post-num">10.</span></a>
-  </div>
   <a href="#" onclick="showPage('contact');closeMobile();return false;">Contact Me</a>
 </div>
 
@@ -1031,10 +1018,55 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
   </footer>
 </div>
 <!-- ══════════════════════════════════════════════════
+ <!-- ══════════════════════════════════════════════════
      PAGE: RESUME
 ══════════════════════════════════════════════════ -->
 <div id="page-resume" class="page" style="overflow:hidden;">
 
+  <!-- Tab bar -->
+  <div style="
+    position: fixed;
+    top: var(--nav-h); left: 0; right: 0;
+    height: 48px; z-index: 200;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--gold-border);
+    display: flex; align-items: stretch;
+    box-shadow: 0 2px 12px rgba(10,58,140,0.06);
+  ">
+    <button id="tab-cv"
+      onclick="switchDoc('cv')"
+      style="
+        flex: 1; max-width: 200px;
+        background: var(--gold); color: #fff;
+        border: none; cursor: pointer;
+        font-family: inherit; font-size: 0.72rem;
+        letter-spacing: 0.13em; text-transform: uppercase;
+        font-weight: 700; transition: background 0.2s;
+        border-right: 1px solid var(--gold-border);
+      ">
+      📄 CV
+    </button>
+    <button id="tab-cover"
+      onclick="switchDoc('cover')"
+      style="
+        flex: 1; max-width: 200px;
+        background: none; color: var(--gold);
+        border: none; cursor: pointer;
+        font-family: inherit; font-size: 0.72rem;
+        letter-spacing: 0.13em; text-transform: uppercase;
+        font-weight: 700; transition: background 0.2s;
+        border-right: 1px solid var(--gold-border);
+      "
+      onmouseover="this.style.background='var(--gold-dim)'"
+      onmouseout="if(currentDoc!=='cover') this.style.background='none'">
+      ✉️ Cover Letter
+    </button>
+
+    <!-- spacer -->
+    <div style="flex:1;"></div>
+
+  </div>
 
   <!-- Full-screen PDF embed -->
   <iframe
@@ -1042,17 +1074,16 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
     src=""
     style="
       position: fixed;
-  
+      top: calc(var(--nav-h) + 48px);
       left: 0; right: 0; bottom: 0;
       width: 100%;
-      height: calc(100vh - var(--nav-h));
+      height: calc(100vh - var(--nav-h) - 48px);
       border: none;
       background: #525659;
     "
   ></iframe>
 
-</div>
-<!-- ══════════════════════════════════════════════════
+</div>═══════════════════════════════════
      PAGE: BLOG OVERVIEW
 ══════════════════════════════════════════════════ -->
 <div id="page-blog" class="page">
@@ -1738,6 +1769,40 @@ function showPage(id) {
   }
 
   // ... rest of your existing showPage code (nav active states etc.)
+}
+// ── Resume tab switcher ──────────────────────────────────
+var currentDoc = 'cv';
+var docs = {
+  cv:    { file: 'resume.pdf',    label: 'CV' },
+  cover: { file: 'Cover Letter Youssef.pdf',  label: 'Cover Letter' }
+};
+
+function switchDoc(type) {
+  currentDoc = type;
+  var frame   = document.getElementById('resume-pdf-frame');
+  var dlBtn   = document.getElementById('doc-download');
+  var tabCv    = document.getElementById('tab-cv');
+  var tabCover = document.getElementById('tab-cover');
+
+  // Load PDF
+  frame.src = docs[type].file;
+
+  // Update download link
+  dlBtn.href     = docs[type].file;
+  dlBtn.download = docs[type].file;
+
+  // Active tab styling
+  tabCv.style.background    = type === 'cv'    ? 'var(--gold)' : 'none';
+  tabCv.style.color         = type === 'cv'    ? '#fff'        : 'var(--gold)';
+  tabCover.style.background = type === 'cover' ? 'var(--gold)' : 'none';
+  tabCover.style.color      = type === 'cover' ? '#fff'        : 'var(--gold)';
+}
+
+if (id === 'resume') {
+  const frame = document.getElementById('resume-pdf-frame');
+  if (frame && !frame.src.includes('.pdf')) {
+    switchDoc('cv');
+  }
 }
 </script>
 
