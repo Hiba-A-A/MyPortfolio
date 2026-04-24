@@ -1686,7 +1686,6 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
 </div>
 
 
-<!-- ─── SCRIPTS ─── -->
 <script>
 // ── Hide all pages IMMEDIATELY before first paint ──────────
 (function() {
@@ -1711,7 +1710,6 @@ const navItems = {
 };
 
 function showPage(id) {
-  // Remove the global hide style on first call
   var hideStyle = document.getElementById('hide-all-pages');
   if (hideStyle) hideStyle.remove();
 
@@ -1740,12 +1738,9 @@ function showPage(id) {
     navItems[id].classList.add('active');
   }
 
-  // Lazy-load CV PDF on first visit to resume page
+  // Every time resume page is opened — always reset to CV tab
   if (id === 'resume') {
-    const frame = document.getElementById('resume-pdf-frame');
-    if (frame && !frame.src.includes('.pdf')) {
-      switchDoc('cv');
-    }
+    switchDoc('cv');
   }
 
   window.scrollTo({ top: 0 });
@@ -1824,8 +1819,8 @@ function switchDoc(type) {
   var tabCv    = document.getElementById('tab-cv');
   var tabCover = document.getElementById('tab-cover');
 
- 
-if (frame) frame.src = docs[type].file + '#toolbar=0';
+  if (frame) frame.src = docs[type].file + '#toolbar=0';
+
   if (tabCv) {
     tabCv.style.background = type === 'cv' ? 'var(--gold)' : 'none';
     tabCv.style.color      = type === 'cv' ? '#fff'        : 'var(--gold)';
