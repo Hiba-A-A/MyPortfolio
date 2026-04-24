@@ -43,7 +43,7 @@ a { text-decoration: none; color: inherit; }
   animation: fadeUp 0.4s ease both;
 }
 .page.active { display: block; }
-#page-home { display: block; position: relative; z-index: 1; }
+#page-home { position: relative; z-index: 1; }
 
 /* ── NAVBAR ── */
 nav {
@@ -1688,6 +1688,14 @@ footer em { color: var(--gold); font-style: normal; font-weight: 700; }
 
 <!-- ─── SCRIPTS ─── -->
 <script>
+// ── Hide all pages IMMEDIATELY before first paint ──────────
+(function() {
+  var style = document.createElement('style');
+  style.innerHTML = '.page { display: none !important; }';
+  style.id = 'hide-all-pages';
+  document.head.appendChild(style);
+})();
+
 let mobileOpen = false;
 
 const allPages = ['home','about','resume','blog','team','work','final','contact','blog-post'];
@@ -1703,12 +1711,25 @@ const navItems = {
 };
 
 function showPage(id) {
+  // Remove the global hide style on first call
+  var hideStyle = document.getElementById('hide-all-pages');
+  if (hideStyle) hideStyle.remove();
+
   allPages.forEach(p => {
     const el = document.getElementById('page-' + p);
-    if (el) { el.classList.remove('active'); el.scrollTop = 0; }
+    if (el) {
+      el.classList.remove('active');
+      el.style.display = 'none';
+      el.scrollTop = 0;
+    }
   });
+
   const target = document.getElementById('page-' + id);
-  if (target) { target.classList.add('active'); target.scrollTop = 0; }
+  if (target) {
+    target.style.display = 'block';
+    target.classList.add('active');
+    target.scrollTop = 0;
+  }
 
   Object.keys(navItems).forEach(k => {
     if (navItems[k]) navItems[k].classList.remove('active');
@@ -1718,6 +1739,15 @@ function showPage(id) {
   } else if (navItems[id]) {
     navItems[id].classList.add('active');
   }
+
+  // Lazy-load CV PDF on first visit to resume page
+  if (id === 'resume') {
+    const frame = document.getElementById('resume-pdf-frame');
+    if (frame && !frame.src.includes('.pdf')) {
+      switchDoc('cv');
+    }
+  }
+
   window.scrollTo({ top: 0 });
 }
 
@@ -1736,6 +1766,29 @@ function openBlog(n) {
   if (navItems['blog']) navItems['blog'].classList.add('active');
 }
 
+// Open PDFs — remember which page to return to
+function openPDF(filename) {
+  sessionStorage.setItem('returnPage', 'work');
+  window.location.href = filename;
+}
+
+function openFinalFile(filename) {
+  sessionStorage.setItem('returnPage', 'final');
+  window.location.href = filename;
+}
+
+// ── On load: restore correct page BEFORE anything is shown ──
+(function() {
+  const returnPage = sessionStorage.getItem('returnPage');
+  if (returnPage) {
+    sessionStorage.removeItem('returnPage');
+    showPage(returnPage);
+  } else {
+    showPage('home');
+  }
+})();
+
+// ── Hamburger menu ───────────────────────────────────────────
 const hamburger = document.getElementById('hamburger');
 const mobileNav = document.getElementById('mobileNav');
 
@@ -1758,70 +1811,29 @@ function closeMobile() {
   hamburger.querySelectorAll('span').forEach(s => { s.style.transform=''; s.style.opacity=''; });
 }
 
-function openPDF(filename) {
-  sessionStorage.setItem('returnPage', 'work');
-  window.location.href = filename;
-}
-
-function openFinalFile(filename) {
-  sessionStorage.setItem('returnPage', 'final');
-  window.location.href = filename;
-}
-
-window.addEventListener('load', () => {
-  const returnPage = sessionStorage.getItem('returnPage');
-  if (returnPage) {
-    sessionStorage.removeItem('returnPage');
-    showPage(returnPage);
-  }
-});
-function showPage(id) {
-  allPages.forEach(p => {
-    const el = document.getElementById('page-' + p);
-    if (el) { el.classList.remove('active'); el.scrollTop = 0; }
-  });
-  const target = document.getElementById('page-' + id);
-  if (target) { target.classList.add('active'); target.scrollTop = 0; }
-
-  // Lazy-load PDF only on first visit
-  if (id === 'resume') {
-    const frame = document.getElementById('resume-pdf-frame');
-    if (frame && !frame.src.includes('resume.pdf')) {
-      frame.src = 'Resume.pdf';
-    }
-  }
-
-  // ... rest of your existing showPage code (nav active states etc.)
-}
-// ── Resume tab switcher ──────────────────────────────────
+// ── Resume tab switcher ──────────────────────────────────────
 var currentDoc = 'cv';
 var docs = {
-  cv:    { file: 'resume.pdf',    label: 'CV' },
-  cover: { file: 'Cover Letter Youssef.pdf',  label: 'Cover Letter' }
+  cv:    { file: 'resume.pdf',               label: 'CV' },
+  cover: { file: 'Cover Letter Youssef.pdf', label: 'Cover Letter' }
 };
 
 function switchDoc(type) {
   currentDoc = type;
-  var frame   = document.getElementById('resume-pdf-frame');
-  var dlBtn   = document.getElementById('doc-download');
+  var frame    = document.getElementById('resume-pdf-frame');
   var tabCv    = document.getElementById('tab-cv');
   var tabCover = document.getElementById('tab-cover');
 
-  // Load PDF
-  frame.src = docs[type].file;
+  if (frame) frame.src = docs[type].file;
 
-  // Update download link
-  dlBtn.href     = docs[type].file;
-  dlBtn.download = docs[type].file;
-
-  // Active tab styling
-  tabCv.style.background    = type === 'cv'    ? 'var(--gold)' : 'none';
-  tabCv.style.color         = type === 'cv'    ? '#fff'        : 'var(--gold)';
-  tabCover.style.background = type === 'cover' ? 'var(--gold)' : 'none';
-  tabCover.style.color      = type === 'cover' ? '#fff'        : 'var(--gold)';
+  if (tabCv) {
+    tabCv.style.background = type === 'cv' ? 'var(--gold)' : 'none';
+    tabCv.style.color      = type === 'cv' ? '#fff'        : 'var(--gold)';
+  }
+  if (tabCover) {
+    tabCover.style.background = type === 'cover' ? 'var(--gold)' : 'var(--gold-dim)';
+    tabCover.style.color      = type === 'cover' ? '#fff'        : 'var(--gold)';
+  }
 }
-
-
 </script>
-
 </body></html>
